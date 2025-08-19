@@ -1,7 +1,0 @@
-{
-  "id": "issuerId.objectId",
-  "barcode": {
-    "type": "QR_CODE",
-    "value": "https://demo.anerita/emergency/USERID"
-  }
-}
