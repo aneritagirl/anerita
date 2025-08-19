@@ -1,7 +1,7 @@
 {
   "name": "ANERITA",
   "short_name": "ANERITA",
-  "start_url": "./ANERITA_master_nextgen_PWA.html",
+  "app.html": "./ANERITA_master_nextgen_PWA.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#BE051E",
