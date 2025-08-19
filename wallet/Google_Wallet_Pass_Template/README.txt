@@ -1,0 +1,1 @@
+Create an issuer in Google Wallet, define a GenericClass, then create a GenericObject with your emergency URL in the barcode & links. Sign the Add to Google Wallet JWT.

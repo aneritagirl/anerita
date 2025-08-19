@@ -1,0 +1,16 @@
+{
+  "formatVersion": 1,
+  "organizationName": "ANERITA",
+  "passTypeIdentifier": "pass.com.example.anerita",
+  "teamIdentifier": "TEAMID",
+  "serialNumber": "1234567890",
+  "description": "ANERITA Emergency QR",
+  "logoText": "ANERITA",
+  "foregroundColor": "rgb(0,0,0)",
+  "backgroundColor": "rgb(255,255,255)",
+  "barcode": {
+    "format": "PKBarcodeFormatQR",
+    "message": "https://demo.anerita/emergency/USERID",
+    "messageEncoding": "iso-8859-1"
+  }
+}

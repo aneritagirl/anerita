@@ -1,0 +1,1 @@
+Use an Apple Pass signing tool with a Pass Type ID to sign this pass.json and images into a .pkpass.

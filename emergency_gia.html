@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ANERITA — Emergency (Offline)</title>
+<style>
+:root{--brand:#BE051E;--ring:#e5e7eb;--ink:#111}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink)}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--ring)}
+.btn{display:inline-block;background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:14px} .pill{display:inline-block;border:1px solid var(--ring);border-radius:999px;padding:6px 10px;margin:4px}
+.pill.red{background:#fee2e2;border-color:#fecaca} .pill.yellow{background:#fffbeb;border-color:#fde68a} .pill.green{background:#ecfdf5;border-color:#bbf7d0}
+.badge{border:1px solid var(--ring);padding:6px 10px;border-radius:999px}
+.kv{display:grid;grid-template-columns:160px 1fr;gap:6px 12px}
+</style></head>
+<body>
+<div class="bar">
+  <div><strong>AN</strong><strong style="color:#BE051E">ER</strong><strong>ITA</strong> — Emergency View</div>
+  <div style="display:flex;gap:8px;align-items:center"><span class="badge">Offline Mode</span>
+    <a class="btn" href="tel:999">Call 999</a><a class="btn" href="tel:112">Call 112</a></div>
+</div>
+<div class="wrap">
+  <h2>Gia <small style="font-weight:400">DOB 01-01-2022</small></h2>
+  <div><span class="pill red">Allergy: Egg</span><span class="pill yellow">Alport Syndrome (Avoid Ibuprofen)</span><span class="pill green">Carries two EpiPens</span><span class="pill green">Blood: O+</span></div>
+  <div class="kv" style="margin-top:8px">
+    <div>ICE #1</div><div>Parent/Carer • +44 7700 900111</div>
+    <div>ICE #2</div><div>Backup • +44 7700 900222</div>
+    <div>GP</div><div>City Health Practice • +44 20 7946 0123</div>
+  </div>
+  <p style="color:#667085"><small>Standalone offline page for demo purposes.</small></p>
+</div>
+</body></html>
