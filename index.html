@@ -1,1 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANERITA — Anytime Emergency Response ID Tag Aid</title>
+<link rel="preload" href="styles/huawei.css" as="style">
+<link rel="stylesheet" href="styles/huawei.css">
+<script defer src="scripts/huawei.js"></script>
+</head>
+<body>
+<header class="hx-header">
+  <div class="hx-wrap">
+    <button class="hx-burger" aria-label="Menu" onclick="document.body.classList.toggle('nav-open')">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="hx-brand" href="/">
+      <span class="an">AN</span><span class="er">ER</span><span class="ita">ITA</span>
+      <small><span class="er">EMERGENCY RESPONSE</span> • IDENTIFICATION TAG AID</small>
+    </a>
+    <nav class="hx-nav">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#safety">Safety</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="hx-cta" href="app.html">Open App</a>
+  </div>
+</header>
 
+<section class="hero">
+  <div class="hx-wrap hero-grid">
+    <div class="hero-text">
+      <div class="pill">Emergency‑first • Works offline</div>
+      <h1 class="reveal">Your medical story, <span class="er">instantly</span>.</h1>
+      <p class="lead reveal">
+        ANERITA puts your allergies, meds, conditions, and care wishes into a QR anyone can scan — on any phone, online or offline.
+      </p>
+      <div class="cta-row reveal">
+        <a class="hx-cta large" href="app.html">Open App</a>
+        <a class="hx-ghost" href="#features">See what’s inside</a>
+      </div>
+      <ul class="hero-points reveal">
+        <li>One scan → clear, triaged emergency view</li>
+        <li>Works from lock‑screen, card, bracelet, or sticker</li>
+        <li>Multilingual (expandable to 20 languages)</li>
+      </ul>
+    </div>
+    <div class="hero-art reveal">
+      <div class="phone">
+        <div class="status"></div>
+        <div class="screen">
+          <div class="screen-top">
+            <div class="name">Emergency — Tina</div>
+            <div class="badges"><span class="b-red">ALLERGY</span><span class="b-amber">EPILEPSY</span></div>
+          </div>
+          <div class="screen-body">
+            <div class="row"><b>Blood</b><span>O+</span></div>
+            <div class="row"><b>Allergies</b><span>Midazolam, Codeine</span></div>
+            <div class="row"><b>Meds</b><span>Metformin, Levetiracetam</span></div>
+          </div>
+          <div class="screen-actions">
+            <a href="tel:999" class="call">999</a>
+            <a href="tel:112" class="call">112</a>
+            <a href="app.html#view-emergency" class="ghost">See full demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="strip">
+  <div class="hx-wrap three reveal">
+    <div class="card"><h3>1) Create</h3><p>Add allergies, conditions, meds, contacts & care wishes.</p></div>
+    <div class="card"><h3>2) Generate</h3><p>Get a QR for lock‑screen, card, bracelet or sticker.</p></div>
+    <div class="card"><h3>3) Scan</h3><p>Responders scan → clear, read‑only emergency view.</p></div>
+  </div>
+</section>
+
+<section id="features" class="hx-wrap reveal">
+  <h2>Built for emergencies</h2>
+  <div class="grid">
+    <div class="card"><b>Offline access</b><p>Emergency view works without signal after first load.</p></div>
+    <div class="card"><b>ICE & SOS</b><p>One‑tap 999/112 & emergency contacts.</p></div>
+    <div class="card"><b>Document vault</b><p>Store care plans, directives, and ID docs.</p></div>
+    <div class="card"><b>Translations</b><p>Key fields auto‑translate for responders.</p></div>
+    <div class="card"><b>Triage colors</b><p>Red/Amber/Green highlights critical risks.</p></div>
+    <div class="card"><b>Privacy by design</b><p>Only essentials show in emergencies.</p></div>
+  </div>
+  <div style="margin-top:16px"><a class="hx-ghost" href="app.html">Open the app</a></div>
+</section>
+
+<section id="safety" class="strip">
+  <div class="hx-wrap reveal">
+    <h2>Security & privacy</h2>
+    <ul class="ticks">
+      <li>HTTPS everywhere, modern encryption</li>
+      <li>Encrypted storage for documents & sensitive fields</li>
+      <li>Role‑based access (you control what shows)</li>
+      <li>GDPR‑ready data controls & audit logs (in the full app)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq" class="hx-wrap reveal">
+  <h2>FAQ</h2>
+  <details><summary>Does it work without internet?</summary><p>Yes — emergency pages cache for offline use after first open.</p></details>
+  <details><summary>Can responders use any phone?</summary><p>Yes — any phone camera scans the QR; no special app needed.</p></details>
+  <details><summary>Is my data safe?</summary><p>Yes — only emergency essentials are shown; the full profile stays protected.</p></details>
+</section>
+
+<footer class="hx-foot">
+  <div class="hx-wrap foot-row">
+    <small>© <span id="yr"></span> ANERITA</small>
+    <a href="app.html" class="hx-cta">Open App</a>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>
