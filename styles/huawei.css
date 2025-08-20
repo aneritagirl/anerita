@@ -69,6 +69,49 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
 }
 
 /* Header */
+/* Header layout */
+
+.hx-header .hx-wrap{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;   /* logo/tagline left, button right */
+
+}
+
+
+
+/* Make the header button look like a small nav pill */
+
+.hx-header .btn{
+
+  padding:8px 14px;
+
+  font-size:14px;
+
+  border-radius:9999px;
+
+  margin-left:16px;
+
+}
+
+
+
+/* Keep brand block tidy */
+
+.hx-brand{
+
+  text-decoration:none;
+
+  color:inherit;
+
+  display:inline-flex;
+
+  align-items:baseline;
+
+  gap:6px;
 .hx-brand {
 
   text-decoration: none;
