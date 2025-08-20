@@ -1,20 +1,36 @@
 {
   "name": "ANERITA",
   "short_name": "ANERITA",
-  "app.html": "./ANERITA_master_nextgen_PWA.html",
-  "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#BE051E",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/favicon-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
     }
-  ]
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#BE051E",
+  "theme_color": "#BE051E"
 }
