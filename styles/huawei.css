@@ -44,8 +44,29 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
   padding: 10px 16px; border-radius: 999px; text-decoration:none; font-weight:600;
 }
 .btn-lg{ padding: 14px 22px; font-size: 18px; }
-.btn-primary{ background: var(--brand); color:#fff; box-shadow: var(--shadow); }
-.btn-primary:hover{ filter: saturate(1.05) brightness(0.98); }
+.btn-primary {
+
+  background: #E53935; /* red */
+
+  color: #fff !important;
+
+  text-decoration: none;
+
+}
+
+
+
+.btn-primary:hover,
+
+.btn-primary:visited,
+
+.btn-primary:active {
+
+  background: #c62828; /* darker red */
+
+  color: #fff !important;
+
+}
 
 /* Header */
 .hx-brand {
