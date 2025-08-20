@@ -420,3 +420,21 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
   white-space:nowrap;border:0;
 
 }
+/* ---- Emergency mobile tidy ---- */
+@media (max-width: 768px){
+  /* Hide header CTA on phones – keep just the hero button */
+  .header-cta{ display:none !important; }
+
+  /* Slightly tighter header padding on phones */
+  .hx-header .container{ padding: 10px 16px !important; }
+
+  /* Pull hero up a touch so it feels aligned */
+  .hero{ padding-top: 8px !important; }
+}
+
+/* Keep header white, always */
+.hx-header{ background:#fff !important; border-bottom:1px solid var(--card-border); }
+
+/* Never let buttons or links go purple */
+a, a:visited { color: inherit !important; text-decoration: none; }
+.btn-primary, .btn-primary:visited { color:#fff !important; }
