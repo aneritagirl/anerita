@@ -1,2 +1,3 @@
-const API_BASE_URL = "https://anerita-api.onrender.com";
-export default API_BASE_URL;
+// config.js
+// Base URL of your live API:
+window.ANERITA_API = 'https://anerita-api.onrender.com';
