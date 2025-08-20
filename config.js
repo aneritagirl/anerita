@@ -1,2 +1,2 @@
-// config.js
-window.API_BASE = 'https://anerita-api.onrender.com';
+const API_BASE_URL = "https://anerita-api.onrender.com";
+export default API_BASE_URL;
