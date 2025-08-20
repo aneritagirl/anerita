@@ -77,15 +77,17 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
 
   align-items:center;
 
-  justify-content:space-between;   /* logo/tagline left, button right */
+  justify-content:space-between;
 
 }
 
 
 
-/* Make the header button look like a small nav pill */
+/* Small pill-style nav button */
 
-.hx-header .btn{
+.hx-header .btn--nav{
+
+  margin-left:auto;
 
   padding:8px 14px;
 
@@ -93,10 +95,9 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
 
   border-radius:9999px;
 
-  margin-left:16px;
+  position:static;     /* ensure not absolutely positioned */
 
 }
-
 
 
 /* Keep brand block tidy */
