@@ -227,3 +227,14 @@ footer{border-top:1px solid var(--ring); margin-top:32px; padding:18px 0; text-a
 .brand span { color: var(--ink); font-weight:900; }
 .brand .er   { color: var(--brand); }      /* make ER red */
 .brand .tm   { font-size:.6em; vertical-align:super; opacity:.8; margin-left:.25em; }
+.hero {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.hero img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
