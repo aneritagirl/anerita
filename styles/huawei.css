@@ -59,3 +59,57 @@ body{font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink
 .reveal.is-in{opacity:1;transform:none}
 
 body.nav-open .hx-nav{display:flex;position:absolute;right:18px;top:60px;background:#fff;border:1px solid var(--ring);border-radius:12px;padding:10px;flex-direction:column;gap:8px}
+:root{--brand:#BE051E;--ink:#111;--muted:#666;--bg:#fff}
+*{box-sizing:border-box}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{color:var(--ink);margin:0 0 .4em}
+p{color:var(--muted);margin:0 0 1em}
+a.btn{display:inline-block;padding:.8em 1.2em;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;font-weight:700}
+a.btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+.hx-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* header */
+.hx-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+.hx-header .hx-wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.brand{font-weight:900;letter-spacing:.5px;color:var(--ink);text-decoration:none}
+.brand .er{color:var(--brand)}
+
+/* hero */
+.hero{background:linear-gradient(140deg,#fff 60%,rgba(190,5,30,.08) 100%)}
+.hero-wrap{display:grid;gap:32px;grid-template-columns:1.1fr .9fr;align-items:center;padding:56px 0}
+.hero .accent{color:var(--brand)}
+.lede{font-size:1.125rem}
+.cta-row{margin-top:16px}
+
+/* features grid */
+.features{padding:48px 0;background:#fff}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
+.card{border:1px solid #eee;border-radius:14px;padding:18px;background:#fff}
+.card h3{margin-top:10px}
+
+/* id options, devices, kids */
+.id-options,.devices{padding:36px 0;background:#fafafa}
+.id-options h2{text-align:center;margin-bottom:.4em}
+.id-options .sub{text-align:center;margin-bottom:18px}
+.edge{border-radius:16px}
+.kids{padding:48px 0;background:#fff}
+.two-col{display:grid;gap:28px;grid-template-columns:1fr 1fr;align-items:center}
+
+/* faq */
+.faq{padding:48px 0;background:#fff}
+details{border:1px solid #eee;border-radius:12px;padding:14px 16px;margin:12px 0;background:#fafafa}
+summary{cursor:pointer;font-weight:700}
+
+/* footer */
+.site-foot{border-top:1px solid #eee;background:#fff}
+.foot-row{display:flex;align-items:center;gap:16px;justify-content:space-between;min-height:72px}
+
+/* responsive */
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr 1fr}
+  .hero-wrap{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr}
+}
