@@ -52,6 +52,33 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
 .hx-header .container{ display:flex; align-items:center; justify-content:space-between; padding: 12px 0; }
 .brand{ font-weight:800; letter-spacing:.6px; text-decoration:none; color:var(--ink); display:inline-flex; gap:2px; align-items:baseline;}
 .brand .er{ color: var(--brand); }
+.hero-tagline {
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  color: #6b7280;   /* neutral gray */
+
+  margin-bottom: 0.5rem;
+
+  letter-spacing: .02em;
+
+}
+
+
+
+@media (max-width: 640px) {
+
+  .hero-tagline {
+
+    font-size: 0.9rem;
+
+    text-align: center;
+
+  }
+
+}
 .brand .tm{ font-size: .6em; color: var(--muted); margin-left: 2px; }
 /* Brand + tagline */
 .brand-block {
