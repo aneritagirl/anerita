@@ -238,3 +238,28 @@ footer{border-top:1px solid var(--ring); margin-top:32px; padding:18px 0; text-a
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+/* --- ANERITA wordmark (header) --- */
+.hx-header .brand{
+  display:inline-flex;
+  align-items:flex-end;
+  gap:.02em;
+  font-weight:900;
+  line-height:1;
+  white-space:nowrap;            /* keep on one line */
+}
+
+.hx-header .brand span{
+  display:inline !important;     /* stop stacking */
+}
+
+.hx-header .brand .er{
+  color:#BE051E;                 /* red ER */
+}
+
+.hx-header .brand .tm{
+  font-size:.6em;
+  margin-left:.25em;
+  opacity:.9;
+  vertical-align:super;
+  position:relative; top:-.15em; /* lift the TM a touch */
+}
