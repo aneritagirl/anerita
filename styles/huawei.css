@@ -222,3 +222,8 @@ footer{border-top:1px solid var(--ring); margin-top:32px; padding:18px 0; text-a
   .features{grid-template-columns:1fr}
   .hx-header .hx-wrap{height:60px}
 }
+:root { --brand:#BE051E; --ink:#111; }
+
+.brand span { color: var(--ink); font-weight:900; }
+.brand .er   { color: var(--brand); }      /* make ER red */
+.brand .tm   { font-size:.6em; vertical-align:super; opacity:.8; margin-left:.25em; }
