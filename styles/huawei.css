@@ -53,7 +53,35 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
 .brand{ font-weight:800; letter-spacing:.6px; text-decoration:none; color:var(--ink); display:inline-flex; gap:2px; align-items:baseline;}
 .brand .er{ color: var(--brand); }
 .brand .tm{ font-size: .6em; color: var(--muted); margin-left: 2px; }
+/* Brand + tagline */
+.brand-block {
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.logo-wordmark { 
+  font-weight: 800; 
+  letter-spacing: .02em; 
+}
+.logo-wordmark .er { color: #C40018; } /* your red */
+.tm { font-size: .65em; margin-left: .15em; color: #9aa3ae; }
 
+.tagline {
+  font-size: .78rem;
+  font-weight: 500;
+  color: #6b7280;    /* neutral gray */
+  letter-spacing: .01em;
+  line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+  .tagline {
+    width: 100%;
+    margin-top: .15rem;
+    font-size: .74rem;
+  }
+}
 /* Hero */
 .hero{ background: linear-gradient(#fff, #fff), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23f0f1f4' d='M11 4h2v4h4v2h-4v4h-2v-4H7V8h4z'/%3E%3C/svg%3E") center/48px repeat; }
 .hero-grid{ display:grid; grid-template-columns: 1fr; gap: var(--gap); align-items:center; }
