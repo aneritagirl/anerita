@@ -78,6 +78,15 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
   display: inline-block;
 
 }
+.hx-header .container {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between; /* logo left, button right */
+
+}
 
 
 
