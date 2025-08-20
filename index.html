@@ -1,161 +1,91 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ANERITA — Anytime Emergency Response ID Tag Aid</title>
 
   <!-- PWA / icons -->
-  <link rel="manifest" href="anerita_manifest.json">
-  <link rel="apple-touch-icon" href="anerita-180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="manifest" href="anerita_manifest.json" />
+  <link rel="apple-touch-icon" href="anerita-180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/huawei.css">
+  <link rel="stylesheet" href="styles/huawei.css" />
 
   <!-- (optional) your existing JS -->
   <script defer src="anerita_service_worker.js"></script>
 </head>
 <body>
 
-  <<header class="hx-header">
-  <div class="hx-wrap">
-    <a class="hx-brand" href="/" aria-label="Anerita Home">
-      <div class="brand-block">
-        <div class="logo-wordmark">
-          <span>AN</span><span class="er">ER</span><span>ITA</span><sup class="tm">™</sup>
+  <!-- Header -->
+  <header class="hx-header">
+    <div class="hx-wrap">
+      <a class="hx-brand" href="/" aria-label="Anerita Home">
+        <div class="brand-block">
+          <div class="logo-wordmark">
+            <span>AN</span><span class="er">ER</span><span>ITA</span><sup class="tm">™</sup>
+          </div>
+          <div class="tagline">Anytime Emergency Response Identification Tag Aid</div>
         </div>
-        <div class="tagline">Anytime Emergency Response Identification Tag Aid</div>
-      </div>
-    </a>
-  </div>
-</header>
+      </a>
+      <a class="btn btn-primary btn-sm" href="app.html">Open App</a>
+    </div>
+  </header>
 
   <!-- Hero -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-text">
-        <section class="hero">
-
-  <div class="hero-grid">
-
-    <div class="hero-text">
-
-      <p class="hero-tagline">Anytime Emergency Response Identification Tag Aid</p>
-      <section class="hero">
-
-  <div class="hero-grid">
-
-    <div class="hero-text">
-
-      <p class="hero-tagline">Anytime Emergency Response Identification Tag Aid</p>
-
-      <h1>Your <span class="highlight">emergency</span> triage, voiced for you.</h1>
-
-      <p class="subhead">Critical health info, spoken and displayed — when every second matters.</p>
-
-      <a href="#" class="btn btn-primary btn-lg">Open App</a>
-
-    </div>
-
-    <!-- existing hero image column -->
-
-  </div>
-
-</section>
-
-      <h1>Your <span class="highlight">emergency</span> triage, voiced for you.</h1>
-
-      <p class="subhead">Critical health info, spoken and displayed — when every second matters.</p>
-
-      <a href="#" class="btn btn-primary btn-lg">Open App</a>
-
-    </div>
-
-    <!-- existing hero image column -->
-
-  </div>
-
-</section>
+        <p class="hero-tagline">Anytime Emergency Response Identification Tag Aid</p>
         <h1>Your <span class="highlight">emergency</span> triage, voiced for you.</h1>
-        <p>Critical health info, spoken and displayed — when every second matters.</p>
+        <p class="subhead">Critical health info, spoken and displayed — when every second matters.</p>
         <a class="btn btn-primary btn-lg" href="app.html">Open App</a>
       </div>
 
       <figure class="hero-art">
-        <img src="images/hero-voiced.jpg" alt="ANERITA emergency triage on phone" loading="eager">
+        <img src="images/hero-voiced.jpg" alt="ANERITA emergency triage on phone" loading="eager" />
       </figure>
     </div>
   </section>
 
   <!-- Features Grid -->
+  <section class="features" id="features">
+    <div class="features-grid">
 
-<section class="features" id="features">
+      <a class="feature-card" href="#" aria-label="ICE & SOS">
+        <div class="thumb"><img src="images/card-ice-sos.png" alt="ICE & SOS" loading="lazy" /></div>
+        <h3>ICE & SOS</h3>
+        <p>Instant access to emergency contacts and alerts.</p>
+      </a>
 
-  <div class="features-grid">
+      <a class="feature-card" href="#" aria-label="Document Vault">
+        <div class="thumb"><img src="images/card-vault.png" alt="Document Vault" loading="lazy" /></div>
+        <h3>Document Vault</h3>
+        <p>Encrypted storage for medical documents.</p>
+      </a>
 
-    <a class="feature-card" href="#" aria-label="ICE & SOS">
+      <a class="feature-card" href="#" aria-label="Translations">
+        <div class="thumb"><img src="images/card-translations.png" alt="Translations" loading="lazy" /></div>
+        <h3>Translations</h3>
+        <p>Break language barriers in emergencies.</p>
+      </a>
 
-      <div class="thumb"><img src="images/card-ice-sos.png" alt="ICE & SOS" loading="lazy"></div>
+      <a class="feature-card" href="#" aria-label="Triage Colors">
+        <div class="thumb"><img src="images/card-triage.png" alt="Triage Colors" loading="lazy" /></div>
+        <h3>Triage Colors</h3>
+        <p>Prioritize care at a glance.</p>
+      </a>
 
-      <h3>ICE & SOS</h3>
+      <a class="feature-card" href="#" aria-label="Security & Privacy">
+        <div class="thumb"><img src="images/card-security.png" alt="Security & Privacy" loading="lazy" /></div>
+        <h3>Security & Privacy</h3>
+        <p>Zero tracking, HTTPS everywhere.</p>
+      </a>
 
-      <p>Instant access to emergency contacts and alerts.</p>
-
-    </a>
-
-
-
-    <a class="feature-card" href="#" aria-label="Document Vault">
-
-      <div class="thumb"><img src="images/card-vault.png" alt="Document Vault" loading="lazy"></div>
-
-      <h3>Document Vault</h3>
-
-      <p>Encrypted storage for medical documents.</p>
-
-    </a>
-
-
-
-    <a class="feature-card" href="#" aria-label="Translations">
-
-      <div class="thumb"><img src="images/card-translations.png" alt="Translations" loading="lazy"></div>
-
-      <h3>Translations</h3>
-
-      <p>Break language barriers in emergencies.</p>
-
-    </a>
-
-
-
-    <a class="feature-card" href="#" aria-label="Triage Colors">
-
-      <div class="thumb"><img src="images/card-triage.png" alt="Triage Colors" loading="lazy"></div>
-
-      <h3>Triage Colors</h3>
-
-      <p>Prioritize care at a glance.</p>
-
-    </a>
-
-
-
-    <a class="feature-card" href="#" aria-label="Security & Privacy">
-
-      <div class="thumb"><img src="images/card-security.png" alt="Security & Privacy" loading="lazy"></div>
-
-      <h3>Security & Privacy</h3>
-
-      <p>Zero tracking, HTTPS everywhere.</p>
-
-    </a>
-
-  </div>
-
-</section>
+    </div>
+  </section>
 
   <!-- Devices lineup -->
   <section class="wide">
@@ -163,7 +93,7 @@
       <h2>Always accessible</h2>
       <p>ANERITA can be carried everywhere — on wristbands, keychains, stickers, or phone widgets.</p>
       <div class="wide-media">
-        <img src="images/devices-lineup.jpg" alt="ANERITA device lineup">
+        <img src="images/devices-lineup.jpg" alt="ANERITA device lineup" loading="lazy" />
       </div>
     </div>
   </section>
@@ -174,7 +104,7 @@
       <h2>ANERITA for kids</h2>
       <p>Peace of mind with child‑friendly wristbands and tags.</p>
       <div class="wide-media">
-        <img src="images/kids-lineup.jpg" alt="ANERITA kids accessories">
+        <img src="images/kids-lineup.jpg" alt="ANERITA kids accessories" loading="lazy" />
       </div>
     </div>
   </section>
@@ -185,7 +115,7 @@
       <h2>Identification, your way</h2>
       <p>Choose the form that suits your lifestyle.</p>
       <div class="wide-media">
-        <img src="images/identification-grid.jpg" alt="ANERITA identification options">
+        <img src="images/identification-grid.jpg" alt="ANERITA identification options" loading="lazy" />
       </div>
     </div>
   </section>
@@ -195,5 +125,6 @@
       <p>© 2025 ANERITA — Emergency Response Identification Tag Aid</p>
     </div>
   </footer>
+
 </body>
 </html>
