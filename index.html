@@ -1,228 +1,121 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ANERITA — Anytime Emergency Response ID Tag Aid</title>
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
-<link rel="preload" href="styles/huawei.css" as="style">
-<link rel="stylesheet" href="styles/huawei.css?v=3">
-<script defer src="scripts/huawei.js"></script>
- <link rel="apple-touch-icon" href="/anerita-180.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ANERITA — Anytime Emergency Response ID Tag Aid</title>
+
+  <!-- PWA / icons -->
+  <link rel="manifest" href="anerita_manifest.json">
+  <link rel="apple-touch-icon" href="anerita-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/huawei.css">
+
+  <!-- (optional) your existing JS -->
+  <script defer src="anerita_service_worker.js"></script>
 </head>
 <body>
+
+  <!-- Header -->
   <header class="hx-header">
-    <div class="hx-wrap">
-      <a class="hx-brand" href="/">
-  <span class="brand">
-    <span>AN</span><span class="er">ER</span><span>ITA</span><sup class="tm">TM</sup>
-  </span>
-</a>
+    <div class="container">
+      <a class="brand" href="/">
+        <span class="an">AN</span><span class="er">ER</span><span class="ita">ITA</span><sup class="tm">™</sup>
+      </a>
+      <a class="btn btn-primary" href="app.html">Open App</a>
     </div>
   </header>
 
-  <main>
-
-
-
-  <!-- HERO -->
-
+  <!-- Hero -->
   <section class="hero">
-
-    <div class="container">
-
+    <div class="container hero-grid">
       <div class="hero-text">
-
         <h1>Your <span class="highlight">emergency</span> triage, voiced for you.</h1>
-
         <p>Critical health info, spoken and displayed — when every second matters.</p>
-
-        <a class="btn-primary" href="app.html">Open App</a>
-
+        <a class="btn btn-primary btn-lg" href="app.html">Open App</a>
       </div>
 
-
-
-      <figure class="hero-figure">
-
-        <img src="images/hero-voiced.jpg" alt="ANERITA emergency triage on phone">
-
+      <figure class="hero-art">
+        <img src="images/hero-voiced.jpg" alt="ANERITA emergency triage on phone" loading="eager">
       </figure>
-
     </div>
-
   </section>
 
+  <!-- Feature cards -->
+  <section class="features">
+    <div class="container cards">
+      <article class="card">
+        <div class="card-media"><img src="images/card-ice-sos.png" alt="ICE & SOS"></div>
+        <h3>ICE & SOS</h3>
+        <p>Instant access to emergency contacts and alerts.</p>
+      </article>
 
+      <article class="card">
+        <div class="card-media"><img src="images/card-vault.png" alt="Document Vault"></div>
+        <h3>Document Vault</h3>
+        <p>Encrypted storage for medical documents.</p>
+      </article>
 
-  <!-- FEATURES GRID -->
+      <article class="card">
+        <div class="card-media"><img src="images/card-translations.png" alt="Translations"></div>
+        <h3>Translations</h3>
+        <p>Break language barriers in emergencies.</p>
+      </article>
 
-  <section class="features section">
+      <article class="card">
+        <div class="card-media"><img src="images/card-triage.png" alt="Triage Colors"></div>
+        <h3>Triage Colors</h3>
+        <p>Prioritize care at a glance.</p>
+      </article>
 
-    <div class="container">
-
-      <div class="grid">
-
-        <article class="card">
-
-          <img src="images/card-ice-sos.png" alt="ICE & SOS">
-
-          <h3>ICE & SOS</h3>
-
-          <p>Instant access to emergency contacts and alerts.</p>
-
-        </article>
-
-
-
-        <article class="card">
-
-          <img src="images/card-security.png" alt="Security & Privacy">
-
-          <h3>Security & Privacy</h3>
-
-          <p>Zero tracking, HTTPS everywhere.</p>
-
-        </article>
-
-
-
-        <article class="card">
-
-          <img src="images/card-translations.png" alt="Translations">
-
-          <h3>Translations</h3>
-
-          <p>Break language barriers in emergencies.</p>
-
-        </article>
-
-
-
-        <article class="card">
-
-          <img src="images/card-triage.png" alt="Triage colors">
-
-          <h3>Triage Colors</h3>
-
-          <p>Prioritize care at a glance.</p>
-
-        </article>
-
-
-
-        <article class="card">
-
-          <img src="images/card-privacy.png" alt="Privacy by Design">
-
-          <h3>Privacy by Design</h3>
-
-          <p>You control who sees what.</p>
-
-        </article>
-
-
-
-        <article class="card">
-
-          <img src="images/card-vault.png" alt="Document Vault">
-
-          <h3>Document Vault</h3>
-
-          <p>Encrypted storage for medical documents.</p>
-
-        </article>
-
-      </div>
-
+      <article class="card">
+        <div class="card-media"><img src="images/card-security.png" alt="Security & Privacy"></div>
+        <h3>Security & Privacy</h3>
+        <p>Zero tracking, HTTPS everywhere.</p>
+      </article>
     </div>
-
   </section>
 
-
-
-  <!-- ALWAYS ACCESSIBLE (full width media) -->
-
-  <section class="media section">
-
+  <!-- Devices lineup -->
+  <section class="wide">
     <div class="container">
-
       <h2>Always accessible</h2>
-
-      <p class="lead">ANERITA can be carried everywhere — on wristbands, keychains, stickers, or phone widgets.</p>
-
-      <div class="frame">
-
-        <img src="images/devices-lineup.jpg" alt="ANERITA devices lineup">
-
+      <p>ANERITA can be carried everywhere — on wristbands, keychains, stickers, or phone widgets.</p>
+      <div class="wide-media">
+        <img src="images/devices-lineup.jpg" alt="ANERITA device lineup">
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- KIDS -->
-
-  <section class="media section">
-
+  <!-- Kids -->
+  <section class="wide alt">
     <div class="container">
-
       <h2>ANERITA for kids</h2>
-
-      <p class="lead">Peace of mind with child‑friendly wristbands and tags.</p>
-
-      <div class="frame">
-
+      <p>Peace of mind with child‑friendly wristbands and tags.</p>
+      <div class="wide-media">
         <img src="images/kids-lineup.jpg" alt="ANERITA kids accessories">
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- IDENTIFICATION OPTIONS -->
-
-  <section class="media section">
-
+  <!-- Identification grid -->
+  <section class="wide">
     <div class="container">
-
       <h2>Identification, your way</h2>
-
-      <p class="lead">Choose the form that suits your lifestyle.</p>
-
-      <div class="frame">
-
+      <p>Choose the form that suits your lifestyle.</p>
+      <div class="wide-media">
         <img src="images/identification-grid.jpg" alt="ANERITA identification options">
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <footer>
-
+  <footer class="site-footer">
     <div class="container">
-
       <p>© 2025 ANERITA — Emergency Response Identification Tag Aid</p>
-
     </div>
-
   </footer>
-
-
-
-</main>
-
-
 </body>
 </html>
