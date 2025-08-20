@@ -1,131 +1,115 @@
-/* ===== ANERITA – mobile‑first layout ===== */
-
+/* ========== Design tokens ========== */
 :root{
-
-  --red:#C8102E;
-
-  --black:#111111;
-
-  --ink:#222222;
-
-  --muted:#6B7280;
-
-  --bg:#FFFFFF;
-
-  --card:#FFFFFF;
-
-  --line:#E5E7EB;
-
-  --radius:18px;
-
-  --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
-
+  --bg: #ffffff;
+  --ink: #111214;
+  --muted: #6b7280;
+  --brand: #cc1122;     /* ANERITA red */
+  --card: #f7f7f8;
+  --card-border: #e9eaee;
+  --radius: 16px;
+  --radius-lg: 20px;
+  --container: 1120px;
+  --gap: 24px;
+  --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
 }
 
+*{ box-sizing: border-box }
+html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); }
+img{ max-width:100%; height:auto; display:block; }
 
+/* Prevent image distortion anywhere */
+.hero-art img,
+.card-media img,
+.wide-media img{ width:100%; height:auto; object-fit:contain; }
 
-*{box-sizing:border-box}
+/* Base type */
+body{
+  font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
+h1{ font-size: clamp(28px, 5.5vw, 48px); line-height:1.15; margin:0 0 12px; }
+h2{ font-size: clamp(22px, 3.8vw, 32px); line-height:1.2; margin:0 0 8px; }
+h3{ font-size: 18px; margin: 8px 0 4px; }
+p{ color: var(--muted); margin: 0 0 12px; }
 
-img{max-width:100%;height:auto;display:block}
-
-
-
-/* Container */
-
-.container{width:min(1200px,92%);margin-inline:auto}
-
-
-
-/* Brand (top‑left) – keep ER red */
-
-.hx-header{position:sticky;top:0;background:#fff;z-index:50;border-bottom:1px solid var(--line)}
-
-.hx-wrap{width:min(1200px,92%);margin-inline:auto;padding:14px 0}
-
-.hx-brand{display:inline-block;text-decoration:none;color:var(--black);font-weight:700;letter-spacing:.04em}
-
-.hx-brand .er{color:var(--red)}
-
-.hx-brand .tm{font-size:.6em;vertical-align:super;margin-left:.15rem;color:var(--muted)}
-
-
+/* Layout helpers */
+.container{ width: min(100% - 32px, var(--container)); margin-inline:auto; }
+section{ padding: clamp(28px, 6vw, 64px) 0; }
 
 /* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: 10px 16px; border-radius: 999px; text-decoration:none; font-weight:600;
+}
+.btn-lg{ padding: 14px 22px; font-size: 18px; }
+.btn-primary{ background: var(--brand); color:#fff; box-shadow: var(--shadow); }
+.btn-primary:hover{ filter: saturate(1.05) brightness(0.98); }
 
-.btn-primary{display:inline-block;background:var(--red);color:#fff;text-decoration:none;
+/* Header */
+.hx-header{ position: sticky; top:0; z-index:10; background:#fff; border-bottom:1px solid var(--card-border);}
+.hx-header .container{ display:flex; align-items:center; justify-content:space-between; padding: 12px 0; }
+.brand{ font-weight:800; letter-spacing:.6px; text-decoration:none; color:var(--ink); display:inline-flex; gap:2px; align-items:baseline;}
+.brand .er{ color: var(--brand); }
+.brand .tm{ font-size: .6em; color: var(--muted); margin-left: 2px; }
 
-  padding:.85rem 1.1rem;border-radius:999px;font-weight:700;box-shadow:var(--shadow)}
+/* Hero */
+.hero{ background: linear-gradient(#fff, #fff), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23f0f1f4' d='M11 4h2v4h4v2h-4v4h-2v-4H7V8h4z'/%3E%3C/svg%3E") center/48px repeat; }
+.hero-grid{ display:grid; grid-template-columns: 1fr; gap: var(--gap); align-items:center; }
+.hero-text{ max-width: 640px; }
+.highlight{ color: var(--brand); }
 
+/* Keep hero image a tidy rectangle that scales */
+.hero-art{
+  border-radius: var(--radius-lg);
+  background: #fff;
+  padding: clamp(8px, 1.5vw, 12px);
+  box-shadow: var(--shadow);
+}
 
+/* Cards grid */
+.features{ background: #fff; }
+.cards{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+.card{
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.02);
+}
+.card-media{
+  /* keeps all feature art same footprint without stretching */
+  aspect-ratio: 4 / 3;
+  display:block;
+  border-radius: 12px;
+  background:#fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  overflow:hidden;
+}
 
-/* HERO */
-
-.hero{padding:24px 0 8px}
-
-.hero .container{display:grid;gap:22px}
-
-.hero-text h1{margin:0 0 .6rem 0;font-size:clamp(28px,5.6vw,44px);line-height:1.05}
-
-.hero-text .highlight{color:var(--red)}
-
-.hero-text p{margin:.25rem 0 1rem 0;color:var(--muted);font-size:clamp(14px,3.5vw,18px)}
-
-.hero-figure{border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
-
-.hero-figure img{width:100%;height:auto}
-
-
-
-/* Feature cards grid */
-
-.features{padding:12px 0 28px}
-
-.features .grid{display:grid;gap:16px}
-
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
-
-  padding:18px;text-align:center;display:flex;flex-direction:column;align-items:center}
-
-.card img{width:min(320px,100%);margin-bottom:12px}
-
-.card h3{margin:.2rem 0 .25rem 0;font-size:clamp(18px,4.2vw,22px)}
-
-.card p{margin:0;color:var(--muted);font-size:clamp(13px,3.6vw,16px)}
-
-
-
-/* Wide media sections */
-
-.media{padding:24px 0}
-
-.media .frame{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff}
-
-.media .frame img{width:100%;height:auto}
-
-
-
-/* Section headings */
-
-.section h2{margin:0 0 .4rem 0;font-size:clamp(22px,5vw,28px)}
-
-.section p.lead{margin:0 0 1rem 0;color:var(--muted)}
-
-
+/* Wide image sections */
+.wide .wide-media,
+.wide.alt .wide-media{
+  border-radius: var(--radius-lg);
+  overflow:hidden;
+  background:#fff;
+  box-shadow: var(--shadow);
+}
+.wide.alt{ background: #fafafb; }
 
 /* Footer */
+.site-footer{ border-top:1px solid var(--card-border); padding: 28px 0; font-size:14px; color:var(--muted); }
 
-footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-
-
-
-/* --------- responsive --------- */
-
-@media (min-width: 860px){
-
-  .hero .container{grid-template-columns:1.1fr 1fr;align-items:center}
-
-  .features .grid{grid-template-columns:repeat(3,1fr)}
-
+/* ====== Desktop / large screens ====== */
+@media (min-width: 900px){
+  .hero-grid{ grid-template-columns: 1.1fr .9fr; }
+  .cards{ grid-template-columns: repeat(3, 1fr); }
+  .cards .card:nth-child(4){ grid-column: span 1; }
+  .cards .card:nth-child(5){ grid-column: span 1; }
 }
