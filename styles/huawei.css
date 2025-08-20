@@ -130,3 +130,79 @@ section + section { margin-top: 48px; }
 
 /* --- Footer --- */
 footer { color: var(--muted); padding: 24px 20px; text-align: center; }
+/* === ANERITA layout polish : start === */
+
+/* 1) Global container + sections */
+.hx-wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+section { padding: 56px 0; }
+
+/* 2) Hero (desktop: 2 columns, mobile: stacked) */
+.hero { display: grid; align-items: center; gap: 32px; }
+.hero-text { max-width: 620px; }
+.hero-img { width: 100%; display: flex; justify-content: center; }
+.hero-img img { width: 100%; max-width: 560px; height: auto; display: block; border-radius: 16px; }
+
+/* 3) Features grid (uniform cards) */
+.features { margin-top: 24px; }
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.feature-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 260px;               /* equal heights */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.feature-card img {
+  width: 100%;
+  max-width: 260px;                /* keep images consistent */
+  height: 160px;                   /* fixed visual box */
+  object-fit: contain;             /* no cropping, no overflow */
+  margin: 4px 0 12px;
+}
+.feature-card h3 { margin: 8px 0 6px; font-size: 20px; }
+.feature-card p  { margin: 0; color:#555; }
+
+/* 4) Section heads for the later rows (devices/kids/identification) */
+.lineup, .kids, .identification { padding-top: 24px; }
+.lineup img, .kids img, .identification img {
+  width: 100%; max-width: 960px; height: auto; display: block; margin: 0 auto;
+  border-radius: 16px;
+}
+
+/* 5) Header brand keeps your red “ER” and stays single-line */
+.hx-header { position: sticky; top: 0; z-index: 10; background: #fff; }
+.hx-brand .brand { font-weight: 900; letter-spacing:.3px; white-space: nowrap; }
+.hx-brand .brand .er { color: #BE051E; }
+
+/* 6) Buttons */
+.btn-primary {
+  background: #BE051E; color:#fff; border-radius: 12px; padding: 10px 18px;
+  font-weight: 700; border: none;
+}
+
+/* 7) Desktop breakpoints */
+@media (min-width: 760px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+  .features-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* 8) Large desktop */
+@media (min-width: 1100px) {
+  .hero-text h1 { font-size: 44px; line-height: 1.12; }
+}
+
+/* 9) Small phones (tighten paddings) */
+@media (max-width: 380px) {
+  section { padding: 40px 0; }
+  .feature-card { min-height: 240px; }
+}
+/* === ANERITA layout polish : end === */
