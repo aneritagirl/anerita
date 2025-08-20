@@ -319,3 +319,46 @@ footer{border-top:1px solid var(--ring); margin-top:32px; padding:18px 0; text-a
 
 /* Optional: if you see any tiny duplicate labels under cards, hide them */
 .features > small{ display:none; }
+/* Mobile-first responsive tweaks */
+@media (max-width: 768px) {
+  header .hx-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header .hx-brand {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .hero-img img {
+    max-width: 90%;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .feature-card {
+    flex: 1 1 100%;
+    margin: 0.5rem 0;
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
