@@ -263,3 +263,59 @@ footer{border-top:1px solid var(--ring); margin-top:32px; padding:18px 0; text-a
   vertical-align:super;
   position:relative; top:-.15em; /* lift the TM a touch */
 }
+/* ---------- Header wordmark ---------- */
+.hx-header .brand{
+  display:inline-flex;
+  align-items:flex-end;
+  gap:.02em;
+  line-height:1;
+  white-space:nowrap;
+  font-weight:900;
+  font-size:18px;               /* boost size on mobile */
+}
+.hx-header .brand span{ display:inline !important; }
+.hx-header .brand .er{ color:#BE051E; }     /* red “ER” */
+.hx-header .brand .tm{
+  font-size:.6em;
+  margin-left:.25em;
+  opacity:.9;
+  position:relative; top:-.15em; /* lift the ™ slightly */
+}
+
+/* ---------- Mobile hero layout ---------- */
+@media (max-width: 760px){
+  .hero .hx-wrap{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:18px;
+  }
+  .hero h1{ font-size:28px; line-height:1.15; margin:0; }
+  .hero p{ margin:4px 0 0; }
+  .hero .btn-primary{ margin-top:10px; }
+
+  .hero-img{ text-align:center; }
+  .hero-img img{
+    width: 100%;
+    max-width: 520px;           /* nice big phone image */
+    height:auto;
+    display:inline-block;
+    border-radius:12px;
+  }
+}
+
+/* ---------- Feature cards polish ---------- */
+.features .feature-card{
+  display:grid;
+  grid-template-rows: auto auto 1fr;
+  gap:10px;
+  padding:18px;
+}
+.features .feature-card img{
+  width:100%;
+  height:auto;
+  max-width:340px;
+  margin:0 auto;                /* center card artwork */
+}
+
+/* Optional: if you see any tiny duplicate labels under cards, hide them */
+.features > small{ display:none; }
