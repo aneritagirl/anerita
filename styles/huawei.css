@@ -113,3 +113,142 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
   .cards .card:nth-child(4){ grid-column: span 1; }
   .cards .card:nth-child(5){ grid-column: span 1; }
 }
+/* === Features grid (uniform cards) === */
+
+.features {
+
+  padding-block: 32px;
+
+}
+
+
+
+.features-grid {
+
+  display: grid;
+
+  gap: 20px;
+
+}
+
+
+
+/* 1 col phones, 2 col tablets, 3 col laptops+ */
+
+@media (max-width: 639px) {
+
+  .features-grid { grid-template-columns: 1fr; }
+
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+
+}
+
+@media (min-width: 1024px) {
+
+  .features-grid { grid-template-columns: repeat(3, 1fr); }
+
+}
+
+
+
+.feature-card {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  padding: 20px;
+
+  background: #fff;
+
+  border: 1px solid #ececec;
+
+  border-radius: 16px;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+
+  transition: transform .15s ease, box-shadow .15s ease;
+
+}
+
+
+
+.feature-card:hover,
+
+.feature-card:focus-visible {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 24px rgba(0,0,0,.10);
+
+  outline: none;
+
+}
+
+
+
+/* Fixed image area so all cards line up perfectly */
+
+.feature-card .thumb {
+
+  height: 160px;                 /* change this if you want taller/shorter */
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #fafafa;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+}
+
+
+
+.feature-card img {
+
+  max-height: 100%;
+
+  width: auto;
+
+  max-width: 100%;
+
+  object-fit: contain;           /* keep icons nicely contained */
+
+}
+
+
+
+.feature-card h3 {
+
+  margin: 0;
+
+  font-size: 1.125rem;           /* ~18px */
+
+}
+
+
+
+.feature-card p {
+
+  margin: 0;
+
+  color: #666;
+
+  line-height: 1.45;
+
+}
