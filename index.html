@@ -15,112 +15,83 @@
 <body>
   <header class="hx-header">
     <div class="hx-wrap">
-      <a class="brand" href="/"><span>AN</span><span class="er">ER</span><span class="ita">ITA</span><small>™</small></a>
+      <a class="brand" href="/">
+        <span class="logo">ANERITA</span>
+        <small>Emergency Response · Identification Tag Aid</small>
+      </a>
       <a class="hx-cta" href="app.html">Open App</a>
     </div>
   </header>
 
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hx-wrap hero-wrap">
-        <div class="hero-copy">
-          <h1>Your <span class="accent">emergency</span> triage, voiced for you.</h1>
-          <p class="lede">Critical health info, spoken and displayed — when every second matters.</p>
-          <div class="cta-row">
-            <a class="btn" href="app.html">Open App</a>
-          </div>
-        </div>
-        <div class="hero-media">
-          <img src="assets/hero-voiced.jpg" alt="ANERITA emergency triage on phone" loading="eager">
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURE CARDS -->
-    <section class="features">
-      <div class="hx-wrap grid">
-        <article class="card">
-          <img src="assets/card-ice-sos.png" alt="ICE & SOS">
-          <h3>ICE & SOS</h3>
-          <p>Instant access to emergency contacts and alerts.</p>
-        </article>
-        <article class="card">
-          <img src="assets/card-vault.png" alt="Encrypted document vault">
-          <h3>Document Vault</h3>
-          <p>Encrypted storage for medical documents.</p>
-        </article>
-        <article class="card">
-          <img src="assets/card-translations.png" alt="Translations">
-          <h3>Translations</h3>
-          <p>Break language barriers in emergencies.</p>
-        </article>
-        <article class="card">
-          <img src="assets/card-triage.png" alt="Triage colors">
-          <h3>Triage Colors</h3>
-          <p>Prioritize care at a glance.</p>
-        </article>
-        <article class="card">
-          <img src="assets/card-privacy.png" alt="Privacy by design">
-          <h3>Privacy by Design</h3>
-          <p>You control who sees what.</p>
-        </article>
-        <article class="card">
-          <img src="assets/card-security.png" alt="Security & privacy">
-          <h3>Security & Privacy</h3>
-          <p>Zero tracking, HTTPS everywhere.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- IDENTIFICATION OPTIONS -->
-    <section class="id-options">
-      <div class="hx-wrap">
-        <h2>Identification that fits your life</h2>
-        <p class="sub">Scan a QR to get exactly the info responders need.</p>
-        <img class="edge" src="assets/identification-grid.jpg" alt="Wristband, keychain, sticker, widget">
-      </div>
-    </section>
-
-    <!-- DEVICES STRIP -->
-    <section class="devices">
-      <div class="hx-wrap">
-        <img src="assets/devices-lineup.jpg" alt="ANERITA devices lineup" class="edge">
-      </div>
-    </section>
-
-    <!-- KIDS -->
-    <section class="kids">
-      <div class="hx-wrap two-col">
-        <div>
-          <h2>ANERITA for kids</h2>
-          <p>Child‑friendly bands and tags so carers can act fast, even if your child can’t speak for themselves.</p>
-          <a class="btn ghost" href="app.html">Try the app</a>
-        </div>
-        <div><img src="assets/kids-lineup.jpg" alt="Kids wristbands and tags"></div>
-      </div>
-    </section>
-
-    <!-- FAQ (short) -->
-    <section class="faq">
-      <div class="hx-wrap">
-        <h2>FAQ</h2>
-        <details><summary>Does it work offline?</summary><p>Yes. Core info and triage screens work without a connection.</p></details>
-        <details><summary>What data is shared?</summary><p>Only what you choose. Sensitive docs are encrypted at rest.</p></details>
-        <details><summary>How is it accessed?</summary><p>Via your QR tag/band, or by opening the PWA on your phone.</p></details>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-foot">
-    <div class="hx-wrap foot-row">
-      <small>© <span id="yr"></span> ANERITA™ • Emergency Response Identification Tag Aid</small>
-      <a href="app.html" class="btn">Open App</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Your <span class="highlight">emergency</span> triage, voiced for you.</h1>
+      <p>Critical health info, spoken and displayed — when every second matters.</p>
+      <a href="app.html" class="btn-primary">Open App</a>
     </div>
-  </footer>
+    <div class="hero-img">
+      <img src="images/hero-voiced.jpg" alt="ANERITA emergency triage on phone">
+    </div>
+  </section>
 
-  <script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+  <!-- Features Grid -->
+  <section class="features">
+    <div class="feature-card">
+      <img src="images/card-ice-sos.png" alt="ICE & SOS">
+      <h3>ICE & SOS</h3>
+      <p>Instant access to emergency contacts and alerts.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/card-vault.png" alt="Document Vault">
+      <h3>Document Vault</h3>
+      <p>Encrypted storage for medical documents.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/card-translations.png" alt="Translations">
+      <h3>Translations</h3>
+      <p>Break language barriers in emergencies.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/card-triage.png" alt="Triage Colors">
+      <h3>Triage Colors</h3>
+      <p>Prioritize care at a glance.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/card-privacy.png" alt="Privacy by Design">
+      <h3>Privacy by Design</h3>
+      <p>You control who sees what.</p>
+    </div>
+    <div class="feature-card">
+      <img src="images/card-security.png" alt="Security & Privacy">
+      <h3>Security & Privacy</h3>
+      <p>Zero tracking, HTTPS everywhere.</p>
+    </div>
+  </section>
+
+  <!-- Devices Lineup -->
+  <section class="lineup">
+    <h2>Always accessible</h2>
+    <p>ANERITA can be carried everywhere — on wristbands, keychains, stickers, or phone widgets.</p>
+    <img src="images/devices-lineup.jpg" alt="ANERITA device lineup">
+  </section>
+
+  <!-- Kids Section -->
+  <section class="kids">
+    <h2>ANERITA for kids</h2>
+    <p>Peace of mind with child-friendly wristbands and tags.</p>
+    <img src="images/kids-lineup.jpg" alt="ANERITA kids accessories">
+  </section>
+
+  <!-- Identification Options -->
+  <section class="identification">
+    <h2>Identification, your way</h2>
+    <p>Choose the form that suits your lifestyle.</p>
+    <img src="images/identification-grid.jpg" alt="ANERITA identification options">
+  </section>
+
+  <footer>
+    <p>© 2025 ANERITA™ — Emergency Response Identification Tag Aid</p>
+  </footer>
 </body>
 </html>
