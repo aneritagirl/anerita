@@ -50,10 +50,15 @@ h3{font-size:clamp(17px,2.4vw,20px)}
 /* Header */
 .site-header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eceff3;backdrop-filter:saturate(1.05) blur(6px)}
 .site-header .bar{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.brand{display:flex;align-items:baseline;gap:6px;font-weight:800;letter-spacing:.6px}
-.brand .er{color:var(--brand)}
-.brand sup{font-size:.6em;top:-.2em;position:relative;color:#6b7280}
-.nav-actions{display:flex;gap:10px}
+./* Brand */
+.brand{
+  display:flex; align-items:baseline; gap:6px;
+  text-decoration:none; color:#111; font-weight:800;
+  letter-spacing:.4px;
+}
+.wordmark{ display:inline-block; letter-spacing:.6px; }
+.wordmark .er{ color: var(--brand); }   /* your red */
+.brand sup{ font-size:.6em; top:-.2em; position:relative; color:#6b7280; }
 
 /* Hero */
 .hero{padding:clamp(28px,7vw,64px) 0}
