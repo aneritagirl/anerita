@@ -228,29 +228,51 @@ section{ padding: clamp(28px, 6vw, 64px) 0; }
   grid-template-columns: 1fr;
   gap: var(--gap);
 }
-/* Feature card thumbs — stop cropping on iOS */
-.feature-card .thumb{
-  /* a comfy box for the image */
-  background:#fff;
-  padding:16px;
+/* Feature Cards */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow-soft, 0 6px 18px rgba(0,0,0,.06));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  /* lock a pleasant proportion without forcing image crop */
-  aspect-ratio: 16 / 10;        /* fallback height below will apply elsewhere */
-  max-width: 100%;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.feature-card .thumb img{
-  width:100%;
-  height:auto;                   /* keep intrinsic ratio */
-  max-height: 220px;             /* prevents giant images on tall phones */
-  object-fit: contain;           /* no cropping */
-  display:block;
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
+/* Feature Icons */
+.feature-card .thumb img {
+  max-width: 120px;        /* bold size */
+  height: auto;
+  object-fit: contain;     /* prevents cropping */
+  display: block;
+  margin: 0 auto 16px;     /* centers + spacing */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); /* subtle glow */
+}
+
+/* Feature Titles */
+.feature-card h3 {
+  font-size: 1.25rem;      /* bigger title */
+  font-weight: 700;        /* bold */
+  margin-bottom: 8px;
+  color: #111;             /* strong dark */
+  letter-spacing: -0.3px;  /* tighter for sleek look */
+}
+
+/* Feature Description */
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;             /* softer than title */
+  max-width: 260px;        /* keeps it neat */
+  margin: 0 auto;
+}
 /* If some browsers ignore aspect-ratio, provide a fallback */
 @supports not (aspect-ratio: 1){
   .feature-card .thumb{ height: 220px; }
