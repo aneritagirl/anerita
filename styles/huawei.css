@@ -1,489 +1,243 @@
-/* ========== Design tokens ========== */
+/* =========================
+   DESIGN TOKENS
+   ========================= */
 :root{
-  --bg: #ffffff;
-  --ink: #111214;
-  --muted: #6b7280;
-  --brand: #cc1122;     /* ANERITA red */
-  --card: #f7f7f8;
-  --card-border: #e9eaee;
-  --radius: 16px;
-  --radius-lg: 20px;
-  --container: 1120px;
-  --gap: 24px;
-  --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
+  --bg:#ffffff;
+  --ink:#111214;
+  --muted:#6b7280;
+  --brand:#cc1122;          /* ANERITA red */
+  --brand-dark:#a50f1b;
+  --card:#f7f7f8;
+  --card-border:#e9eaee;
+  --radius:16px;
+  --radius-lg:20px;
+  --container:1120px;
+  --gap:24px;
+  --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
 }
 
-*{ box-sizing: border-box }
+*{ box-sizing:border-box; }
 html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); }
 img{ max-width:100%; height:auto; display:block; }
 
-/* Prevent image distortion anywhere */
-.hero-art img,
-.card-media img,
-.wide-media img{ width:100%; height:auto; object-fit:contain; }
-
-/* Base type */
 body{
-  font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-h1{ font-size: clamp(28px, 5.5vw, 48px); line-height:1.15; margin:0 0 12px; }
-h2{ font-size: clamp(22px, 3.8vw, 32px); line-height:1.2; margin:0 0 8px; }
-h3{ font-size: 18px; margin: 8px 0 4px; }
-p{ color: var(--muted); margin: 0 0 12px; }
+h1{ font-size:clamp(28px,5.5vw,48px); line-height:1.15; margin:0 0 12px; color:#111; }
+h2{ font-size:clamp(22px,3.8vw,32px); line-height:1.2; margin:0 0 8px; color:#111; }
+h3{ font-size:18px; margin:8px 0 4px; color:#111; }
+p{ color:var(--muted); margin:0 0 12px; }
 
-/* Layout helpers */
-.container{ width: min(100% - 32px, var(--container)); margin-inline:auto; }
-section{ padding: clamp(28px, 6vw, 64px) 0; }
+.container{ width:min(100% - 32px, var(--container)); margin-inline:auto; }
+section{ padding:clamp(28px,6vw,64px) 0; }
 
-/* Buttons */
+/* No purple links anywhere */
+a, a:visited{ color:inherit; text-decoration:none; }
+
+/* =========================
+   BUTTONS
+   ========================= */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
-  padding: 10px 16px; border-radius: 999px; text-decoration:none; font-weight:600;
+  padding:10px 16px; border-radius:999px; text-decoration:none; font-weight:700;
+  transition:transform .04s ease, filter .15s ease, box-shadow .15s ease;
+  white-space:nowrap;
 }
-.btn-lg{ padding: 14px 22px; font-size: 18px; }
-.btn-primary {
-
-  background: #E53935; /* red */
-
-  color: #fff !important;
-
-  text-decoration: none;
-
+.btn-lg{ padding:14px 22px; font-size:18px; }
+.btn-primary{
+  background:var(--brand); color:#fff !important; border:none;
+  box-shadow:0 8px 22px rgba(204,17,34,.18);
 }
+.btn-primary:hover{ filter:saturate(1.05) brightness(1.02); transform:translateY(-1px); }
+.btn-primary:active{ background:var(--brand-dark); transform:translateY(0); box-shadow:0 6px 16px rgba(204,17,34,.16); }
+.btn-ghost{ background:transparent; color:#111; }
+.btn-ghost:hover{ background:#00000008; }
 
-
-
-.btn-primary:hover,
-
-.btn-primary:visited,
-
-.btn-primary:active {
-
-  background: #c62828; /* darker red */
-
-  color: #fff !important;
-
+/* =========================
+   HEADER (sticky)
+   ========================= */
+.hx-header{
+  position:sticky; top:0; z-index:1000; background:#fff;
+  border-bottom:1px solid var(--card-border);
+  backdrop-filter:saturate(1.08) blur(6px);
 }
-
-/* Header */
-/* Header layout */
-
 .hx-header .hx-wrap{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 0;
 }
 
-
-
-/* Small pill-style nav button */
-
-.hx-header .btn--nav{
-
-  margin-left:auto;
-
-  padding:8px 14px;
-
-  font-size:14px;
-
-  border-radius:9999px;
-
-  position:static;     /* ensure not absolutely positioned */
-
-}
-
-
-/* Keep brand block tidy */
-
+/* Brand block (logo + tagline) */
 .hx-brand{
-
-  text-decoration:none;
-
-  color:inherit;
-
-  display:inline-flex;
-
-  align-items:baseline;
-
-  gap:6px;
-.hx-brand {
-
-  text-decoration: none;
-
-  color: inherit;
-
-  display: inline-block;
-
+  display:inline-flex; align-items:baseline; gap:6px; color:inherit; text-decoration:none;
 }
-.hx-header .container {
+.brand-block{ display:flex; flex-direction:column; align-items:flex-start; }
+.logo-wordmark{ font-weight:800; letter-spacing:.02em; }
+.logo-wordmark .er{ color:#C40018; }  /* ensure ER is red */
+.tm{ font-size:.65em; margin-left:.15em; color:#9aa3ae; position:relative; top:-.15em; }
 
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between; /* logo left, button right */
-
+.tagline{
+  font-size:.82rem; font-weight:500; color:#6b7280; letter-spacing:.01em; line-height:1.2;
+  margin-top:.2rem;
 }
 
+/* header CTA wrapper (your right-side buttons) */
+.header-cta{ display:flex; gap:10px; }
 
-
-.brand-block {
-
-  display: flex;
-
-  flex-direction: column; /* forces tagline under logo */
-
-  align-items: flex-start;
-
+/* On small phones, hide the header "Open App" so hero CTA leads */
+@media (max-width:768px){
+  .header-cta .btn-primary{ display:none; }
 }
 
-
-
-.tagline {
-
-  font-size: 0.85rem;
-
-  font-weight: 400;
-
-  margin-top: 0.2rem;
-
-  color: #444;
-
+/* =========================
+   HERO
+   ========================= */
+.hero{
+  background:
+    linear-gradient(#fff,#fff),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23f0f1f4' d='M11 4h2v4h4v2h-4v4h-2v-4H7V8h4z'/%3E%3C/svg%3E")
+    center/48px repeat;
+  padding:clamp(32px,8vw,96px) 0;
 }
-
-
-
-;
-
+.hero-grid{
+  display:grid; gap:clamp(20px,4vw,40px); align-items:center;
+  grid-template-columns:1.05fr .95fr;
 }
-
-
-
-@media (max-width: 640px) {
-
-  .hero-tagline {
-
-    font-size: 0.9rem;
-
-    text-align: center;
-
-  }
-
+.hero .highlight{ color:var(--brand); }
+.hero .subhead{
+  color:#454a52; font-size:clamp(16px,2.4vw,18px); line-height:1.6;
+  max-width:48ch; margin:12px 0 22px;
 }
-.brand .tm{ font-size: .6em; color: var(--muted); margin-left: 2px; }
-/* Brand + tagline */
-.brand-block {
-  display: flex;
-  align-items: baseline;
-  gap: .75rem;
-  flex-wrap: wrap;
-}
-.logo-wordmark { 
-  font-weight: 800; 
-  letter-spacing: .02em; 
-}
-.logo-wordmark .er { color: #C40018; } /* your red */
-.tm { font-size: .65em; margin-left: .15em; color: #9aa3ae; }
+.hero .cta-row{ display:flex; gap:12px; flex-wrap:wrap; }
 
-.tagline {
-  font-size: .78rem;
-  font-weight: 500;
-  color: #6b7280;    /* neutral gray */
-  letter-spacing: .01em;
-  line-height: 1.2;
-}
-
-@media (max-width: 640px) {
-  .tagline {
-    width: 100%;
-    margin-top: .15rem;
-    font-size: .74rem;
-  }
-}
-/* Hero */
-.hero{ background: linear-gradient(#fff, #fff), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23f0f1f4' d='M11 4h2v4h4v2h-4v4h-2v-4H7V8h4z'/%3E%3C/svg%3E") center/48px repeat; }
-.hero-grid{ display:grid; grid-template-columns: 1fr; gap: var(--gap); align-items:center; }
-.hero-text{ max-width: 640px; }
-.highlight{ color: var(--brand); }
-
-/* Keep hero image a tidy rectangle that scales */
+/* hero artwork card */
 .hero-art{
-  border-radius: var(--radius-lg);
-  background: #fff;
-  padding: clamp(8px, 1.5vw, 12px);
-  box-shadow: var(--shadow);
-}
-
-/* Cards grid */
-.features{ background: #fff; }
-.cards{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: var(--gap);
-}
-/* Feature Cards */
-.feature-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  border-radius: var(--radius);
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-}
-
-/* Feature Icons */
-.feature-card .thumb img {
-  max-width: 120px;        /* bold size */
-  height: auto;
-  object-fit: contain;     /* prevents cropping */
-  display: block;
-  margin: 0 auto 16px;     /* centers + spacing */
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); /* subtle glow */
-}
-
-/* Feature Titles */
-.feature-card h3 {
-  font-size: 1.25rem;      /* bigger title */
-  font-weight: 700;        /* bold */
-  margin-bottom: 8px;
-  color: #111;             /* strong dark */
-  letter-spacing: -0.3px;  /* tighter for sleek look */
-}
-
-/* Feature Description */
-.feature-card p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #555;             /* softer than title */
-  max-width: 260px;        /* keeps it neat */
-  margin: 0 auto;
-}
-/* If some browsers ignore aspect-ratio, provide a fallback */
-@supports not (aspect-ratio: 1){
-  .feature-card .thumb{ height: 220px; }
-}
-.card{
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius);
-  padding: 16px;
-  box-shadow: 0 1px 0 rgba(0,0,0,.02);
-}
-.card-media{
-  /* keeps all feature art same footprint without stretching */
-  aspect-ratio: 4 / 3;
-  display:block;
-  border-radius: 12px;
+  border-radius:var(--radius-lg);
   background:#fff;
-  padding: 10px;
-  margin-bottom: 10px;
-  overflow:hidden;
+  padding:clamp(8px,1.5vw,12px);
+  box-shadow:var(--shadow);
+  border:1px solid #e9eef3;
 }
 
-/* Wide image sections */
+/* Mobile hero stack */
+@media (max-width:900px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero .subhead{ max-width:none; }
+}
+
+/* =========================
+   FEATURES (bold, no cropping)
+   ========================= */
+.features{ background:#fff; }
+.features-grid{ display:grid; gap:24px; }
+
+/* responsive columns: 1 / 2 / 3 */
+@media (max-width:639px){ .features-grid{ grid-template-columns:1fr; } }
+@media (min-width:640px) and (max-width:1023px){ .features-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .features-grid{ grid-template-columns:repeat(3,1fr); } }
+
+.feature-card{
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  gap:12px; padding:20px; background:#fff;
+  border:1px solid #ececec; border-radius:16px; color:inherit; text-decoration:none;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.feature-card:hover, .feature-card:focus-visible{
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,.10);
+  outline:none;
+}
+
+/* fixed icon area so cards align; images contained (no crop) */
+.feature-card .thumb{
+  height:180px;                  /* bold icon stage */
+  display:flex; align-items:center; justify-content:center;
+  background:#fafafa; border-radius:12px; overflow:hidden; width:100%;
+}
+.feature-card .thumb img{
+  max-width:140px; max-height:100%;
+  width:auto; height:auto; object-fit:contain;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+.feature-card h3{
+  margin:0; font-size:1.25rem; font-weight:800; letter-spacing:-0.3px; color:#111;
+}
+.feature-card p{
+  margin:0; color:#555; line-height:1.55; font-size:.96rem; max-width:34ch;
+}
+
+/* =========================
+   GENERIC CARDS / MEDIA
+   ========================= */
+.card{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+.card-media{ aspect-ratio:4/3; display:block; border-radius:12px; background:#fff; padding:10px; margin-bottom:10px; overflow:hidden; }
+.hero-art img, .card-media img, .wide-media img{ width:100%; height:auto; object-fit:contain; }
+
+/* =========================
+   WIDE MEDIA SECTIONS
+   ========================= */
 .wide .wide-media,
 .wide.alt .wide-media{
-  border-radius: var(--radius-lg);
+  border-radius:var(--radius-lg);
   overflow:hidden;
   background:#fff;
-  box-shadow: var(--shadow);
+  box-shadow:var(--shadow);
 }
-.wide.alt{ background: #fafafb; }
+.wide.alt{ background:#fafafb; }
 
-/* Footer */
-.site-footer{ border-top:1px solid var(--card-border); padding: 28px 0; font-size:14px; color:var(--muted); }
-
-/* ====== Desktop / large screens ====== */
-@media (min-width: 900px){
-  .hero-grid{ grid-template-columns: 1.1fr .9fr; }
-  .cards{ grid-template-columns: repeat(3, 1fr); }
-  .cards .card:nth-child(4){ grid-column: span 1; }
-  .cards .card:nth-child(5){ grid-column: span 1; }
+/* =========================
+   HOW IT WORKS (optional steps)
+   ========================= */
+.steps{ display:grid; gap:24px; }
+@media (min-width:1024px){ .steps{ grid-template-columns:repeat(3,1fr); } }
+@media (max-width:1023px){ .steps{ grid-template-columns:1fr; } }
+.step{
+  background:#fff; border:1px solid #e8edf3; border-radius:16px; padding:20px;
+  box-shadow:0 6px 16px rgba(0,0,0,.06);
 }
-/* === Features grid (uniform cards) === */
+.step h3{ font-weight:800; color:#111; margin-bottom:6px; }
+.step p{ margin:0; color:#4a4f57; }
 
-.features {
-
-  padding-block: 32px;
-
+/* =========================
+   SIGNUP STRIP
+   ========================= */
+.cta-strip{
+  background:#eef5f7; border:1px solid #e1ecf0; border-radius:16px;
+  padding:28px 20px; margin:48px auto 24px;
 }
+.cta-strip .cta-actions{ display:flex; gap:16px; flex-wrap:wrap; }
 
-
-
-.features-grid {
-
-  display: grid;
-
-  gap: 20px;
-
-}
-
-
-
-/* 1 col phones, 2 col tablets, 3 col laptops+ */
-
-@media (max-width: 639px) {
-
-  .features-grid { grid-template-columns: 1fr; }
-
+/* =========================
+   FOOTER
+   ========================= */
+.site-footer{
+  border-top:1px solid var(--card-border);
+  padding:28px 0; font-size:14px; color:var(--muted);
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
-
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-
-}
-
-@media (min-width: 1024px) {
-
-  .features-grid { grid-template-columns: repeat(3, 1fr); }
-
-}
-
-
-
-.feature-card {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 12px;
-
-  padding: 20px;
-
-  background: #fff;
-
-  border: 1px solid #ececec;
-
-  border-radius: 16px;
-
-  text-decoration: none;
-
-  color: inherit;
-
-  box-shadow: 0 1px 2px rgba(0,0,0,.04);
-
-  transition: transform .15s ease, box-shadow .15s ease;
-
-}
-
-
-
-.feature-card:hover,
-
-.feature-card:focus-visible {
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 24px rgba(0,0,0,.10);
-
-  outline: none;
-
-}
-
-
-
-/* Fixed image area so all cards line up perfectly */
-
-.feature-card .thumb {
-
-  height: 160px;                 /* change this if you want taller/shorter */
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #fafafa;
-
-  border-radius: 12px;
-
-  overflow: hidden;
-
-}
-
-
-
-.feature-card img {
-
-  max-height: 100%;
-
-  width: auto;
-
-  max-width: 100%;
-
-  object-fit: contain;           /* keep icons nicely contained */
-
-}
-
-
-
-.feature-card h3 {
-
-  margin: 0;
-
-  font-size: 1.125rem;           /* ~18px */
-
-}
-
-
-
-.feature-card p {
-
-  margin: 0;
-
-  color: #666;
-
-  line-height: 1.45;
-
-}
-/* Hide visually, keep for screen readers */
-
+/* =========================
+   ACCESSIBILITY HELPERS
+   ========================= */
 .sr-only{
-
-  position:absolute !important;
-
-  width:1px;height:1px;
-
-  padding:0;margin:-1px;
-
-  overflow:hidden;clip:rect(0,0,0,0);
-
-  white-space:nowrap;border:0;
-
-}
-/* ---- Emergency mobile tidy ---- */
-@media (max-width: 768px){
-  /* Hide header CTA on phones – keep just the hero button */
-  .header-cta{ display:none !important; }
-
-  /* Slightly tighter header padding on phones */
-  .hx-header .container{ padding: 10px 16px !important; }
-
-  /* Pull hero up a touch so it feels aligned */
-  .hero{ padding-top: 8px !important; }
+  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
 }
 
-/* Keep header white, always */
-.hx-header{ background:#fff !important; border-bottom:1px solid var(--card-border); }
-
-/* Never let buttons or links go purple */
-a, a:visited { color: inherit !important; text-decoration: none; }
-.btn-primary, .btn-primary:visited { color:#fff !important; }
+/* =========================
+   MOBILE TWEAKS
+   ========================= */
+@media (max-width:768px){
+  /* keep header compact */
+  .hx-header .hx-wrap{ padding:10px 0; }
+  /* pull hero up a touch so it feels aligned */
+  .hero{ padding-top:8px; }
+}
