@@ -216,13 +216,17 @@
       </div>
     </div>
   </section>
-<!-- ===== SIGNUP ===== -->
 <section class="wide alt" id="signup">
   <div class="container">
     <h2>Sign up for updates</h2>
-    <p>Be the first to know when ANERITA launches. Get updates, new features, and tips that could save lives.</p>
+    <p>Be the first to know when ANERITA adds new features, tips, and accessories.</p>
 
-    <form action="https://formspree.io/f/mgvzgvdb" method="POST" style="margin-top:16px; display:flex; flex-wrap:wrap; gap:12px; max-width:480px;">
+    <form 
+      id="signup-form"
+      action="https://formspree.io/f/mgvzgvdb" 
+      method="POST" 
+      style="margin-top:16px; display:flex; flex-wrap:wrap; gap:12px; max-width:480px;"
+    >
       <input 
         type="email" 
         name="email" 
@@ -232,8 +236,68 @@
       >
       <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
     </form>
+
+    <!-- feedback messages -->
+    <div id="signup-success" class="alert success">
+      ✅ Thanks for signing up! We’ll keep you posted.
+    </div>
+    <div id="signup-error" class="alert error">
+      ⚠️ Something went wrong. Please try again.
+    </div>
   </div>
 </section>
+
+<style>
+  .alert {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+  }
+  .alert.success {
+    background: #e6f4ea;
+    color: #1e7b34;
+    border: 1px solid #b5dfb9;
+  }
+  .alert.error {
+    background: #fdecea;
+    color: #c62828;
+    border: 1px solid #f5c6c6;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('signup-form');
+  const successMsg = document.getElementById('signup-success');
+  const errorMsg = document.getElementById('signup-error');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        successMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
+        form.reset();
+      } else {
+        throw new Error("Network error");
+      }
+    } catch (err) {
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'block';
+    }
+  });
+</script>
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
