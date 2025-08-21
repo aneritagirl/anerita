@@ -7,11 +7,17 @@
   <link rel="stylesheet" href="styles/site.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container bar">
-      <a class="brand" href="/">AN<span class="er">ER</span>ITA<sup>™</sup></a>
-    </div>
-  </header>
+<header class="site-header" role="banner">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="Anerita Home">
+      <span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup>
+    </a>
+    <nav class="nav-actions" aria-label="Primary">
+      <a class="btn btn-ghost" href="/#how">How it works</a>
+      <a class="btn btn-primary" href="/app.html">Open App</a>
+    </nav>
+  </div>
+</header>
 
   <section class="container" style="padding:40px 0;max-width:800px">
     <h1>Terms of Use</h1>
