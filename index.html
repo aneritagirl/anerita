@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ANERITA — Anytime Emergency Response Identification Tag Aid</title>
 
-  <!-- Icons / PWA (keep your existing files) -->
+  <!-- PWA / Icons (keep your existing files in repo) -->
   <link rel="manifest" href="anerita_manifest.json" />
   <link rel="apple-touch-icon" href="anerita-180.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
@@ -16,11 +16,10 @@
     :root{
       --brand:#c62828;           /* ANERITA red */
       --brand-dark:#a52020;      /* pressed */
-      --ink:#1a1a1a;             /* headings */
+      --ink:#111214;             /* headings */
       --text:#5c5f66;            /* body */
       --paper:#ffffff;           /* cards */
-      --page:#f6f7f9;            /* background */
-      --card:#ffffff;
+      --page:#f6f7f9;            /* soft section bg */
       --radius:16px;
       --shadow:0 10px 24px rgba(0,0,0,.08);
       --gap:24px;
@@ -29,15 +28,16 @@
 
     /* ===== Base ===== */
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
+    html,body{margin:0;padding:0;background:#fff}
     body{
-      font: 16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
       color:var(--text);
-      background:#fff;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
     img{display:block;max-width:100%;height:auto}
+
+    a,a:visited{color:inherit;text-decoration:none}
 
     .container{
       width:100%;
@@ -47,122 +47,113 @@
     }
 
     h1,h2,h3{color:var(--ink);margin:0 0 .5rem}
-    h1{
-      font-size:clamp(28px, 6vw, 48px);
-      line-height:1.15;
-      letter-spacing:-.02em;
-    }
+    h1{font-size:clamp(28px, 6vw, 48px);line-height:1.15;letter-spacing:-.02em}
     h2{font-size:clamp(22px, 3.4vw, 32px)}
     h3{font-size:clamp(17px, 2.4vw, 20px)}
 
     /* ===== Buttons ===== */
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 18px; border-radius:999px; font-weight:650;
-      text-decoration:none; user-select:none; transition:filter .15s ease, transform .02s ease;
-      gap:8px; white-space:nowrap;
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:8px;white-space:nowrap;user-select:none;
+      padding:12px 18px;border-radius:999px;font-weight:650;
+      transition:filter .15s ease, transform .02s ease, background .15s ease;
+      background:transparent;color:var(--ink);
     }
-    .btn-primary{background:var(--brand); color:#fff}
+    .btn-lg{padding:14px 22px;font-size:18px}
+    .btn-primary{background:var(--brand);color:#fff}
     .btn-primary:hover{filter:saturate(1.05) brightness(1.02)}
     .btn-primary:active{background:var(--brand-dark)}
-    .btn-ghost{background:transparent; color:var(--ink)}
-    .btn-ghost:hover{background:#00000008}
-
-    .btn-lg{padding:14px 22px; font-size:18px}
+    .btn-ghost:hover{background:#0000000c}
 
     /* ===== Header ===== */
     .site-header{
-      position:sticky; top:0; z-index:1000; background:#fff;
+      position:sticky;top:0;z-index:1000;background:#fff;
       border-bottom:1px solid #eceff3;
-      backdrop-filter:saturate(1.1) blur(6px);
+      backdrop-filter:saturate(1.05) blur(6px);
     }
     .site-header .bar{
-      display:flex; align-items:center; justify-content:space-between;
+      display:flex;align-items:center;justify-content:space-between;
       padding:12px 0;
     }
     .brand{
-      display:flex; align-items:baseline; gap:6px; text-decoration:none; color:var(--ink);
-      font-weight:800; letter-spacing:.6px;
+      display:flex;align-items:baseline;gap:6px;
+      font-weight:800;letter-spacing:.6px;color:var(--ink);
     }
-    .brand .er{ color:var(--brand); }
-    .brand sup{ font-size:.6em; top:-.2em; position:relative; color:#6b7280 }
-    .nav-actions{display:flex; gap:10px}
+    .brand .er{color:var(--brand)}
+    .brand sup{font-size:.6em;top:-.2em;position:relative;color:#6b7280}
+    .nav-actions{display:flex;gap:10px}
 
     /* ===== Hero ===== */
-    .hero{ padding: clamp(28px, 7vw, 64px) 0; }
+    .hero{padding:clamp(28px,7vw,64px) 0}
     .hero .eyebrow{
-      font-size:14px; font-weight:600; color:#6b7280; letter-spacing:.02em;
-      margin-bottom:12px;
+      font-size:14px;font-weight:600;color:#6b7280;letter-spacing:.02em;margin-bottom:12px
     }
     .hero-grid{
-      display:grid; align-items:center; gap: clamp(20px, 4vw, 40px);
-      grid-template-columns: 1.02fr .98fr;
+      display:grid;gap:clamp(20px,4vw,40px);align-items:center;
+      grid-template-columns:1.02fr .98fr;
     }
-    .highlight{ color:var(--brand); }
-    .subhead{ margin: 14px 0 22px; max-width:42ch; }
-
-    .hero-art{
-      background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding: clamp(10px, 2.2vw, 16px);
-    }
+    .highlight{color:var(--brand)}
+    .subhead{margin:14px 0 22px;max-width:42ch}
+    .hero-art{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(10px,2.2vw,16px)}
 
     /* ===== Features ===== */
-    .features{ background:var(--page); padding: clamp(28px, 7vw, 72px) 0; }
+    .features{background:var(--page);padding:clamp(28px,7vw,72px) 0}
     .features-grid{
-      display:grid; gap:var(--gap);
-      grid-template-columns: repeat(3, 1fr);
+      display:grid;gap:var(--gap);
+      grid-template-columns:repeat(3,1fr);
     }
     .card{
-      background:var(--card);
-      border:1px solid #e8edf3;
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-      transition: transform .15s ease, box-shadow .15s ease;
+      background:var(--paper);border:1px solid #e8edf3;border-radius:var(--radius);
+      padding:18px;box-shadow:var(--shadow);
+      transition:transform .15s ease, box-shadow .15s ease;
     }
-    .card:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.10); }
-    .card .thumb{ aspect-ratio: 16/10; background:#fff; border-radius:12px; display:grid; place-items:center; margin-bottom:12px; overflow:hidden }
-    .card p{ margin:6px 0 0 }
+    .card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.10)}
 
-    /* ===== Wide image sections ===== */
-    .wide{ padding: clamp(28px, 7vw, 72px) 0; background:#fff; }
-    .wide.alt{ background:var(--page); }
-    .wide .media{
-      background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
-      margin-top:18px;
+    /* Fixed media zone that never crops the image */
+    .card .thumb{
+      height:160px;
+      display:flex;align-items:center;justify-content:center;
+      background:#fff;border-radius:12px;margin-bottom:12px;overflow:hidden;
     }
+    .card .thumb img{
+      max-height:100%;max-width:100%;object-fit:contain
+    }
+    .card p{margin:6px 0 0}
+
+    /* ===== Wide sections ===== */
+    .wide{padding:clamp(28px,7vw,72px) 0;background:#fff}
+    .wide.alt{background:var(--page)}
+    .wide .media{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-top:18px}
 
     /* ===== How it works ===== */
-    .steps{
-      display:grid; gap:var(--gap); grid-template-columns: repeat(3,1fr);
-    }
-    .step{ background:#fff; border:1px solid #e8edf3; border-radius:var(--radius); padding:20px; box-shadow:var(--shadow) }
+    .steps{display:grid;gap:var(--gap);grid-template-columns:repeat(3,1fr)}
+    .step{background:#fff;border:1px solid #e8edf3;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
 
     /* ===== FAQ ===== */
-    details{
-      background:#fff; border:1px solid #e8edf3; border-radius:12px; padding:14px 16px;
-    }
-    details+details{ margin-top:12px }
-    summary{ cursor:pointer; font-weight:600; color:var(--ink) }
+    details{background:#fff;border:1px solid #e8edf3;border-radius:12px;padding:14px 16px}
+    details+details{margin-top:12px}
+    summary{cursor:pointer;font-weight:600;color:var(--ink)}
 
     /* ===== Footer ===== */
-    .footer{ padding:36px 0; background:#fff; border-top:1px solid #eceff3; color:#8a9099; font-size:14px; }
+    .footer{padding:36px 0;background:#fff;border-top:1px solid #eceff3;color:#8a9099;font-size:14px}
 
     /* ===== Responsive ===== */
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .subhead{ max-width: none; }
-      .features-grid{ grid-template-columns: 1fr 1fr; }
-      .steps{ grid-template-columns: 1fr; }
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr}
+      .subhead{max-width:none}
+      .features-grid{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:1fr}
     }
-    @media (max-width: 560px){
-      .nav-actions{ gap:8px }
-      .features-grid{ grid-template-columns: 1fr; }
+    @media (max-width:560px){
+      .nav-actions{gap:8px}
+      .features-grid{grid-template-columns:1fr}
+      .card .thumb{height:150px}
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== Sticky Header ===== -->
+  <!-- ===== Header ===== -->
   <header class="site-header" role="banner">
     <div class="container bar">
       <a class="brand" href="/" aria-label="Anerita Home">
@@ -185,7 +176,7 @@
           ANERITA stores critical health info and speaks it out loud when it matters — even offline.
           Show responders exactly what they need to know in seconds.
         </p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
           <a class="btn btn-primary btn-lg" href="app.html">Open App</a>
           <a class="btn btn-ghost btn-lg" href="#how">How it works</a>
         </div>
@@ -320,8 +311,8 @@
     <div class="container">
       <h2>Sign up for updates</h2>
       <p>Join the waitlist to get new features, tips, and early access to accessories.</p>
-      <!-- Simple mailto fallback; replace with your form later -->
       <div style="margin-top:14px">
+        <!-- Simple mailto fallback for now -->
         <a class="btn btn-primary btn-lg" href="mailto:hello@anerita.com?subject=Sign%20me%20up%20for%20ANERITA%20updates">Join the waitlist</a>
         <a class="btn btn-ghost btn-lg" href="app.html">Open App</a>
       </div>
@@ -331,9 +322,9 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
         <div>© 2025 ANERITA — Emergency Response Identification Tag Aid</div>
-        <nav style="display:flex; gap:16px">
+        <nav style="display:flex;gap:16px">
           <a href="#features" class="btn btn-ghost">Features</a>
           <a href="#how" class="btn btn-ghost">How it works</a>
           <a href="#faq" class="btn btn-ghost">FAQ</a>
@@ -341,16 +332,6 @@
         </nav>
       </div>
     </div>
-    <section class="cta-strip" id="signup">
-  <div class="container">
-    <h2>Sign up for updates</h2>
-    <p>Join the waitlist to get new features, tips, and early access to accessories.</p>
-    <div class="cta-actions">
-      <a class="btn btn-primary btn-lg" href="https://…">Join the waitlist</a>
-      <a class="btn" href="app.html">Open App</a>
-    </div>
-  </div>
-</section>
   </footer>
 
   <!-- Your existing JS is fine to keep -->
