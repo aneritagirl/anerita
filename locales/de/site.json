@@ -1,1 +1,147 @@
 
+{
+  "nav": {
+    "features": "Funktionen",
+    "how": "Wie es funktioniert",
+    "faq": "Häufige Fragen",
+    "about": "Über uns",
+    "clinician": "Informationen für Fachkräfte",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "terms": "Bedingungen",
+    "signInCreate": "Anmelden / Konto erstellen",
+    "openApp": "App öffnen"
+  },
+
+  "lang": { "label": "Sprache" },
+
+  "hero": {
+    "eyebrow": "Notfall-Identifikationshilfe jederzeit verfügbar",
+    "headline_html": "Deine <span class=\"highlight\">Notfall-Triage</span>, mit Stimme für dich.",
+    "subhead": "In einer Krise entscheiden Einsatzkräfte in Sekunden. ANERITA zeigt und spricht die wichtigsten Daten — Allergien, Vorerkrankungen, Medikamente und ICE-Kontakte — damit Hilfe schneller und sicherer ist.",
+    "benefits": {
+      "clarity": {
+        "title": "Klarheit statt Panik:",
+        "body": "ein Scan zeigt, was zählt."
+      },
+      "privacy": {
+        "title": "Datenschutz auf dem Gerät:",
+        "body": "du bestimmst, was geteilt wird."
+      },
+      "universal": {
+        "title": "Universell:",
+        "body": "jedes Handy, jede Sprache, jedes Tag."
+      }
+    }
+  },
+
+  "cta": {
+    "openApp": "App öffnen",
+    "seeFeatures": "Funktionen ansehen"
+  },
+
+  "features": {
+    "heading": "Alles, was du brauchst, auf einen Blick",
+    "lede": "Entwickelt für echte Notfälle — schnell, klar, privat.",
+    "cards": {
+      "ice": {
+        "title": "ICE & SOS",
+        "desc": "Sofortiger Zugriff auf Notfallkontakte und Alarme."
+      },
+      "vault": {
+        "title": "Dokumenten-Tresor",
+        "desc": "Verschlüsselter Speicher für medizinische Dokumente."
+      },
+      "translations": {
+        "title": "Übersetzungen",
+        "desc": "Überwindet Sprachbarrieren in Notfällen."
+      },
+      "triage": {
+        "title": "Triage-Farben",
+        "desc": "Priorisierung der Versorgung auf einen Blick."
+      },
+      "security": {
+        "title": "Sicherheit & Datenschutz",
+        "desc": "Kein Tracking. HTTPS überall. Funktioniert offline."
+      },
+      "offline": {
+        "title": "Offline-Modus",
+        "desc": "Lebensrettender Zugriff ohne <em>Signal</em>. Deine Karte wird auf deinem Gerät gespeichert."
+      }
+    }
+  },
+
+  "always": {
+    "heading": "Immer zugänglich",
+    "body": "Trage es als Armband, Schlüsselanhänger, Aufkleber oder Telefon-Widget — weltweit.",
+    "note": "Kostenlose Nutzung: drucke deine eigenen Aufkleber oder verwende jedes Gepäck-/ID-Tag. Wir berechnen nur optionale Zubehörteile später."
+  },
+
+  "kids": {
+    "heading": "ANERITA für Kinder",
+    "body": "Kinderfreundliche Bänder und Tags für Schule, Reisen und Sicherheit."
+  },
+
+  "identify": {
+    "heading": "Identifikation auf deine Weise",
+    "body": "Wähle die Form, die zu deinem Lebensstil passt."
+  },
+
+  "how": {
+    "heading": "Wie es funktioniert",
+    "steps": {
+      "1": {
+        "title": "1. Erstelle deine Karte",
+        "body": "Füge Allergien, Vorerkrankungen, Medikamente und ICE-Kontakte hinzu. Alles wird sicher auf deinem Gerät gespeichert."
+      },
+      "2": {
+        "title": "2. Verbinde dein Tag",
+        "body": "Verbinde ein Armband, einen Schlüsselanhänger, Aufkleber oder ein Widget. Ein schneller Scan zeigt sofort deine Infos."
+      },
+      "3": {
+        "title": "3. Teile in Sekunden",
+        "body": "ANERITA zeigt und <strong>spricht</strong> die wichtigsten Informationen, damit Einsatzkräfte schneller handeln — auch offline."
+      }
+    }
+  },
+
+  "faq": {
+    "heading": "Häufige Fragen",
+    "q1": {
+      "q": "Funktioniert es ohne Internet?",
+      "a": "Ja. Deine Notfallkarte wird lokal gespeichert und kann offline angezeigt und gesprochen werden."
+    },
+    "q2": {
+      "q": "Wie steht es um den Datenschutz?",
+      "a": "Wir verfolgen dich nicht. Deine Daten sind verschlüsselt und bleiben auf deinem Gerät, außer du entscheidest dich, sie zu teilen."
+    },
+    "q3": {
+      "q": "Können Einsatzkräfte es schnell nutzen?",
+      "a": "Absolut — ein einfacher Scan öffnet deine Karte; großer Text und Audio heben die wichtigsten Details hervor."
+    }
+  },
+
+  "signup": {
+    "heading": "Sei der Erste mit lebensrettenden Funktionen",
+    "body": "Neue Sprachen, Tag-Stile und Krankenhaus-Integrationen werden eingeführt. Hinterlasse deine E-Mail für frühzeitigen Zugang.",
+    "placeholder": "Deine E-Mail-Adresse",
+    "button": "Registrieren",
+    "success": "✅ Danke für deine Anmeldung! Wir halten dich auf dem Laufenden.",
+    "error": "⚠️ Etwas ist schief gelaufen. Bitte versuche es erneut."
+  },
+
+  "compliance": {
+    "heading": "Datenschutz & Compliance",
+    "body": "ANERITA wurde mit Blick auf Patientensicherheit, Privatsphäre und globale Standards entwickelt.",
+    "badges": {
+      "gdpr": "DSGVO-konform",
+      "hipaa": "HIPAA-bereit",
+      "zero": "Kein Tracking",
+      "device": "Datenschutz auf dem Gerät"
+    }
+  },
+
+  "footer": {
+    "copy": "© 2025 ANERITA — Notfall-Identifikationshilfe jederzeit verfügbar"
+  }
+}
