@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "how": "Cómo funciona",
+    "openApp": "Abrir app",
+    "signInCreate": "Entrar / Crear"
+  },
+  "hero": {
+    "eyebrow": "Ayuda de Identificación de Respuesta de Emergencia en cualquier momento",
+    "headline_html": "Tu triaje de <span class=\"highlight\">emergencia</span>, con voz para ti.",
+    "subhead": "En una crisis, los equipos deciden en segundos. ANERITA muestra y habla lo esencial — alergias, condiciones, medicación e ICE — para que la ayuda sea más rápida y segura."
+  },
+  "cta": {
+    "openApp": "Abrir app",
+    "seeFeatures": "Ver funciones"
+  }
+}
