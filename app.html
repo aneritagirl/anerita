@@ -1,263 +1,297 @@
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="styles/site.css?v=3">
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANERITA — PWA Master</title>
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
-<link rel="manifest" href="./anerita_manifest.json">
-<meta name="theme-color" content="#BE051E">
-  <script src="config.js"></script>
-<style>
-  .brand .tm {
-  font-size: 0.7em;
-  opacity: 0.8;
-  vertical-align: super;
-  margin-left: 0.2em;
-}
-  body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink);background:#fff}
-  .bar{background:#fff;border-bottom:1px solid var(--ring);padding:12px 16px;display:flex;align-items:center;gap:12px;justify-content:space-between}
-  .brand{font-weight:900}
-  .wrap{max-width:960px;margin:0 auto;padding:16px}
-  .btn{display:inline-block;background:var(--brand);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none}
-  .pill{display:inline-block;border:1px solid var(--ring);border-radius:999px;padding:6px 10px;margin-right:8px}
-  .grid{display:grid;gap:14px}
-  @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
-  pre{background:#f7f7fb;border:1px solid #e5e7eb;border-radius:8px;padding:12px;overflow:auto}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ANERITA — App</title>
+  <meta name="description" content="Set up and show your ANERITA emergency card. Works offline." />
+  <link rel="stylesheet" href="styles/site.css" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
 </head>
 <body>
-<div class="bar">
-  <div class="brand">
-  <span>AN</span><span style="color:#BE051E">ER</span>ITA<span class="tm">™</span>
-</div>
-  <a class="btn" href="#" onclick="installPrompt && installPrompt.prompt();return false;">Install App</a>
-</div>
-<div class="wrap">
-  <h1>Welcome to ANERITA (PWA)</h1>
-  <p>This is the installable version of ANERITA. You can use it offline once it’s added to your Home Screen.</p>
-  <div class="grid">
-    <div>
-      <h3>Emergency View (Offline Demos)</h3>
-      <p><a class="btn" href="./emergency_tina.html">Open Tina (offline)</a></p>
-      <p><a class="btn" href="./emergency_gia.html">Open Gia (offline)</a></p>
-      <p class="pill">Offline-ready</p>
-      <p class="pill">999 / 112</p>
-    </div>
-    <div>
-      <h3>How to Install (PWA)</h3>
-      <ol>
-        <li>Serve this folder over <b>https</b> or <b>localhost</b> (e.g., <code>python -m http.server 8080</code>).</li>
-        <li>Open this page and tap “Install App”.</li>
-      </ol>
-      <p><small>Service workers need https/localhost to run.</small></p>
-    </div>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="Anerita Home"><span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup></a>
+    <nav class="nav-actions">
+      <a class="btn btn-ghost" id="greet"></a>
+      <a class="btn btn-primary" href="#" id="showCardBtn">Open Emergency</a>
+    </nav>
   </div>
-  <pre id="log"></pre>
-</div>
-<script>
-let installPrompt=null;
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;document.getElementById('log').textContent='Install prompt is ready.'});
-if('serviceWorker' in navigator){navigator.serviceWorker.register('./anerita_service_worker.js');}
-</script>
-<style>
-  /* === DEMO UI (safe to remove later) === */
-  .demo-shell{max-width:1100px;margin:0 auto;padding:16px}
-  .demo-tabs{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:50}
-  .demo-tabs .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:12px 0}
-  .logo{font-weight:800;letter-spacing:.2px}
-  .logo .er{color:#BE051E}
-  .logo .tm{font-size:.7em;opacity:.8;margin-left:.2em}
-  .demo-nav{display:flex;gap:8px;flex-wrap:wrap}
-  .demo-btn{padding:8px 12px;border:1px solid #e5e7eb;border-radius:8px;background:#fff;cursor:pointer}
-  .demo-btn.active{border-color:#BE051E;color:#BE051E;font-weight:700}
-  .demo-cta{padding:10px 14px;border-radius:10px;background:#BE051E;color:#fff;border:1px solid #BE051E;font-weight:700}
-  .demo-grid{display:grid;gap:12px}
-  @media(min-width:760px){.demo-grid.cols-3{grid-template-columns:repeat(3,1fr)}}
-  .card{border:1px solid #e5e7eb;border-radius:12px;padding:16px}
-  .muted{color:#6b7280}
-  .hidden{display:none}
-  .big{font-size:22px;margin:0}
-  .em-actions{display:flex;gap:10px;flex-wrap:wrap}
-  .call{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #e5e7eb}
-  .call strong{font-size:18px}
-  .pill{display:inline-block;background:#fee2e2;color:#991b1b;border:1px solid #fecaca;padding:4px 10px;border-radius:999px;font-size:12px}
-  .kv{display:grid;grid-template-columns:140px 1fr;gap:6px 16px}
-  .kv div{padding:4px 0;border-bottom:1px dashed #eee}
-  .kv b{white-space:nowrap}
-  .tag{display:inline-block;padding:6px 10px;border:1px solid #e5e7eb;border-radius:999px;font-size:12px;margin-right:6px}
-</style>
-<!-- === DEMO APP SHELL (safe to remove later) === -->
-<div id="demoApp" class="demo-shell">
-  <div class="demo-tabs">
-    <div class="row">
-      <div class="logo">AN<span class="er">ER</span>ITA<span class="tm">™</span></div>
-      <nav class="demo-nav">
-        <button class="demo-btn active" data-view="dash">Dashboard</button>
-        <button class="demo-btn" data-view="emergency">Emergency</button>
-        <button class="demo-btn" data-view="profile">Profile</button>
-        <button class="demo-btn" data-view="vault">Vault</button>
-        <button class="demo-btn" data-view="meds">Meds & Appointments</button>
+</header>
+
+<main class="wide">
+  <div class="container" style="max-width:940px">
+
+    <!-- Progress -->
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px">
+      <span class="chip" id="statusChip">Offline‑ready</span>
+      <span class="chip" id="countChip">0 / 12</span>
+    </div>
+
+    <!-- Tabs -->
+    <nav style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px">
+      <button class="btn btn-ghost" data-step="1">1. Profile</button>
+      <button class="btn btn-ghost" data-step="2">2. Medical</button>
+      <button class="btn btn-ghost" data-step="3">3. Preferences</button>
+      <button class="btn btn-primary" id="saveAll">Save</button>
+    </nav>
+
+    <!-- STEP 1: Profile -->
+    <section class="card step" id="step1">
+      <h2>Profile & ICE</h2>
+      <div class="grid" style="--cols:2">
+        <label class="field">
+          <span>Full name</span>
+          <input id="p_name" placeholder="Jane Doe" autocomplete="name" />
+        </label>
+        <label class="field">
+          <span>Date of birth</span>
+          <input id="p_dob" type="date" />
+        </label>
+        <label class="field">
+          <span>Primary language</span>
+          <input id="p_lang" placeholder="English" />
+        </label>
+        <label class="field">
+          <span>ICE contact (name)</span>
+          <input id="p_ice_name" placeholder="Partner / Parent" />
+        </label>
+        <label class="field">
+          <span>ICE phone</span>
+          <input id="p_ice_phone" placeholder="+44 7700 900000" />
+        </label>
+        <label class="field">
+          <span>Notes (optional)</span>
+          <input id="p_notes" placeholder="Hearing impaired / carries EpiPen" />
+        </label>
+      </div>
+    </section>
+
+    <!-- STEP 2: Medical -->
+    <section class="card step" id="step2" hidden>
+      <h2>Medical essentials</h2>
+      <div class="grid" style="--cols:2">
+        <label class="field">
+          <span>Allergies</span>
+          <textarea id="m_allergies" rows="3" placeholder="Penicillin; Peanuts"></textarea>
+        </label>
+        <label class="field">
+          <span>Conditions</span>
+          <textarea id="m_conditions" rows="3" placeholder="Diabetes type 1; Epilepsy"></textarea>
+        </label>
+        <label class="field">
+          <span>Medications</span>
+          <textarea id="m_meds" rows="3" placeholder="Warfarin 5mg daily; Insulin"></textarea>
+        </label>
+        <label class="field">
+          <span>Other info</span>
+          <textarea id="m_other" rows="3" placeholder="Pacemaker; Pregnancy 20w"></textarea>
+        </label>
+      </div>
+    </section>
+
+    <!-- STEP 3: Preferences -->
+    <section class="card step" id="step3" hidden>
+      <h2>Preferences</h2>
+      <div class="grid" style="--cols:2">
+        <label class="field">
+          <span>Triage color</span>
+          <select id="pref_triage">
+            <option value="">Select</option>
+            <option>Green</option>
+            <option>Yellow</option>
+            <option>Red</option>
+            <option>Black</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Card language</span>
+          <input id="pref_card_lang" placeholder="English / Español / …" />
+        </label>
+        <label class="field">
+          <span>Voice playback</span>
+          <select id="pref_voice">
+            <option value="">Off</option>
+            <option value="on">On</option>
+          </select>
+        </label>
+        <div class="field">
+          <button class="btn btn-ghost" id="testVoice">Test voice</button>
+        </div>
+      </div>
+      <div style="margin-top:8px">
+        <button class="btn btn-primary" id="previewBtn">View Emergency Card</button>
+      </div>
+    </section>
+
+    <!-- Emergency Card Preview -->
+    <section class="card" id="card" hidden>
+      <h2 style="margin-top:0">Emergency Card</h2>
+      <p class="note">Show this screen to responders. Tap “Play” to speak the summary.</p>
+      <div id="cardView" style="line-height:1.6"></div>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-primary" id="play">Play</button>
+        <button class="btn btn-ghost" id="edit">Edit</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot-row">
+      <div>© 2025 ANERITA — Emergency Response Identification Tag Aid</div>
+      <nav class="foot-nav">
+        <a href="index.html#features" class="btn btn-ghost">Features</a>
+        <a href="index.html#how" class="btn btn-ghost">How it works</a>
+        <a href="privacy.html" class="btn btn-ghost">Privacy</a>
+        <a href="terms.html" class="btn btn-ghost">Terms</a>
       </nav>
-      <button class="demo-cta" data-install>Install App</button>
     </div>
   </div>
+</footer>
 
-  <!-- DASHBOARD -->
-  <section id="view-dash">
-    <div class="card">
-      <h2 class="big">Welcome back, Tina</h2>
-      <p class="muted">Everything at a glance. Tap a tile to jump in.</p>
-      <div class="demo-grid cols-3" style="margin-top:10px">
-        <div class="card">
-          <b>Emergency QR</b><br><span class="muted">Ready to show</span><br><br>
-          <button class="demo-cta" data-go="emergency">Open Emergency</button>
-        </div>
-        <div class="card">
-          <b>Document Vault</b><br><span class="muted">3 files</span><br><br>
-          <button class="demo-btn" data-go="vault">View Vault</button>
-        </div>
-        <div class="card">
-          <b>Meds & Appointments</b><br><span class="muted">2 meds • 1 appointment</span><br><br>
-          <button class="demo-btn" data-go="meds">Open Tracker</button>
-        </div>
-      </div>
-    </div>
-  </section>
-   <!-- EMERGENCY -->
-  <section id="view-emergency" class="hidden">
-    <div class="card">
-      <div class="pill">Read‑only for responders</div>
-      <h2 class="big" style="margin-top:8px">Emergency — Tina Moore</h2>
-      <p class="muted">DOB 13‑12‑1988 • ID: A‑TM‑8821 • Blood O+</p>
-      <div class="em-actions" style="margin:10px 0 16px">
-        <a class="call" href="tel:999"><strong>Call 999</strong><br><small>UK emergency</small></a>
-        <a class="call" href="tel:112"><strong>Call 112</strong><br><small>EU emergency</small></a>
-        <a class="call" href="sms:+447700900000?body=Emergency%20scan%20for%20Tina%20Moore"><strong>Text ICE</strong><br><small>Notify contact</small></a>
-      </div>
-      <div class="demo-grid cols-3">
-        <div class="card">
-          <b>Allergies</b><br>
-          <span class="tag">Midazolam</span>
-          <span class="tag">Codeine</span>
-          <span class="tag">Penicillin</span>
-        </div>
-        <div class="card">
-          <b>Conditions</b><br>
-          Epilepsy, Type 2 Diabetes
-        </div>
-        <div class="card">
-          <b>Meds (key)</b><br>
-          Metformin 500mg (AM/PM), Levetiracetam 500mg (BID)
-        </div>
-      </div>
-      <div class="card" style="margin-top:12px">
-        <b>Care Preferences</b>
-        <div class="kv" style="margin-top:8px">
-          <b>DNR:</b><div>No</div>
-          <b>DNI:</b><div>Yes</div>
-          <b>Life support:</b><div>Limit to 90 days</div>
-          <b>Organ donor:</b><div>No</div>
-          <b>Transfusion:</b><div>Restricted</div>
-          <b>Burial/cremation:</b><div>Cremation</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFILE (read-only demo) -->
-  <section id="view-profile" class="hidden">
-    <div class="card">
-      <h2 class="big">Profile — Tina Moore</h2>
-      <div class="kv" style="margin-top:8px">
-        <b>Full name</b><div>Tina Moore</div>
-        <b>Date of birth</b><div>13‑12‑1988</div>
-        <b>Blood type</b><div>O+</div>
-        <b>Allergies</b><div>Midazolam, Codeine, Penicillin</div>
-        <b>Conditions</b><div>Epilepsy; Type 2 Diabetes</div>
-        <b>ICE contact</b><div>+44 7700 900000</div>
-        <b>Address</b><div>—</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VAULT (placeholders) -->
-  <section id="view-vault" class="hidden">
-    <div class="card">
-      <h2 class="big">Document Vault</h2>
-      <p class="muted">Encrypted in the real app. Demo shows sample items.</p>
-      <div class="demo-grid cols-3" style="margin-top:10px">
-        <div class="card"><b>Advance directive.pdf</b><br><small>Updated 02 Feb</small></div>
-        <div class="card"><b>Allergies card.png</b><br><small>Updated 28 Jan</small></div>
-        <div class="card"><b>Diabetes notes.docx</b><br><small>Updated 15 Jan</small></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MEDS & APPTS -->
-  <section id="view-meds" class="hidden">
-    <div class="card">
-      <h2 class="big">Meds & Appointments</h2>
-      <div class="demo-grid" style="margin-top:10px">
-        <div class="card">
-          <b>Medications</b><br>
-          <div class="kv" style="margin-top:8px">
-            <b>Metformin</b><div>500mg — 08:00 / 20:00</div>
-            <b>Levetiracetam</b><div>500mg — 09:00 / 21:00</div>
-          </div>
-        </div>
-        <div class="card">
-          <b>Upcoming appointment</b><br>
-          <div class="kv" style="margin-top:8px">
-            <b>Date</b><div>14 Mar 2025 — 09:30</div>
-            <b>Type</b><div>Diabetes check</div>
-            <b>Location</b><div>City Health Centre</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
 <script>
-  // === DEMO WIRES ===
-  (function(){
-    function show(view){
-      ['dash','emergency','profile','vault','meds'].forEach(v=>{
-        document.getElementById('view-'+v).classList.toggle('hidden', v!==view);
-        document.querySelectorAll('.demo-btn').forEach(b=>{
-          if(b.dataset.view===view) b.classList.add('active'); else b.classList.remove('active');
-        });
-      });
-      window.scrollTo(0,0);
+  // ------- tiny state layer (localStorage) -------
+  const KEY = 'anerita_profile_v1';
+  const $ = (id)=>document.getElementById(id);
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; }
+    catch { return {}; }
+  }
+  function save(data) {
+    localStorage.setItem(KEY, JSON.stringify(data));
+    updateCount();
+  }
+
+  // prefill greeting
+  const email = localStorage.getItem('anerita_user_email');
+  if (email) $('greet').textContent = email;
+
+  // step nav
+  document.querySelectorAll('[data-step]').forEach(btn=>{
+    btn.addEventListener('click', ()=> showStep(+btn.dataset.step));
+  });
+  function showStep(n){
+    document.querySelectorAll('.step').forEach(s => s.hidden = true);
+    $('step'+n).hidden = false;
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // Save all
+  $('saveAll').addEventListener('click', ()=>{
+    const data = {
+      profile: {
+        name: $('p_name').value.trim(),
+        dob: $('p_dob').value,
+        lang: $('p_lang').value.trim(),
+        ice_name: $('p_ice_name').value.trim(),
+        ice_phone: $('p_ice_phone').value.trim(),
+        notes: $('p_notes').value.trim(),
+      },
+      medical: {
+        allergies: $('m_allergies').value.trim(),
+        conditions: $('m_conditions').value.trim(),
+        meds: $('m_meds').value.trim(),
+        other: $('m_other').value.trim(),
+      },
+      prefs: {
+        triage: $('pref_triage').value,
+        card_lang: $('pref_card_lang').value.trim(),
+        voice: $('pref_voice').value,
+      }
+    };
+    save(data);
+    flash('Saved');
+  });
+
+  // load into fields
+  (function hydrate(){
+    const d = load();
+    if(d.profile){
+      $('p_name').value = d.profile.name || '';
+      $('p_dob').value  = d.profile.dob || '';
+      $('p_lang').value = d.profile.lang || '';
+      $('p_ice_name').value = d.profile.ice_name || '';
+      $('p_ice_phone').value = d.profile.ice_phone || '';
+      $('p_notes').value = d.profile.notes || '';
     }
-
-    // Top tab buttons
-    document.querySelectorAll('.demo-btn[data-view]').forEach(btn=>{
-      btn.addEventListener('click', ()=> show(btn.dataset.view));
-    });
-
-    // Dashboard tiles → go to sections
-    document.querySelectorAll('[data-go]').forEach(x=>{
-      x.addEventListener('click', ()=> show(x.dataset.go));
-    });
-
-    // Install button (PWA)
-    let deferred=null;
-    window.addEventListener('beforeinstallprompt', (e)=>{ e.preventDefault(); deferred=e; });
-    const installBtn = document.querySelector('[data-install]');
-    if(installBtn){
-      installBtn.addEventListener('click', async()=>{
-        if(!deferred) return alert('If your browser supports install, an install banner will appear.');
-        deferred.prompt(); await deferred.userChoice; deferred=null;
-      });
+    if(d.medical){
+      $('m_allergies').value = d.medical.allergies || '';
+      $('m_conditions').value = d.medical.conditions || '';
+      $('m_meds').value = d.medical.meds || '';
+      $('m_other').value = d.medical.other || '';
     }
-
-    // Start on Dashboard
-    show('dash');
+    if(d.prefs){
+      $('pref_triage').value = d.prefs.triage || '';
+      $('pref_card_lang').value = d.prefs.card_lang || '';
+      $('pref_voice').value = d.prefs.voice || '';
+    }
+    updateCount();
+    // if anchor is #setup, stay on step1
+    if(location.hash === '#setup') showStep(1);
   })();
+
+  function updateCount(){
+    const d = load();
+    const vals = [
+      d?.profile?.name, d?.profile?.dob, d?.profile?.ice_phone,
+      d?.medical?.allergies, d?.medical?.conditions, d?.medical?.meds
+    ].filter(Boolean).length;
+    $('countChip').textContent = `${vals} / 12`;
+  }
+
+  function flash(msg){
+    const c = document.createElement('div');
+    c.textContent = msg;
+    c.style.position='fixed'; c.style.bottom='20px'; c.style.left='50%';
+    c.style.transform='translateX(-50%)';
+    c.style.padding='8px 14px'; c.style.borderRadius='999px';
+    c.style.background='#111214'; c.style.color='#fff';
+    c.style.zIndex='9999';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),1200);
+  }
+
+  // Preview & voice
+  $('previewBtn').addEventListener('click', showCard);
+  $('showCardBtn').addEventListener('click', showCard);
+  $('edit').addEventListener('click', ()=> { $('card').hidden=true; showStep(1); });
+
+  function showCard(){
+    const d = load();
+    const safe = (v)=> (v && String(v).trim()) || '—';
+    $('card').hidden = false;
+    $('cardView').innerHTML = `
+      <div><strong>Name:</strong> ${safe(d?.profile?.name)}</div>
+      <div><strong>DOB:</strong> ${safe(d?.profile?.dob)}</div>
+      <div><strong>Allergies:</strong> ${safe(d?.medical?.allergies)}</div>
+      <div><strong>Conditions:</strong> ${safe(d?.medical?.conditions)}</div>
+      <div><strong>Meds:</strong> ${safe(d?.medical?.meds)}</div>
+      <div><strong>ICE:</strong> ${safe(d?.profile?.ice_name)} — ${safe(d?.profile?.ice_phone)}</div>
+      <div><strong>Triage:</strong> ${safe(d?.prefs?.triage)}</div>
+      <div style="margin-top:6px"><small>Last updated: ${new Date().toLocaleString()}</small></div>
+    `;
+    window.scrollTo({top: $('card').offsetTop - 12, behavior:'smooth'});
+  }
+
+  $('play').addEventListener('click', ()=>{
+    const d = load();
+    const parts = [
+      d?.profile?.name && `Patient ${d.profile.name}.`,
+      d?.medical?.allergies && `Allergies: ${d.medical.allergies}.`,
+      d?.medical?.conditions && `Conditions: ${d.medical.conditions}.`,
+      d?.medical?.meds && `Medications: ${d.medical.meds}.`,
+      d?.profile?.ice_phone && `Emergency contact ${d.profile.ice_name || ''} ${d.profile.ice_phone}.`,
+      d?.prefs?.triage && `Triage ${d.prefs.triage}.`
+    ].filter(Boolean).join(' ');
+    const utter = new SpeechSynthesisUtterance(parts || 'No data available.');
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utter);
+  });
 </script>
 </body>
 </html>
