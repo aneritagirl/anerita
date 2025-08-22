@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "how": "How it works",
+    "openApp": "Open App",
+    "signInCreate": "Sign in / Create"
+  },
+  "hero": {
+    "eyebrow": "Anytime Emergency Response Identification Tag Aid",
+    "headline_html": "Your <span class=\"highlight\">emergency</span> triage, voiced for you.",
+    "subhead": "In a crisis, responders decide in seconds. ANERITA shows and speaks the essentials — allergies, conditions, meds, ICE — so help is faster and safer."
+  },
+  "cta": {
+    "openApp": "Open App",
+    "seeFeatures": "See features"
+  }
+}
