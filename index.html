@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ANERITA — Emergency Response Identification Tag Aid</title>
+  <title>ANERITA — Anytime Emergency Response Identification Tag Aid</title>
 
   <!-- Canonical + SEO -->
   <link rel="canonical" href="https://anerita.com/">
   <meta name="description" content="ANERITA speaks and displays your critical health info in emergencies — even offline. Identification tags, ICE & SOS, document vault, translations." />
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="ANERITA — Emergency Response Identification Tag Aid" />
+  <meta property="og:title" content="ANERITA —Anytime Emergency Response Identification Tag Aid" />
   <meta property="og:description" content="Your emergency triage, voiced for you." />
   <meta property="og:url" content="https://anerita.com/" />
   <meta property="og:type" content="website" />
@@ -32,7 +32,8 @@
 <!-- ===== Sticky Header ===== -->
 <header class="site-header" role="banner">
   <div class="container bar">
-    <!-- Brand -->
+
+    <!-- Brand (always returns home) -->
     <a class="brand" href="/" aria-label="Anerita Home">
       <span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup>
     </a>
@@ -40,7 +41,7 @@
     <!-- Right side: CTAs -->
     <div class="header-actions">
       <nav class="nav-ctas" aria-label="Primary">
-        <a class="btn btn-ghost" href="/account.html">Sign in / Create</a>
+        <a class="btn btn-ghost" href="/login.html">Sign in / Create</a>
         <a class="btn btn-primary" href="/app.html">Open App</a>
       </nav>
 
@@ -52,7 +53,7 @@
     </div>
   </div>
 
-  <!-- Slide-down menu -->
+  <!-- Slide-down menu (secondary links) -->
   <nav id="siteMenu" class="site-menu" aria-label="More">
     <div class="container">
       <a href="#features">Features</a>
@@ -63,6 +64,7 @@
       <a href="/contact.html">Contact</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
+      <a href="/login.html">Sign in / Create</a>
     </div>
   </nav>
 </header>
@@ -79,9 +81,8 @@
       <h1>Your <span class="highlight">emergency</span> triage, voiced for you.</h1>
 
       <p class="subhead">
-        In a crisis, responders decide in seconds. ANERITA shows and
-        speaks the essentials — allergies, conditions, meds, ICE — so help is
-        faster and safer. <span class="chip">Works offline</span>
+        In a crisis, responders decide in seconds. ANERITA shows and speaks the essentials — allergies,
+        conditions, meds, ICE — so help is faster and safer. <span class="chip">Works offline</span>
       </p>
 
       <ul class="benefits">
@@ -139,7 +140,7 @@
         <p>Zero tracking. HTTPS everywhere. Works offline.</p>
       </article>
 
-      <!-- Offline Mode -->
+      <!-- Offline Mode (inline SVG = no cropping, no external file) -->
       <article class="card">
         <div class="thumb">
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Offline mode icon">
@@ -252,7 +253,12 @@
     <h2>Be first to get life‑saving features</h2>
     <p>New languages, tag styles, and hospital integrations are rolling out. Leave your email for early access.</p>
 
-    <form id="signup-form" action="https://formspree.io/f/mgvzgvdb" method="POST" class="signup-form">
+    <form 
+      id="signup-form"
+      action="https://formspree.io/f/mgvzgvdb"
+      method="POST"
+      class="signup-form"
+    >
       <input type="email" name="email" placeholder="Your email address" required>
       <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
     </form>
@@ -271,7 +277,7 @@
       <li><span class="badge">GDPR Compliant</span></li>
       <li><span class="badge">HIPAA Ready</span></li>
       <li><span class="badge">Zero Tracking</span></li>
-      <li><span class="badge">On-Device Privacy</span></li>
+      <li><span class="badge">On‑Device Privacy</span></li>
     </ul>
   </div>
 </section>
@@ -285,8 +291,12 @@
         <a href="#features" class="btn btn-ghost">Features</a>
         <a href="#how" class="btn btn-ghost">How it works</a>
         <a href="#faq" class="btn btn-ghost">FAQ</a>
+        <a href="/about.html" class="btn btn-ghost">About</a>
+        <a href="/clinician.html" class="btn btn-ghost">Clinician</a>
+        <a href="/contact.html" class="btn btn-ghost">Contact</a>
         <a href="/privacy.html" class="btn btn-ghost">Privacy</a>
         <a href="/terms.html" class="btn btn-ghost">Terms</a>
+        <a href="/login.html" class="btn btn-ghost">Sign in / Create</a>
       </nav>
     </div>
   </div>
@@ -310,62 +320,70 @@
 
 <!-- Signup JS -->
 <script>
-  const form = document.getElementById('signup-form');
-  const successMsg = document.getElementById('signup-success');
-  const errorMsg = document.getElementById('signup-error');
+  (function(){
+    const form = document.getElementById('signup-form');
+    const ok = document.getElementById('signup-success');
+    const err = document.getElementById('signup-error');
+    if(!form) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        successMsg.style.display = 'block';
-        errorMsg.style.display = 'none';
-        form.reset();
-      } else { throw new Error('Form error'); }
-    } catch {
-      successMsg.style.display = 'none';
-      errorMsg.style.display = 'block';
-    }
-  });
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      ok.style.display = 'none';
+      err.style.display = 'none';
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          ok.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Form error');
+        }
+      } catch {
+        err.style.display = 'block';
+      }
+    });
+  })();
 </script>
 
-<!-- Menu JS -->
+<!-- Hamburger menu JS -->
 <script>
-(function(){
-  const btn = document.getElementById('navToggle');
-  const menu = document.getElementById('siteMenu');
-  if(!btn || !menu) return;
+  (function(){
+    const btn = document.getElementById('navToggle');
+    const menu = document.getElementById('siteMenu');
+    if(!btn || !menu) return;
 
-  function closeOnEscape(e){
-    if(e.key === 'Escape'){
+    function closeOnEscape(e){
+      if(e.key === 'Escape'){
+        btn.setAttribute('aria-expanded','false');
+        menu.classList.remove('open');
+        document.removeEventListener('keydown', closeOnEscape);
+      }
+    }
+
+    btn.addEventListener('click', ()=>{
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('open', !open);
+      if(!open) document.addEventListener('keydown', closeOnEscape);
+    });
+
+    // Close on link click
+    menu.addEventListener('click', (e)=>{
+      const a = e.target.closest('a');
+      if(!a) return;
       btn.setAttribute('aria-expanded','false');
       menu.classList.remove('open');
       document.removeEventListener('keydown', closeOnEscape);
-    }
-  }
-  btn.addEventListener('click', ()=>{
-    const open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!open));
-    menu.classList.toggle('open', !open);
-    if(!open) document.addEventListener('keydown', closeOnEscape);
-  });
-  menu.addEventListener('click', (e)=>{
-    const a = e.target.closest('a');
-    if(!a) return;
-    btn.setAttribute('aria-expanded','false');
-    menu.classList.remove('open');
-    document.removeEventListener('keydown', closeOnEscape);
-  });
-})();
+    });
+  })();
 </script>
 
-<!-- Service worker (if present) -->
+<!-- (keep your service worker if you have one) -->
 <script defer src="anerita_service_worker.js"></script>
 </body>
 </html>
