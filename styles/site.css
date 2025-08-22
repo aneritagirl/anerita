@@ -183,3 +183,36 @@ summary{cursor:pointer;font-weight:600;color:var(--ink)}
   display:flex; gap:10px; padding: 8px 20px 12px;
 }
 .drawer-actions .btn{ flex:1; justify-content:center; }
+/* Header layout */
+.site-header { position: sticky; top: 0; z-index: 1000; background:#fff; border-bottom:1px solid #eceff3; }
+.site-header .bar { display:flex; align-items:center; justify-content:space-between; padding:12px 0; }
+.header-actions { display:flex; align-items:center; gap:12px; }
+
+/* Burger button */
+.hamburger { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px;
+  border:0; background:#fff; border-radius:999px; box-shadow:0 1px 2px rgba(0,0,0,.06);
+}
+.hamburger-box { display:inline-block; position:relative; width:22px; height:2px; background:#111; }
+.hamburger-inner { position:absolute; inset:0; background:#111; }
+.hamburger-box::before,
+.hamburger-box::after {
+  content:""; position:absolute; left:0; right:0; height:2px; background:#111;
+}
+.hamburger-box::before { top:-6px; }
+.hamburger-box::after  { top: 6px; }
+
+/* Slide-down menu */
+.site-menu { display:none; border-top:1px solid #f0f2f5; background:#fff; }
+.site-menu.open { display:block; }
+.site-menu .container { display:grid; gap:14px; padding:16px 0; }
+.site-menu a { text-decoration:none; color:#111; padding:8px 0; }
+
+/* Responsive: keep CTAs always; burger useful on small screens */
+@media (max-width: 860px){
+  .nav-ctas .btn.btn-ghost { display:none; }   /* hide text link if tight */
+}
+
+/* (optional) slightly smaller burger on very narrow */
+@media (max-width: 400px){
+  .hamburger { width:36px; height:36px; }
+}
