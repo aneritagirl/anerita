@@ -7,40 +7,40 @@
 
   <!-- Canonical + SEO -->
   <link rel="canonical" href="https://anerita.com/">
-  <meta name="description" content="ANERITA speaks and displays your critical health info in emergencies — even offline. Identification tags, ICE & SOS, document vault, translations." />
+  <meta name="description" content="ANERITA speaks and displays your critical health info in emergencies — even offline. Identification tags, ICE & SOS, document vault, translations.">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="ANERITA — Emergency Response Identification Tag Aid" />
-  <meta property="og:description" content="Your emergency triage, voiced for you." />
-  <meta property="og:url" content="https://anerita.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://anerita.com/images/og-hero.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:title" content="ANERITA — Emergency Response Identification Tag Aid">
+  <meta property="og:description" content="Your emergency triage, voiced for you.">
+  <meta property="og:url" content="https://anerita.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://anerita.com/images/og-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- PWA / icons (keep your existing files) -->
-  <meta name="theme-color" content="#c62828" />
-  <link rel="manifest" href="anerita_manifest.json" />
-  <link rel="apple-touch-icon" href="anerita-180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
+  <!-- PWA / icons -->
+  <meta name="theme-color" content="#c62828">
+  <link rel="manifest" href="anerita_manifest.json">
+  <link rel="apple-touch-icon" href="anerita-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/site.css" />
+  <link rel="stylesheet" href="styles/site.css">
 </head>
 <body>
 
   <!-- ===== Sticky Header ===== -->
   <header class="site-header" role="banner">
-  <div class="container bar">
-    <a class="brand" href="/" aria-label="Anerita Home">
-      <span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup>
-    </a>
-    <nav class="nav-actions" aria-label="Primary">
-      <a class="btn btn-ghost" href="/#how">How it works</a>
-      <a class="btn btn-primary" href="/app.html">Open App</a>
-    </nav>
-  </div>
-</header>
+    <div class="container bar">
+      <a class="brand" href="/" aria-label="Anerita Home">
+        <span class="word">AN</span><span class="er">ER</span><span class="word">ITA</span><sup class="tm">™</sup>
+      </a>
+      <nav class="nav-actions" aria-label="Primary">
+        <a class="btn btn-ghost" href="#how">How it works</a>
+        <a class="btn btn-primary" href="app.html">Open App</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="home">
@@ -50,15 +50,13 @@
         <h1>Your <span class="highlight">emergency</span> triage, voiced for you.</h1>
 
         <p class="subhead">
-          In a crisis, responders make decisions in **seconds**. ANERITA shows and
-          speaks the essentials — allergies, conditions, meds, ICE — so help is
-          faster and safer. <span class="chip">Works offline</span>
+          In a crisis, responders decide in seconds. ANERITA shows and speaks the essentials — allergies, conditions, meds, ICE — so help is faster and safer. <span class="chip">Works offline</span>
         </p>
 
         <ul class="benefits">
-          <li><strong>Clarity over panic:</strong> one tap / one scan shows what matters.</li>
-          <li><strong>On‑device privacy:</strong> zero tracking; you control what is shared.</li>
-          <li><strong>Universal:</strong> works anywhere, any language, any tag.</li>
+          <li><strong>Clarity over panic:</strong> one scan shows what matters.</li>
+          <li><strong>On‑device privacy:</strong> you control what is shared.</li>
+          <li><strong>Universal:</strong> any phone, any language, any tag.</li>
         </ul>
 
         <div class="cta-row">
@@ -81,8 +79,8 @@
 
       <div class="features-grid">
         <article class="card">
-          <div class="thumb"><img src="images/card-ice-sos.png" alt="ICE & SOS"></div>
-          <h3>ICE & SOS</h3>
+          <div class="thumb"><img src="images/card-ice-sos.png" alt="ICE &amp; SOS"></div>
+          <h3>ICE &amp; SOS</h3>
           <p>Instant access to emergency contacts and alerts.</p>
         </article>
 
@@ -105,12 +103,12 @@
         </article>
 
         <article class="card">
-          <div class="thumb"><img src="images/card-security.png" alt="Security & Privacy"></div>
-          <h3>Security & Privacy</h3>
+          <div class="thumb"><img src="images/card-security.png" alt="Security &amp; Privacy"></div>
+          <h3>Security &amp; Privacy</h3>
           <p>Zero tracking. HTTPS everywhere. Works offline.</p>
         </article>
 
-        <!-- NEW: Offline Mode (inline SVG so no external file needed) -->
+        <!-- Offline Mode (inline SVG = never crops, no extra file) -->
         <article class="card">
           <div class="thumb">
             <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Offline mode icon">
@@ -216,88 +214,29 @@
       </div>
     </div>
   </section>
-<section class="wide alt" id="signup">
-  <div class="container">
-    <h2>Sign up for updates</h2>
-    <p>Be the first to know when ANERITA adds new features, tips, and accessories.</p>
 
-    <form 
-      id="signup-form"
-      action="https://formspree.io/f/mgvzgvdb" 
-      method="POST" 
-      style="margin-top:16px; display:flex; flex-wrap:wrap; gap:12px; max-width:480px;"
-    >
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="Your email address" 
-        required
-        style="flex:1; padding:12px 14px; border:1px solid #ccc; border-radius:999px; font-size:16px;"
+  <!-- ===== SIGNUP ===== -->
+  <section class="wide alt" id="signup">
+    <div class="container">
+      <h2>Be first to get life‑saving features</h2>
+      <p>New languages, tag styles, and hospital integrations are rolling out. Leave your email for early access.</p>
+
+      <form 
+        id="signup-form"
+        action="https://formspree.io/f/mgvzgvdb"
+        method="POST"
+        class="signup-form"
       >
-      <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
-    </form>
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+      </form>
 
-    <!-- feedback messages -->
-    <div id="signup-success" class="alert success">
-      ✅ Thanks for signing up! We’ll keep you posted.
+      <!-- feedback messages -->
+      <div id="signup-success" class="alert success">✅ Thanks for signing up! We’ll keep you posted.</div>
+      <div id="signup-error" class="alert error">⚠️ Something went wrong. Please try again.</div>
     </div>
-    <div id="signup-error" class="alert error">
-      ⚠️ Something went wrong. Please try again.
-    </div>
-  </div>
-</section>
+  </section>
 
-<style>
-  .alert {
-    display: none;
-    margin-top: 16px;
-    padding: 12px 16px;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 15px;
-    text-align: center;
-  }
-  .alert.success {
-    background: #e6f4ea;
-    color: #1e7b34;
-    border: 1px solid #b5dfb9;
-  }
-  .alert.error {
-    background: #fdecea;
-    color: #c62828;
-    border: 1px solid #f5c6c6;
-  }
-</style>
-
-<script>
-  const form = document.getElementById('signup-form');
-  const successMsg = document.getElementById('signup-success');
-  const errorMsg = document.getElementById('signup-error');
-
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const data = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        successMsg.style.display = 'block';
-        errorMsg.style.display = 'none';
-        form.reset();
-      } else {
-        throw new Error("Network error");
-      }
-    } catch (err) {
-      successMsg.style.display = 'none';
-      errorMsg.style.display = 'block';
-    }
-  });
-</script>
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
@@ -328,6 +267,35 @@
     "publisher":{"@type":"Organization","name":"ANERITA","url":"https://anerita.com/"},
     "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
   }
+  </script>
+
+  <!-- Signup JS -->
+  <script>
+    const form = document.getElementById('signup-form');
+    const successMsg = document.getElementById('signup-success');
+    const errorMsg = document.getElementById('signup-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          successMsg.style.display = 'block';
+          errorMsg.style.display = 'none';
+          form.reset();
+        } else {
+          throw new Error('Form error');
+        }
+      } catch {
+        successMsg.style.display = 'none';
+        errorMsg.style.display = 'block';
+      }
+    });
   </script>
 
   <!-- (keep your service worker if you have one) -->
