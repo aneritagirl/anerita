@@ -1,16 +1,56 @@
 {
-  "nav": {
-    "how": "How it works",
-    "openApp": "Open App",
-    "signInCreate": "Sign in / Create"
-  },
-  "hero": {
-    "eyebrow": "Anytime Emergency Response Identification Tag Aid",
-    "headline_html": "Your <span class=\"highlight\">emergency</span> triage, voiced for you.",
-    "subhead": "In a crisis, responders decide in seconds. ANERITA shows and speaks the essentials — allergies, conditions, meds, ICE — so help is faster and safer."
-  },
-  "cta": {
-    "openApp": "Open App",
-    "seeFeatures": "See features"
-  }
+  "nav.signin": "Sign in / Create",
+  "nav.open": "Open App",
+  "nav.features": "Features",
+  "nav.how": "How it works",
+  "nav.faq": "FAQ",
+  "nav.about": "About",
+  "nav.clinician": "Clinician info",
+  "nav.contact": "Contact",
+  "nav.privacy": "Privacy",
+  "nav.terms": "Terms",
+
+  "feature.ice.title": "ICE & SOS",
+  "feature.ice.body": "Instant access to emergency contacts and alerts.",
+  "feature.vault.title": "Document Vault",
+  "feature.vault.body": "Encrypted storage for medical documents.",
+  "feature.trans.title": "Translations",
+  "feature.trans.body": "Break language barriers in emergencies.",
+  "feature.triage.title": "Triage Colors",
+  "feature.triage.body": "Prioritize care at a glance.",
+  "feature.security.title": "Security & Privacy",
+  "feature.security.body": "Zero tracking. HTTPS everywhere. Works offline.",
+  "feature.offline.title": "Offline Mode",
+  "feature.offline.body": "Life‑saving access with no signal. Your card is stored on your device.",
+
+  "wide.always.title": "Always accessible",
+  "wide.always.body": "Wear it or stick it: wristbands, keychains, stickers, or a phone widget — worldwide.",
+  "wide.kids.title": "ANERITA for kids",
+  "wide.kids.body": "Child‑friendly bands and tags for school, trips, and peace of mind.",
+  "wide.ident.title": "Identification, your way",
+  "wide.ident.body": "Choose the form that suits your lifestyle.",
+
+  "how.title": "How it works",
+  "how.step1.title": "1. Create your card",
+  "how.step1.body": "Add allergies, conditions, meds, and ICE contacts. Everything lives securely on your device.",
+  "how.step2.title": "2. Link your tag",
+  "how.step2.body": "Connect a wristband, keychain, sticker or widget. A quick scan shows your info instantly.",
+  "how.step3.title": "3. Share in seconds",
+  "how.step3.body": "ANERITA displays and voices the essentials so responders act faster — even offline.",
+  "how.cta": "Open App",
+
+  "faq.title": "Common questions",
+  "faq.q1": "Does it work without the internet?",
+  "faq.a1": "Yes. Your emergency card is stored locally and can be displayed and spoken offline.",
+  "faq.q2": "What about privacy?",
+  "faq.a2": "We do not track you. Your data is encrypted and stays on your device unless you choose to share it.",
+  "faq.q3": "Can responders use it quickly?",
+  "faq.a3": "Absolutely — a simple scan opens your card; big text + audio highlight the critical details.",
+
+  "signup.title": "Be first to get life‑saving features",
+  "signup.body": "New languages, tag styles, and hospital integrations are rolling out. Leave your email for early access.",
+  "signup.placeholder": "Your email address",
+  "signup.submit": "Sign Up",
+
+  "foot.copyright": "© 2025 ANERITA — Emergency Response Identification Tag Aid"
 }
