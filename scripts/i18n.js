@@ -1,35 +1,50 @@
+<script>
 (function () {
+  // Helper: set text or HTML based on attribute
+  function applyTranslation(el, value) {
+    // If you want to allow HTML for this element, add data-i18n-html
+    if (el.hasAttribute('data-i18n-html')) {
+      el.innerHTML = value;
+    } else {
+      el.textContent = value;
+    }
+  }
+
+  // Render everything that has data-i18n
+  function renderAll() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const fallback = el.getAttribute('data-i18n-default') || '';
+      const v = i18next.t(key, { defaultValue: fallback });
+      applyTranslation(el, v);
+    });
+  }
+
+  // Language selector (optional)
+  const picker = document.getElementById('lang');
+  if (picker) {
+    picker.addEventListener('change', () => {
+      i18next.changeLanguage(picker.value).then(renderAll);
+      document.documentElement.setAttribute('lang', picker.value);
+    });
+  }
+
   i18next
     .use(i18nextHttpBackend)
     .use(i18nextBrowserLanguageDetector)
     .init({
       fallbackLng: 'en',
-      supportedLngs: ['en','es','fr','de','it','pt','ro','ar','hi','zh'],
       backend: { loadPath: '/locales/{{lng}}/site.json' },
-      detection: { order: ['querystring','localStorage','navigator'], caches: ['localStorage'], lookupQuerystring: 'lang' },
-      interpolation: { escapeValue: false }
-    }).then(applyTranslations);
-
-  function applyTranslations() {
-    const lng = i18next.resolvedLanguage || 'en';
-    document.documentElement.setAttribute('lang', lng);
-    document.documentElement.setAttribute('dir', ['ar'].includes(lng) ? 'rtl' : 'ltr');
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      const val = i18next.t(key);
-      if (key.endsWith('_html')) el.innerHTML = val; else el.textContent = val;
+      returnNull: false,            // fall back to default if null
+      returnEmptyString: false,     // fall back to default if empty
+    }, (err) => {
+      if (err) console.error(err);
+      // Sync picker with active language
+      if (picker) picker.value = i18next.language?.split('-')[0] || 'en';
+      renderAll();
     });
 
-    const picker = document.getElementById('lang');
-    if (picker) picker.value = lng;
-  }
-
-  document.addEventListener('change', (e) => {
-    if (e.target && e.target.id === 'lang') {
-      const lng = e.target.value;
-      i18next.changeLanguage(lng).then(applyTranslations);
-      try { localStorage.setItem('i18nextLng', lng); } catch(e){}
-    }
-  });
+  // Re-render if language changes from elsewhere
+  i18next.on('languageChanged', renderAll);
 })();
+</script>
