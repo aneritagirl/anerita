@@ -37,12 +37,31 @@
       <span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup>
     </a>
 
-    <!-- Right side: CTAs + Burger -->
-    <div class="header-actions">
-      <nav class="nav-ctas" aria-label="Primary">
-  <a class="btn btn-ghost" href="/login.html">Sign in / Create</a>
-  <a class="btn btn-ghost" href="/clinician.html">Clinician</a>   <!-- ADD THIS -->
-  <a class="btn btn-primary" href="/app.html">Open App</a>
+ <!-- Right side: CTAs only -->
+<div class="header-actions">
+  <nav class="nav-ctas" aria-label="Primary">
+    <a class="btn btn-ghost" href="/account.html">Sign in / Create</a>
+    <a class="btn btn-primary" href="/app.html">Open App</a>
+  </nav>
+
+  <!-- Hamburger -->
+  <button class="hamburger" id="navToggle" aria-label="Open menu" aria-controls="siteMenu" aria-expanded="false">
+    <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+  </button>
+</div>
+
+<!-- Slide-down menu (secondary links) -->
+<nav id="siteMenu" class="site-menu" aria-label="More">
+  <div class="container">
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/clinician.html">Clinician info</a> <!-- moved here -->
+    <a href="/contact.html">Contact</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </div>
 </nav>
 
       <!-- Hamburger -->
