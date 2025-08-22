@@ -134,5 +134,36 @@
     "publisher":{"@type":"Organization","name":"ANERITA","url":"https://anerita.com/"}
   }
   </script>
+  <script>
+  (function(){
+    const btn = document.getElementById('navToggle');
+    const menu = document.getElementById('siteMenu');
+    if(!btn || !menu) return;
+
+    function closeOnEscape(e){
+      if(e.key === 'Escape'){
+        btn.setAttribute('aria-expanded','false');
+        menu.classList.remove('open');
+        document.removeEventListener('keydown', closeOnEscape);
+      }
+    }
+
+    btn.addEventListener('click', ()=>{
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('open', !open);
+      if(!open) document.addEventListener('keydown', closeOnEscape);
+    });
+
+    // Close menu when clicking a link
+    menu.addEventListener('click', (e)=>{
+      const a = e.target.closest('a');
+      if(!a) return;
+      btn.setAttribute('aria-expanded','false');
+      menu.classList.remove('open');
+      document.removeEventListener('keydown', closeOnEscape);
+    });
+  })();
+</script>
 </body>
 </html>
