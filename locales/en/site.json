@@ -1,166 +1,37 @@
 {
   "nav": {
-    "features": "Features",
-    "how": "How it works",
-    "faq": "FAQ",
-    "about": "About",
-    "clinician": "Clinician info",
-    "contact": "Contact",
-    "privacy": "Privacy",
-    "terms": "Terms",
-    "login": "Sign in / Create",
-    "openApp": "Open App",
-    "language": "Language"
+    "features": "Características",
+    "how": "Cómo funciona",
+    "faq": "Preguntas frecuentes",
+    "about": "Acerca de",
+    "clinician": "Info para clínicos",
+    "contact": "Contacto",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "login": "Iniciar sesión / Crear",
+    "openApp": "Abrir app",
+    "language": "Idioma"
   },
 
   "common": {
-    "brandTagline": "Anytime Emergency Response Identification Tag Aid",
-    "worksOffline": "Works offline",
-    "submit": "Send",
-    "email": "Your email address",
-    "name": "Your name",
-    "message": "Your message",
-    "save": "Save",
-    "cancel": "Cancel"
+    "brandTagline": "Ayuda de Identificación de Respuesta de Emergencia en cualquier momento",
+    "worksOffline": "Funciona sin conexión",
+    "submit": "Enviar",
+    "email": "Tu correo electrónico",
+    "name": "Tu nombre",
+    "message": "Tu mensaje",
+    "save": "Guardar",
+    "cancel": "Cancelar"
   },
 
-  "auth": {
-    "title": "Welcome to ANERITA",
-    "loginTitle": "Sign in",
-    "registerTitle": "Create account",
-    "emailLabel": "Email",
-    "passwordLabel": "Password",
-    "passwordHint": "At least 8 characters.",
-    "haveAccount": "Already have an account?",
-    "needAccount": "New here?",
-    "btnLogin": "Sign in",
-    "btnRegister": "Create account",
-    "legalNote": "By continuing you agree to our {privacy} and {terms}."
+  "hero": {
+    "eyebrow": "Ayuda de Identificación de Respuesta de Emergencia en cualquier momento",
+    "headline_html": "Tu <span class=\"highlight\">triaje</span> de emergencia, con voz para ti.",
+    "subhead": "En una crisis, los equipos deciden en segundos. ANERITA muestra y habla lo esencial — alergias, condiciones, medicación e ICE — para que la ayuda sea más rápida y segura."
   },
 
-  "features": {
-    "title": "Everything you need, at a glance",
-    "lede": "Built for real emergencies — fast, clear, private.",
-    "card1_title": "ICE & SOS",
-    "card1_text": "Instant access to emergency contacts and alerts.",
-    "card2_title": "Document Vault",
-    "card2_text": "Encrypted storage for medical documents.",
-    "card3_title": "Translations",
-    "card3_text": "Break language barriers in emergencies.",
-    "card4_title": "Triage Colors",
-    "card4_text": "Prioritize care at a glance.",
-    "card5_title": "Security & Privacy",
-    "card5_text": "Zero tracking. HTTPS everywhere. Works offline.",
-    "card6_title": "Offline Mode",
-    "card6_text": "Life‑saving access with no signal. Your card is stored on your device."
-  },
-
-  "how": {
-    "title": "How it works",
-    "step1_title": "1) Create your card",
-    "step1_text": "Add allergies, conditions, meds, and ICE contacts. Everything lives securely on your device.",
-    "step2_title": "2) Link your tag",
-    "step2_text": "Connect a wristband, keychain, sticker or widget. A quick scan shows your info instantly.",
-    "step3_title": "3) Share in seconds",
-    "step3_text": "ANERITA displays and <strong>voices</strong> the essentials so responders act faster — even offline.",
-    "cta": "Open App"
-  },
-
-  "faq": {
-    "title": "Common questions",
-    "q1": "Does it work without the internet?",
-    "a1": "Yes. Your emergency card is stored locally and can be displayed and spoken offline.",
-    "q2": "What about privacy?",
-    "a2": "We do not track you. Your data is encrypted and stays on your device unless you choose to share it.",
-    "q3": "Can responders use it quickly?",
-    "a3": "Absolutely — a simple scan opens your card; big text + audio highlight the critical details."
-  },
-
-  "about": {
-    "metaTitle": "About Us — ANERITA",
-    "metaDesc": "ANERITA is a patient‑first emergency ID that shows and speaks your critical info — even offline.",
-    "title": "About ANERITA",
-    "lede": "ANERITA is a patient‑first emergency identification system that shows — and speaks — the essentials when seconds matter. It works online or offline, in any country.",
-    "missionTitle": "Mission",
-    "missionText": "Help responders act faster and safer by giving them clear, consent‑driven information — allergies, conditions, meds, and care preferences — in seconds, in their language.",
-    "whyTitle": "Why it matters",
-    "why_clarity_html": "<strong>Clarity in chaos:</strong> emergency decisions are made fast. We surface what’s critical first.",
-    "why_privacy_html": "<strong>Privacy by design:</strong> your data lives on your device unless you choose to share it.",
-    "why_global_html": "<strong>Global by default:</strong> big text + voice + translations to bridge language barriers.",
-    "safetyTitle": "Safety & Privacy",
-    "safety_device_html": "<strong>On‑device first:</strong> emergency card works offline; optional cloud features later.",
-    "safety_tracking_html": "<strong>Zero tracking:</strong> no analytics cookies; privacy‑friendly telemetry only when you opt‑in.",
-    "safety_consent_html": "<strong>Consent & control:</strong> you decide what shows on scan, and who sees what.",
-    "safety_note": "Compliance roadmap: UK GDPR baseline; HIPAA alignment for any U.S. hosting/integrations; ISO 27001 practices as we scale.",
-    "trustTitle": "Privacy & Trust",
-    "trustText": "ANERITA follows GDPR (Europe) and HIPAA (US) principles. Your data never leaves your device unless you choose to share it. No trackers, no ads, no third‑party data mining.",
-    "onDeviceTitle": "On‑Device First",
-    "onDeviceText": "Unlike cloud‑only apps, ANERITA works offline and caches securely. This ensures responders can access your critical info even without signal.",
-    "fromPatientTitle": "From a patient, for patients",
-    "fromPatientText": "ANERITA was created by a patient who experienced how hard it is to be heard during emergencies. This tool exists so your voice and wishes are clear when you can’t speak."
-  },
-
-  "clinician": {
-    "metaTitle": "Clinician & responder information — ANERITA",
-    "title": "Clinician & responder information",
-    "lede": "ANERITA is a patient‑owned emergency card that displays and speaks time‑critical information at the scene — even without signal.",
-    "col1_title": "1) Access",
-    "col1_text": "Scan the QR code on the patient’s tag/phone, or tap the widget. The card opens instantly; tap <em>Play</em> to hear the voice summary.",
-    "col2_title": "2) What you’ll see",
-    "col2_list1": "Identifiers (name, DOB), allergies, key conditions, medications.",
-    "col2_list2": "ICE contacts (In Case of Emergency) and patient notes.",
-    "col2_list3": "Language/translation aid and <em>triage color</em> indicator selected by the user.",
-    "col2_list4": "Time‑stamped last update.",
-    "col3_title": "3) Offline ready",
-    "col3_text": "The emergency card is cached on the device. If there’s no network, the screen and voice still work. No login required at scene.",
-    "verifyTitle": "Verification & authenticity",
-    "verifyText_html": "The card is <strong>patient‑supplied information</strong>. If clinical risk is high or details conflict, verify against secondary sources (wristband labels, medication boxes, GP records, Summary Care Record, EHR, or next‑of‑kin).",
-    "verifyBul1": "Last updated: shown on the card.",
-    "verifyBul2": "Cross‑check: scan tag + confirm name/DOB with patient or ICE contact when possible.",
-    "privacyTitle": "Privacy, consent & security",
-    "privacyBul1": "No trackers. Data is stored on the patient’s device; sharing happens only when they or a guardian present the card.",
-    "privacyBul2": "Use for direct care in emergencies under standard consent exceptions where applicable.",
-    "privacyBul3": "Do not photograph the card unless local policy allows and it is necessary for care.",
-    "disclaimer": "ANERITA is an information aid, not a medical record. Clinical judgment remains paramount.",
-    "docTitle": "What to document",
-    "docBul1": "That a patient‑provided emergency card was consulted (ANERITA).",
-    "docBul2": "Key items used (e.g., allergies, do‑not‑use meds, warnings)."
-  },
-
-  "contact": {
-    "metaTitle": "Contact — ANERITA",
-    "title": "Contact",
-    "lede": "Questions, partnerships, media? We’d love to hear from you.",
-    "emailPlaceholder": "Your email address",
-    "namePlaceholder": "Your name",
-    "messagePlaceholder": "Your message",
-    "btnSend": "Send",
-    "success": "Thanks — we’ll get back to you.",
-    "error": "Something went wrong. Please try again."
-  },
-
-  "privacy": {
-    "metaTitle": "Privacy — ANERITA",
-    "title": "Privacy Policy",
-    "lede": "We don’t track you. Data you enter in the app stays on your device unless you choose to share it.",
-    "whatTitle": "What we collect",
-    "whatText": "Only the info you provide for your emergency card. No analytics cookies.",
-    "contactTitle": "Contact",
-    "contactEmail": "hello@anerita.com"
-  },
-
-  "terms": {
-    "metaTitle": "Terms — ANERITA",
-    "title": "Terms of Use",
-    "lede": "Use ANERITA at your own discretion. Do not rely on it as a substitute for professional medical advice or emergency services.",
-    "acceptableTitle": "Acceptable use",
-    "acceptableText": "Don’t misuse the service, attempt to break security, or upload content you don’t have rights to.",
-    "liabilityTitle": "Liability",
-    "liabilityText": "Provided “as is” without warranties. To the maximum extent permitted by law, we’re not liable for indirect or incidental damages.",
-    "contactTitle": "Contact"
-  },
-
-  "footer": {
-    "copy": "© 2025 ANERITA — Emergency Response Identification Tag Aid"
+  "cta": {
+    "openApp": "Abrir app",
+    "seeFeatures": "Ver funciones"
   }
 }
