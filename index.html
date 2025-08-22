@@ -3,91 +3,369 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="meta.title">ANERITA — Emergency Response Identification Tag Aid</title>
-  <meta name="description" content="" data-i18n="meta.desc" />
+  <title>ANERITA — Emergency Response Identification Tag Aid</title>
+
+  <!-- Canonical + SEO -->
+  <link rel="canonical" href="https://anerita.com/">
+  <meta name="description" content="ANERITA speaks and displays your critical health info in emergencies — even offline. Identification tags, ICE & SOS, document vault, translations." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="ANERITA — Emergency Response Identification Tag Aid" />
+  <meta property="og:description" content="Your emergency triage, voiced for you." />
+  <meta property="og:url" content="https://anerita.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://anerita.com/images/og-hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- PWA / icons -->
+  <meta name="theme-color" content="#c62828" />
+  <link rel="manifest" href="anerita_manifest.json" />
+  <link rel="apple-touch-icon" href="anerita-180.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles/site.css" />
 </head>
 <body>
 
-<header class="site-header">
+<!-- ===== Sticky Header ===== -->
+<header class="site-header" role="banner">
   <div class="container bar">
-    <a class="brand" href="/" aria-label="Anerita Home"><span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup></a>
+    <!-- Brand -->
+    <a class="brand" href="/" aria-label="Anerita Home">
+      <span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup>
+    </a>
 
-    <nav class="nav-actions" aria-label="Primary">
-      <a class="btn btn-ghost" href="#features" data-i18n="nav.features">Features</a>
-      <a class="btn btn-ghost" href="#how" data-i18n="nav.how">How it works</a>
-      <a class="btn btn-primary" href="/app.html" data-i18n="nav.openApp">Open App</a>
+    <!-- Right side: CTAs -->
+    <div class="header-actions">
+      <nav class="nav-ctas" aria-label="Primary">
+        <a class="btn btn-ghost" href="/account.html">Sign in / Create</a>
+        <a class="btn btn-primary" href="/app.html">Open App</a>
+      </nav>
 
-      <!-- language picker -->
-      <label for="lang" style="margin-left:10px" data-i18n="lang.label">Language</label>
-      <select id="lang" style="margin-left:6px;padding:6px 10px;border-radius:8px;">
-        <option value="en">English</option>
-        <option value="es">Español</option>
-      </select>
-    </nav>
+      <!-- Hamburger -->
+      <button class="hamburger" id="navToggle" aria-label="Open menu"
+              aria-controls="siteMenu" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
   </div>
+
+  <!-- Slide-down menu -->
+  <nav id="siteMenu" class="site-menu" aria-label="More">
+    <div class="container">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="/about.html">About</a>
+      <a href="/clinician.html">Clinician info</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+  </nav>
 </header>
 
-<section class="hero">
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow" data-i18n="home.hero.eyebrow"></div>
-      <h1 data-i18n="home.hero.headline_html"></h1>
-      <p class="subhead" data-i18n="home.hero.subhead"></p>
+      <div class="eyebrow">
+        <abbr title="Anytime Emergency Response Identification Tag Aid">ANERITA</abbr>
+        — Anytime Emergency Response Identification Tag Aid
+      </div>
+
+      <h1>Your <span class="highlight">emergency</span> triage, voiced for you.</h1>
+
+      <p class="subhead">
+        In a crisis, responders decide in seconds. ANERITA shows and
+        speaks the essentials — allergies, conditions, meds, ICE — so help is
+        faster and safer. <span class="chip">Works offline</span>
+      </p>
 
       <ul class="benefits">
-        <li><strong data-i18n="home.hero.benefits.clarity.title"></strong> <span data-i18n="home.hero.benefits.clarity.body"></span></li>
-        <li><strong data-i18n="home.hero.benefits.privacy.title"></strong> <span data-i18n="home.hero.benefits.privacy.body"></span></li>
-        <li><strong data-i18n="home.hero.benefits.universal.title"></strong> <span data-i18n="home.hero.benefits.universal.body"></span></li>
+        <li><strong>Clarity over panic:</strong> one scan shows what matters.</li>
+        <li><strong>On‑device privacy:</strong> you control what is shared.</li>
+        <li><strong>Universal:</strong> any phone, any language, any tag.</li>
       </ul>
 
       <div class="cta-row">
-        <a class="btn btn-primary btn-lg" href="/app.html" data-i18n="home.cta.openApp">Open App</a>
-        <a class="btn btn-ghost btn-lg" href="#features" data-i18n="home.cta.seeFeatures">See features</a>
+        <a class="btn btn-primary btn-lg" href="app.html">Open App</a>
+        <a class="btn btn-ghost btn-lg" href="#features">See features</a>
       </div>
     </div>
 
     <figure class="hero-art">
-      <img src="images/hero-voiced.jpg" alt="ANERITA mockup" width="900" height="700">
+      <img src="images/hero-voiced.jpg" alt="ANERITA emergency triage on phone" width="900" height="700" loading="eager">
     </figure>
   </div>
 </section>
 
+<!-- ===== FEATURES ===== -->
 <section class="features" id="features">
   <div class="container">
-    <h2 data-i18n="home.features.heading"></h2>
-    <p class="lede" data-i18n="home.features.lede"></p>
+    <h2>Everything you need, at a glance</h2>
+    <p class="lede">Built for real emergencies — fast, clear, private.</p>
 
     <div class="features-grid">
       <article class="card">
-        <h3 data-i18n="home.features.cards.ice.title"></h3>
-        <p data-i18n="home.features.cards.ice.desc"></p>
+        <div class="thumb"><img src="images/card-ice-sos.png" alt="ICE &amp; SOS"></div>
+        <h3>ICE &amp; SOS</h3>
+        <p>Instant access to emergency contacts and alerts.</p>
       </article>
+
       <article class="card">
-        <h3 data-i18n="home.features.cards.vault.title"></h3>
-        <p data-i18n="home.features.cards.vault.desc"></p>
+        <div class="thumb"><img src="images/card-vault.png" alt="Document Vault"></div>
+        <h3>Document Vault</h3>
+        <p>Encrypted storage for medical documents.</p>
       </article>
+
       <article class="card">
-        <h3 data-i18n="home.features.cards.translations.title"></h3>
-        <p data-i18n="home.features.cards.translations.desc"></p>
+        <div class="thumb"><img src="images/card-translations.png" alt="Translations"></div>
+        <h3>Translations</h3>
+        <p>Break language barriers in emergencies.</p>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="images/card-triage.png" alt="Triage Colors"></div>
+        <h3>Triage Colors</h3>
+        <p>Prioritize care at a glance.</p>
+      </article>
+
+      <article class="card">
+        <div class="thumb"><img src="images/card-security.png" alt="Security &amp; Privacy"></div>
+        <h3>Security &amp; Privacy</h3>
+        <p>Zero tracking. HTTPS everywhere. Works offline.</p>
+      </article>
+
+      <!-- Offline Mode -->
+      <article class="card">
+        <div class="thumb">
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Offline mode icon">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fafafa"/><stop offset="1" stop-color="#ffffff"/>
+              </linearGradient>
+            </defs>
+            <rect width="200" height="140" rx="12" fill="url(#g)"/>
+            <g fill="#c62828">
+              <rect x="46"  y="92" width="14" height="24" rx="3" opacity=".35"/>
+              <rect x="70"  y="80" width="14" height="36" rx="3" opacity=".5"/>
+              <rect x="94"  y="66" width="14" height="50" rx="3" opacity=".65"/>
+              <rect x="118" y="50" width="14" height="66" rx="3" opacity=".8"/>
+            </g>
+            <path d="M150 26 L54 118" stroke="#c62828" stroke-width="10" stroke-linecap="round"/>
+            <rect x="110" y="96" width="64" height="22" rx="11" fill="#111214" opacity=".9"/>
+            <text x="142" y="112" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="12" fill="#fff">OFFLINE</text>
+          </svg>
+        </div>
+        <h3>Offline Mode</h3>
+        <p>Life‑saving access with <em>no signal</em>. Your card is stored on your device.</p>
       </article>
     </div>
   </div>
 </section>
 
+<!-- ===== WIDE: Always Accessible ===== -->
+<section class="wide">
+  <div class="container">
+    <h2>Always accessible</h2>
+    <p>Wear it or stick it: wristbands, keychains, stickers, or a phone widget — worldwide.</p>
+    <div class="media">
+      <img src="images/devices-lineup.jpg" alt="ANERITA device lineup">
+    </div>
+    <p class="note">Free to use: print your own stickers or use any luggage/ID tag. We only charge for optional accessories later.</p>
+  </div>
+</section>
+
+<!-- ===== WIDE ALT: For Kids ===== -->
+<section class="wide alt">
+  <div class="container">
+    <h2>ANERITA for kids</h2>
+    <p>Child‑friendly bands and tags for school, trips, and peace of mind.</p>
+    <div class="media">
+      <img src="images/kids-lineup.jpg" alt="ANERITA kids accessories">
+    </div>
+  </div>
+</section>
+
+<!-- ===== WIDE: Identification Options ===== -->
+<section class="wide">
+  <div class="container">
+    <h2>Identification, your way</h2>
+    <p>Choose the form that suits your lifestyle.</p>
+    <div class="media">
+      <img src="images/identification-grid.jpg" alt="ANERITA identification options">
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="wide alt" id="how">
+  <div class="container">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Create your card</h3>
+        <p>Add allergies, conditions, meds, and ICE contacts. Everything lives securely on your device.</p>
+      </div>
+      <div class="step">
+        <h3>2. Link your tag</h3>
+        <p>Connect a wristband, keychain, sticker or widget. A quick scan shows your info instantly.</p>
+      </div>
+      <div class="step">
+        <h3>3. Share in seconds</h3>
+        <p>ANERITA displays and <strong>voices</strong> the essentials so responders act faster — even offline.</p>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-lg" href="app.html">Open App</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="wide" id="faq">
+  <div class="container">
+    <h2>Common questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Does it work without the internet?</summary>
+        <p>Yes. Your emergency card is stored locally and can be displayed and spoken offline.</p>
+      </details>
+      <details>
+        <summary>What about privacy?</summary>
+        <p>We do not track you. Your data is encrypted and stays on your device unless you choose to share it.</p>
+      </details>
+      <details>
+        <summary>Can responders use it quickly?</summary>
+        <p>Absolutely — a simple scan opens your card; big text + audio highlight the critical details.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SIGNUP ===== -->
+<section class="wide alt" id="signup">
+  <div class="container">
+    <h2>Be first to get life‑saving features</h2>
+    <p>New languages, tag styles, and hospital integrations are rolling out. Leave your email for early access.</p>
+
+    <form id="signup-form" action="https://formspree.io/f/mgvzgvdb" method="POST" class="signup-form">
+      <input type="email" name="email" placeholder="Your email address" required>
+      <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+    </form>
+
+    <div id="signup-success" class="alert success">✅ Thanks for signing up! We’ll keep you posted.</div>
+    <div id="signup-error" class="alert error">⚠️ Something went wrong. Please try again.</div>
+  </div>
+</section>
+
+<!-- ===== COMPLIANCE ===== -->
+<section class="compliance">
+  <div class="container">
+    <h2>Privacy & Compliance</h2>
+    <p>ANERITA is designed with patient safety, privacy, and global standards in mind.</p>
+    <ul class="badges">
+      <li><span class="badge">GDPR Compliant</span></li>
+      <li><span class="badge">HIPAA Ready</span></li>
+      <li><span class="badge">Zero Tracking</span></li>
+      <li><span class="badge">On-Device Privacy</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container">
     <div class="foot-row">
-      <div data-i18n="footer.copy">© 2025 ANERITA — Emergency Response Identification Tag Aid</div>
+      <div>© 2025 ANERITA — Anytime Emergency Response Identification Tag Aid</div>
+      <nav class="foot-nav">
+        <a href="#features" class="btn btn-ghost">Features</a>
+        <a href="#how" class="btn btn-ghost">How it works</a>
+        <a href="#faq" class="btn btn-ghost">FAQ</a>
+        <a href="/privacy.html" class="btn btn-ghost">Privacy</a>
+        <a href="/terms.html" class="btn btn-ghost">Terms</a>
+      </nav>
     </div>
   </div>
 </footer>
 
-<!-- i18next libs -->
-<script src="https://unpkg.com/i18next@23/i18next.min.js"></script>
-<script src="https://unpkg.com/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
-<script src="https://unpkg.com/i18next-browser-languagedetector@7/i18nextBrowserLanguageDetector.min.js"></script>
-<!-- our glue -->
-<script src="/scripts/i18n.js"></script>
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"ANERITA",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"iOS, Android, Web",
+  "description":"Emergency response identification tag aid that speaks and displays critical health info, even offline.",
+  "url":"https://anerita.com/",
+  "image":"https://anerita.com/images/og-hero.jpg",
+  "publisher":{"@type":"Organization","name":"ANERITA","url":"https://anerita.com/"},
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+
+<!-- Signup JS -->
+<script>
+  const form = document.getElementById('signup-form');
+  const successMsg = document.getElementById('signup-success');
+  const errorMsg = document.getElementById('signup-error');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        successMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
+        form.reset();
+      } else { throw new Error('Form error'); }
+    } catch {
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'block';
+    }
+  });
+</script>
+
+<!-- Menu JS -->
+<script>
+(function(){
+  const btn = document.getElementById('navToggle');
+  const menu = document.getElementById('siteMenu');
+  if(!btn || !menu) return;
+
+  function closeOnEscape(e){
+    if(e.key === 'Escape'){
+      btn.setAttribute('aria-expanded','false');
+      menu.classList.remove('open');
+      document.removeEventListener('keydown', closeOnEscape);
+    }
+  }
+  btn.addEventListener('click', ()=>{
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('open', !open);
+    if(!open) document.addEventListener('keydown', closeOnEscape);
+  });
+  menu.addEventListener('click', (e)=>{
+    const a = e.target.closest('a');
+    if(!a) return;
+    btn.setAttribute('aria-expanded','false');
+    menu.classList.remove('open');
+    document.removeEventListener('keydown', closeOnEscape);
+  });
+})();
+</script>
+
+<!-- Service worker (if present) -->
+<script defer src="anerita_service_worker.js"></script>
 </body>
 </html>
