@@ -441,3 +441,5 @@ summary{cursor:pointer;font-weight:600;color:var(--ink)}
   left: 0;
   top: 0;
 }
+.features .thumb svg { width: 100%; height: auto; display: block; }
+.features .thumb img { width: 100%; height: auto; display: block; object-fit: contain; }
