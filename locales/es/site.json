@@ -4,143 +4,163 @@
     "how": "Cómo funciona",
     "faq": "Preguntas frecuentes",
     "about": "Acerca de",
-    "clinician": "Información para clínicos",
+    "clinician": "Info para clínicos",
     "contact": "Contacto",
     "privacy": "Privacidad",
     "terms": "Términos",
-    "signInCreate": "Iniciar sesión / Crear cuenta",
-    "openApp": "Abrir app"
-  },
-
-  "lang": { "label": "Idioma" },
-
-  "hero": {
-    "eyebrow": "Ayuda de Identificación de Respuesta de Emergencia en cualquier momento",
-    "headline_html": "Tu <span class=\"highlight\">triaje de emergencia</span>, con voz para ti.",
-    "subhead": "En una crisis, los equipos deciden en segundos. ANERITA muestra y habla lo esencial — alergias, condiciones, medicación e ICE — para que la ayuda sea más rápida y segura.",
-    "benefits": {
-      "clarity": {
-        "title": "Claridad sobre el pánico:",
-        "body": "un escaneo muestra lo que importa."
-      },
-      "privacy": {
-        "title": "Privacidad en el dispositivo:",
-        "body": "tú controlas lo que se comparte."
-      },
-      "universal": {
-        "title": "Universal:",
-        "body": "cualquier teléfono, cualquier idioma, cualquier etiqueta."
-      }
-    }
-  },
-
-  "cta": {
+    "login": "Iniciar sesión / Crear",
     "openApp": "Abrir app",
-    "seeFeatures": "Ver características"
+    "language": "Idioma"
+  },
+
+  "common": {
+    "brandTagline": "Ayuda de Identificación de Respuesta de Emergencia en cualquier momento",
+    "worksOffline": "Funciona sin conexión",
+    "submit": "Enviar",
+    "email": "Tu correo electrónico",
+    "name": "Tu nombre",
+    "message": "Tu mensaje",
+    "save": "Guardar",
+    "cancel": "Cancelar"
+  },
+
+  "auth": {
+    "title": "Bienvenido/a a ANERITA",
+    "loginTitle": "Iniciar sesión",
+    "registerTitle": "Crear cuenta",
+    "emailLabel": "Correo electrónico",
+    "passwordLabel": "Contraseña",
+    "passwordHint": "Al menos 8 caracteres.",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "needAccount": "¿Primera vez aquí?",
+    "btnLogin": "Iniciar sesión",
+    "btnRegister": "Crear cuenta",
+    "legalNote": "Al continuar aceptas nuestra {privacy} y {terms}."
   },
 
   "features": {
-    "heading": "Todo lo que necesitas, de un vistazo",
-    "lede": "Diseñado para emergencias reales — rápido, claro, privado.",
-    "cards": {
-      "ice": {
-        "title": "ICE y SOS",
-        "desc": "Acceso instantáneo a contactos de emergencia y alertas."
-      },
-      "vault": {
-        "title": "Bóveda de documentos",
-        "desc": "Almacenamiento cifrado para documentos médicos."
-      },
-      "translations": {
-        "title": "Traducciones",
-        "desc": "Rompe las barreras del idioma en emergencias."
-      },
-      "triage": {
-        "title": "Colores de triaje",
-        "desc": "Prioriza la atención de un vistazo."
-      },
-      "security": {
-        "title": "Seguridad y privacidad",
-        "desc": "Sin rastreo. HTTPS en todas partes. Funciona sin conexión."
-      },
-      "offline": {
-        "title": "Modo sin conexión",
-        "desc": "Acceso vital sin <em>señal</em>. Tu tarjeta se guarda en tu dispositivo."
-      }
-    }
-  },
-
-  "always": {
-    "heading": "Siempre accesible",
-    "body": "Úsalo como pulsera, llavero, pegatina o widget en el teléfono — en cualquier lugar del mundo.",
-    "note": "Uso gratuito: imprime tus propias pegatinas o utiliza cualquier etiqueta de equipaje/ID. Solo cobramos por accesorios opcionales más adelante."
-  },
-
-  "kids": {
-    "heading": "ANERITA para niños",
-    "body": "Pulseras y etiquetas adaptadas a los niños para la escuela, viajes y tranquilidad."
-  },
-
-  "identify": {
-    "heading": "Identificación, a tu manera",
-    "body": "Elige la forma que se adapte a tu estilo de vida."
+    "title": "Todo lo que necesitas, de un vistazo",
+    "lede": "Diseñado para emergencias reales — rápido, claro y privado.",
+    "card1_title": "ICE y SOS",
+    "card1_text": "Acceso instantáneo a contactos de emergencia y alertas.",
+    "card2_title": "Bóveda de documentos",
+    "card2_text": "Almacenamiento cifrado para documentos médicos.",
+    "card3_title": "Traducciones",
+    "card3_text": "Rompe barreras de idioma en emergencias.",
+    "card4_title": "Colores de triaje",
+    "card4_text": "Prioriza la atención de un vistazo.",
+    "card5_title": "Seguridad y privacidad",
+    "card5_text": "Cero rastreo. HTTPS en todas partes. Funciona sin conexión.",
+    "card6_title": "Modo sin conexión",
+    "card6_text": "Acceso que salva vidas sin señal. Tu tarjeta se guarda en el dispositivo."
   },
 
   "how": {
-    "heading": "Cómo funciona",
-    "steps": {
-      "1": {
-        "title": "1. Crea tu tarjeta",
-        "body": "Añade alergias, condiciones, medicación y contactos ICE. Todo vive de forma segura en tu dispositivo."
-      },
-      "2": {
-        "title": "2. Vincula tu etiqueta",
-        "body": "Conecta una pulsera, llavero, pegatina o widget. Un escaneo rápido muestra tu información al instante."
-      },
-      "3": {
-        "title": "3. Comparte en segundos",
-        "body": "ANERITA muestra y <strong>habla</strong> lo esencial para que los respondedores actúen más rápido — incluso sin conexión."
-      }
-    }
+    "title": "Cómo funciona",
+    "step1_title": "1) Crea tu tarjeta",
+    "step1_text": "Añade alergias, enfermedades, medicación y contactos ICE. Todo vive de forma segura en tu dispositivo.",
+    "step2_title": "2) Vincula tu etiqueta",
+    "step2_text": "Conecta una pulsera, llavero, pegatina o widget. Un escaneo rápido muestra tu información al instante.",
+    "step3_title": "3) Comparte en segundos",
+    "step3_text": "ANERITA muestra y <strong>lee en voz alta</strong> lo esencial para que los equipos actúen más rápido — incluso sin conexión.",
+    "cta": "Abrir app"
   },
 
   "faq": {
-    "heading": "Preguntas frecuentes",
-    "q1": {
-      "q": "¿Funciona sin internet?",
-      "a": "Sí. Tu tarjeta de emergencia se guarda localmente y se puede mostrar y reproducir sin conexión."
-    },
-    "q2": {
-      "q": "¿Qué pasa con la privacidad?",
-      "a": "No te rastreamos. Tus datos están cifrados y permanecen en tu dispositivo a menos que decidas compartirlos."
-    },
-    "q3": {
-      "q": "¿Pueden los respondedores usarlo rápidamente?",
-      "a": "Absolutamente — un simple escaneo abre tu tarjeta; el texto grande y el audio destacan los detalles críticos."
-    }
+    "title": "Preguntas frecuentes",
+    "q1": "¿Funciona sin internet?",
+    "a1": "Sí. Tu tarjeta de emergencia se guarda localmente y puede mostrarse y leerse en voz alta sin conexión.",
+    "q2": "¿Qué pasa con la privacidad?",
+    "a2": "No te rastreamos. Tus datos están cifrados y permanecen en tu dispositivo salvo que elijas compartirlos.",
+    "q3": "¿Pueden usarla rápido los respondedores?",
+    "a3": "Claro — un escaneo abre tu tarjeta; el texto grande + audio destacan lo crítico."
   },
 
-  "signup": {
-    "heading": "Sé el primero en obtener funciones que salvan vidas",
-    "body": "Nuevos idiomas, estilos de etiquetas e integraciones hospitalarias se están implementando. Deja tu correo para acceso anticipado.",
-    "placeholder": "Tu correo electrónico",
-    "button": "Registrarse",
-    "success": "✅ ¡Gracias por registrarte! Te mantendremos informado.",
-    "error": "⚠️ Algo salió mal. Inténtalo de nuevo."
+  "about": {
+    "metaTitle": "Acerca de nosotros — ANERITA",
+    "metaDesc": "ANERITA es una identificación de emergencia centrada en el paciente que muestra y habla tu información crítica — incluso sin conexión.",
+    "title": "Acerca de ANERITA",
+    "lede": "ANERITA es un sistema de identificación de emergencia, centrado en el paciente, que muestra — y habla — lo esencial cuando cada segundo cuenta. Funciona en línea o sin conexión, en cualquier país.",
+    "missionTitle": "Misión",
+    "missionText": "Ayudar a los equipos a actuar más rápido y con mayor seguridad, ofreciéndoles información clara y basada en el consentimiento — alergias, enfermedades, medicación y preferencias de cuidado — en segundos y en su idioma.",
+    "whyTitle": "Por qué importa",
+    "why_clarity_html": "<strong>Claridad en el caos:</strong> las decisiones en emergencia son rápidas. Mostramos primero lo crítico.",
+    "why_privacy_html": "<strong>Privacidad por diseño:</strong> tus datos viven en tu dispositivo salvo que elijas compartirlos.",
+    "why_global_html": "<strong>Global por defecto:</strong> texto grande + voz + traducciones para salvar barreras de idioma.",
+    "safetyTitle": "Seguridad y privacidad",
+    "safety_device_html": "<strong>Prioridad al dispositivo:</strong> la tarjeta funciona sin conexión; funciones en la nube opcionales más adelante.",
+    "safety_tracking_html": "<strong>Cero rastreo:</strong> sin cookies analíticas; telemetría respetuosa solo con tu consentimiento.",
+    "safety_consent_html": "<strong>Consentimiento y control:</strong> decides qué se muestra al escanear y quién lo ve.",
+    "safety_note": "Hoja de ruta de cumplimiento: base de RGPD del Reino Unido; alineación HIPAA para cualquier alojamiento/integración en EE. UU.; prácticas ISO 27001 a medida que escalamos.",
+    "trustTitle": "Privacidad y confianza",
+    "trustText": "ANERITA sigue los principios del RGPD (Europa) y HIPAA (EE. UU.). Tus datos nunca salen de tu dispositivo salvo que elijas compartirlos. Sin rastreadores, sin anuncios, sin minería de datos de terceros.",
+    "onDeviceTitle": "Primero en el dispositivo",
+    "onDeviceText": "A diferencia de las apps solo en la nube, ANERITA funciona sin conexión y guarda caché de forma segura. Así los equipos pueden ver tu información crítica incluso sin señal.",
+    "fromPatientTitle": "De una paciente, para pacientes",
+    "fromPatientText": "ANERITA fue creada por una paciente que vivió lo difícil que es ser escuchada en emergencias. Existe para que tu voz y tus deseos queden claros cuando no puedas hablar."
   },
 
-  "compliance": {
-    "heading": "Privacidad y cumplimiento",
-    "body": "ANERITA está diseñada pensando en la seguridad del paciente, la privacidad y los estándares globales.",
-    "badges": {
-      "gdpr": "Cumple con GDPR",
-      "hipaa": "Compatible con HIPAA",
-      "zero": "Sin rastreo",
-      "device": "Privacidad en el dispositivo"
-    }
+  "clinician": {
+    "metaTitle": "Información para clínicos y respondedores — ANERITA",
+    "title": "Información para clínicos y respondedores",
+    "lede": "ANERITA es una tarjeta de emergencia del paciente que muestra y habla información crítica en el lugar — incluso sin señal.",
+    "col1_title": "1) Acceso",
+    "col1_text": "Escanea el código QR de la etiqueta o del teléfono del paciente, o toca el widget. La tarjeta se abre al instante; toca <em>Reproducir</em> para oír el resumen de voz.",
+    "col2_title": "2) Lo que verás",
+    "col2_list1": "Identificadores (nombre, fecha de nacimiento), alergias, enfermedades clave y medicación.",
+    "col2_list2": "Contactos ICE (en caso de emergencia) y notas del paciente.",
+    "col2_list3": "Ayuda de idioma/traducción y color de <em>triaje</em> seleccionado por la persona usuaria.",
+    "col2_list4": "Marca de tiempo de la última actualización.",
+    "col3_title": "3) Listo sin conexión",
+    "col3_text": "La tarjeta se almacena en el dispositivo. Si no hay red, la pantalla y la voz siguen funcionando. No se requiere inicio de sesión en la escena.",
+    "verifyTitle": "Verificación y autenticidad",
+    "verifyText_html": "La tarjeta es <strong>información proporcionada por el paciente</strong>. Si el riesgo clínico es alto o hay conflictos, verifica con fuentes secundarias (pulseras, cajas de medicación, historia clínica de AP, Summary Care Record, EHR o familiares).",
+    "verifyBul1": "Última actualización: visible en la tarjeta.",
+    "verifyBul2": "Comprobación cruzada: escanear etiqueta + confirmar nombre/fecha de nacimiento con el paciente o contacto ICE cuando sea posible.",
+    "privacyTitle": "Privacidad, consentimiento y seguridad",
+    "privacyBul1": "Sin rastreadores. Los datos se guardan en el dispositivo del paciente; se comparten solo cuando él/ella o un tutor presentan la tarjeta.",
+    "privacyBul2": "Uso para atención directa en emergencias bajo las excepciones de consentimiento estándar cuando correspondan.",
+    "privacyBul3": "No fotografíes la tarjeta salvo que la política local lo permita y sea necesario para la atención.",
+    "disclaimer": "ANERITA es una ayuda informativa, no una historia clínica. El juicio clínico siempre prevalece.",
+    "docTitle": "Qué documentar",
+    "docBul1": "Que se consultó una tarjeta de emergencia proporcionada por el paciente (ANERITA).",
+    "docBul2": "Elementos clave utilizados (p. ej., alergias, fármacos a evitar, advertencias)."
+  },
+
+  "contact": {
+    "metaTitle": "Contacto — ANERITA",
+    "title": "Contacto",
+    "lede": "¿Dudas, alianzas, prensa? Nos encantará leerte.",
+    "emailPlaceholder": "Tu correo electrónico",
+    "namePlaceholder": "Tu nombre",
+    "messagePlaceholder": "Tu mensaje",
+    "btnSend": "Enviar",
+    "success": "Gracias — nos pondremos en contacto contigo.",
+    "error": "Algo salió mal. Inténtalo de nuevo."
+  },
+
+  "privacy": {
+    "metaTitle": "Privacidad — ANERITA",
+    "title": "Política de privacidad",
+    "lede": "No te rastreamos. Los datos que introduces en la app se quedan en tu dispositivo salvo que elijas compartirlos.",
+    "whatTitle": "Qué recopilamos",
+    "whatText": "Solo la información que aportas para tu tarjeta de emergencia. Sin cookies analíticas.",
+    "contactTitle": "Contacto",
+    "contactEmail": "hello@anerita.com"
+  },
+
+  "terms": {
+    "metaTitle": "Términos — ANERITA",
+    "title": "Términos de uso",
+    "lede": "Usa ANERITA bajo tu responsabilidad. No debe sustituir el consejo médico profesional ni los servicios de emergencia.",
+    "acceptableTitle": "Uso aceptable",
+    "acceptableText": "No abuses del servicio, no intentes vulnerar la seguridad ni subir contenido sobre el que no tengas derechos.",
+    "liabilityTitle": "Responsabilidad",
+    "liabilityText": "Se ofrece “tal cual”, sin garantías. En la máxima medida permitida por la ley, no respondemos por daños indirectos o incidentales.",
+    "contactTitle": "Contacto"
   },
 
   "footer": {
-    "copy": "© 2025 ANERITA — Ayuda de Identificación de Respuesta de Emergencia en cualquier momento"
-  }
+    "copy": "© 2025 ANERITA — Ayuda de Identificación de Respuesta de Emergencia"
+    }
 }
