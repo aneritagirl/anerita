@@ -289,3 +289,38 @@ summary{cursor:pointer;font-weight:600;color:var(--ink)}
 /* little red “Free to use” chip */
 .badge{ display:inline-block; padding:6px 10px; border-radius:999px; font-weight:700; font-size:.9rem; }
 .badge-free{ background:#fde7e7; color:#c62828; border:1px solid #f6c6c6; }
+/* --- Feature cards: keep thumbs tidy --- */
+.features-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card .thumb {
+  /* consistent visual window for every card */
+  aspect-ratio: 16 / 10;
+  background: #f7f7f8;
+  border-radius: 12px;
+  padding: 16px;
+  overflow: hidden;         /* important for big images/SVGs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* images and SVGs scale nicely inside the thumb */
+.card .thumb img,
+.card .thumb svg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;      /* keeps aspect ratio */
+}
