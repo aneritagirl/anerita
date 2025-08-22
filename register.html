@@ -4,111 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Create account — ANERITA</title>
-  <link rel="canonical" href="https://anerita.com/register.html" />
-  <meta name="description" content="Create your ANERITA account to set up your emergency card, allergies, conditions, and ICE contacts." />
   <link rel="stylesheet" href="styles/site.css" />
-  <style>
-    .auth-wrap{max-width:620px;margin:0 auto;padding:clamp(28px,6vw,56px) 0}
-    .auth-card{background:#fff;border:1px solid #e8edf3;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.08);padding:22px}
-    .field{display:grid;gap:6px;margin:12px 0}
-    .field input, .field select{padding:12px 14px;border:1px solid #ccd2d9;border-radius:12px;font-size:16px}
-    .muted{color:#6b7280;font-size:14px}
-    .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-    .error{display:none;margin-top:10px;background:#fdecea;color:#c62828;border:1px solid #f5c6c6;padding:10px 12px;border-radius:12px;font-weight:600}
-  </style>
 </head>
 <body>
-  <header class="site-header" role="banner">
+  <header class="site-header">
     <div class="container bar">
-      <a class="brand" href="/" aria-label="Anerita Home"><span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup></a>
-      <nav class="nav-actions" aria-label="Primary">
-        <a class="btn btn-ghost" href="/login.html">Sign in</a>
-        <a class="btn btn-primary" href="/app.html" aria-disabled="true">Open App</a>
+      <a class="brand" href="/">ANERITA</a>
+      <nav>
+        <a href="login.html">Sign in</a>
+        <a href="app.html" class="btn btn-primary">Open App</a>
       </nav>
     </div>
   </header>
 
-  <main class="container auth-wrap">
-    <div class="auth-card">
+  <section class="form-section">
+    <div class="form-card">
       <h1>Create your account</h1>
-      <p class="muted">Start your emergency card in minutes. You can edit or delete your data any time.</p>
+      <p>Start your emergency card in minutes. Add your Health Profile after sign-in.</p>
+      <form>
+        <label>Full name</label>
+        <input type="text" placeholder="Tina Moore" required />
 
-      <form id="regForm" novalidate>
-        <div class="field">
-          <label for="fullName">Full name</label>
-          <input id="fullName" name="fullName" type="text" required placeholder="Tina Moore" />
-        </div>
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" required />
 
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
-        </div>
+        <label>Password</label>
+        <input type="password" placeholder="At least 6 characters" required />
 
-        <div class="field">
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password" autocomplete="new-password" required placeholder="At least 6 characters" />
-        </div>
+        <label>Confirm password</label>
+        <input type="password" placeholder="Repeat your password" required />
 
-        <div class="field">
-          <label for="confirm">Confirm password</label>
-          <input id="confirm" name="confirm" type="password" required placeholder="Repeat your password" />
-        </div>
+        <label class="checkbox">
+          <input type="checkbox" required />
+          I agree to the <a href="privacy.html">Privacy</a> and <a href="terms.html">Terms</a>.
+        </label>
 
-        <!-- Quick starter fields (stored locally for now) -->
-        <div class="field">
-          <label for="blood">Blood type (optional)</label>
-          <select id="blood" name="blood">
-            <option value="">Select</option>
-            <option>O+</option><option>O-</option><option>A+</option><option>A-</option>
-            <option>B+</option><option>B-</option><option>AB+</option><option>AB-</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="ice">ICE contact (optional)</label>
-          <input id="ice" name="ice" type="tel" placeholder="+44 7700 900000" />
-        </div>
-
-        <div class="row" style="margin-top:8px">
-          <a class="muted" href="/privacy.html">Privacy</a>
-          <button class="btn btn-primary btn-lg" type="submit">Create account</button>
-        </div>
-
-        <div class="error" id="regError">Please fill the required fields and make sure passwords match.</div>
+        <button type="submit" class="btn btn-primary">Create account</button>
       </form>
-
-      <p class="muted" style="margin-top:14px">Already have an account? <a href="/login.html">Sign in</a></p>
+      <p>Already have an account? <a href="login.html">Sign in</a></p>
     </div>
-  </main>
+  </section>
 
-  <script>
-    // Demo-only registration (no backend yet)
-    const form = document.getElementById('regForm');
-    const err  = document.getElementById('regError');
-
-    form.addEventListener('submit', e=>{
-      e.preventDefault();
-      const name  = form.fullName.value.trim();
-      const email = form.email.value.trim();
-      const pass  = form.password.value.trim();
-      const conf  = form.confirm.value.trim();
-      const okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      const ok = name && okEmail && pass.length >= 6 && pass === conf;
-      if(!ok){ err.style.display='block'; return; }
-
-      // save a tiny starter profile locally (for demo)
-      const profile = {
-        name, email,
-        blood: form.blood.value || '',
-        ice:   form.ice.value || ''
-      };
-      localStorage.setItem('anerita_profile', JSON.stringify(profile));
-      localStorage.setItem('anerita_token', 'demo_' + Math.random().toString(36).slice(2));
-      localStorage.setItem('anerita_email', email);
-
-      // go to the app shell for now
-      window.location.href = '/app.html';
-    });
-  </script>
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 ANERITA — Emergency Response Identification Tag Aid</p>
+    </div>
+  </footer>
 </body>
 </html>
