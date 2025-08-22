@@ -555,3 +555,87 @@ summary{cursor:pointer;font-weight:600;color:var(--ink)}
 .btn.social{width:100%;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:8px 0}
 .btn.social.google{background:#fff;border:1px solid #e2e5e8}
 .btn.social.apple{background:#000;color:#fff}
+/* Center form on screen */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f9f9f9;
+}
+
+/* Card box */
+.auth-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* Headings */
+.auth-box h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.auth-box p {
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Inputs */
+.auth-box input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Main button */
+.auth-box button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  background: #c62828;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-box button:hover {
+  background: #a51e1e;
+}
+
+/* Social login */
+.social-login {
+  margin-top: 25px;
+}
+
+.social-login button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.google-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.apple-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+}
