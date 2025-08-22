@@ -16,6 +16,24 @@
     <nav class="nav-actions">
       <a class="btn btn-ghost" href="/how.html">How it works</a>
       <a class="btn btn-primary" href="/app.html">Open App</a>
+      <nav class="nav-actions" aria-label="Primary">
+  <a class="btn btn-ghost" href="/#how" data-i18n="nav.how">How it works</a>
+  <a class="btn btn-primary" href="/app.html" data-i18n="nav.openApp">Open App</a>
+
+  <!-- Language picker -->
+  <select id="lang" aria-label="Language" style="margin-left:10px;padding:8px 10px;border-radius:8px;">
+    <option value="en">English</option>
+    <option value="es">Español</option>
+    <option value="fr">Français</option>
+    <option value="de">Deutsch</option>
+    <option value="it">Italiano</option>
+    <option value="pt">Português</option>
+    <option value="ro">Română</option>
+    <option value="ar">العربية</option>
+    <option value="hi">हिन्दी</option>
+    <option value="zh">中文</option>
+  </select>
+</nav>
     </nav>
   </div>
 </header>
@@ -119,5 +137,9 @@
     });
   })();
 </script>
+  <script src="https://unpkg.com/i18next@23/i18next.min.js"></script>
+<script src="https://unpkg.com/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
+<script src="https://unpkg.com/i18next-browser-languagedetector@7/i18nextBrowserLanguageDetector.min.js"></script>
+<script src="/scripts/i18n.js" defer></script>
 </body>
 </html>
