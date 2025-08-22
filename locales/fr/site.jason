@@ -1,1 +1,147 @@
 
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "how": "Comment ça marche",
+    "faq": "FAQ",
+    "about": "À propos",
+    "clinician": "Infos pour les soignants",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "signInCreate": "Se connecter / Créer un compte",
+    "openApp": "Ouvrir l’app"
+  },
+
+  "lang": { "label": "Langue" },
+
+  "hero": {
+    "eyebrow": "Aide d’identification d’urgence accessible à tout moment",
+    "headline_html": "Votre <span class=\"highlight\">triage d’urgence</span>, avec voix pour vous.",
+    "subhead": "En cas de crise, les secours décident en quelques secondes. ANERITA affiche et lit à voix haute les informations essentielles — allergies, maladies, médicaments et contacts ICE — pour une aide plus rapide et plus sûre.",
+    "benefits": {
+      "clarity": {
+        "title": "Clarté plutôt que panique :",
+        "body": "un scan montre l’essentiel."
+      },
+      "privacy": {
+        "title": "Confidentialité sur l’appareil :",
+        "body": "vous contrôlez ce qui est partagé."
+      },
+      "universal": {
+        "title": "Universel :",
+        "body": "n’importe quel téléphone, n’importe quelle langue, n’importe quel tag."
+      }
+    }
+  },
+
+  "cta": {
+    "openApp": "Ouvrir l’app",
+    "seeFeatures": "Voir les fonctionnalités"
+  },
+
+  "features": {
+    "heading": "Tout ce dont vous avez besoin, en un coup d’œil",
+    "lede": "Conçu pour les vraies urgences — rapide, clair, privé.",
+    "cards": {
+      "ice": {
+        "title": "ICE & SOS",
+        "desc": "Accès instantané aux contacts d’urgence et aux alertes."
+      },
+      "vault": {
+        "title": "Coffre-fort de documents",
+        "desc": "Stockage chiffré pour vos dossiers médicaux."
+      },
+      "translations": {
+        "title": "Traductions",
+        "desc": "Brise les barrières linguistiques en cas d’urgence."
+      },
+      "triage": {
+        "title": "Codes couleur de triage",
+        "desc": "Priorisez les soins en un coup d’œil."
+      },
+      "security": {
+        "title": "Sécurité & Confidentialité",
+        "desc": "Aucun suivi. HTTPS partout. Fonctionne hors ligne."
+      },
+      "offline": {
+        "title": "Mode hors ligne",
+        "desc": "Accès vital sans <em>réseau</em>. Votre carte est stockée sur votre appareil."
+      }
+    }
+  },
+
+  "always": {
+    "heading": "Toujours accessible",
+    "body": "À porter ou coller : bracelets, porte-clés, autocollants ou widget sur téléphone — dans le monde entier.",
+    "note": "Utilisation gratuite : imprimez vos propres autocollants ou utilisez n’importe quel porte-étiquette/ID. Nous facturons uniquement les accessoires optionnels plus tard."
+  },
+
+  "kids": {
+    "heading": "ANERITA pour enfants",
+    "body": "Bracelets et tags adaptés aux enfants pour l’école, les voyages et la tranquillité d’esprit."
+  },
+
+  "identify": {
+    "heading": "Identification à votre façon",
+    "body": "Choisissez la forme qui correspond à votre mode de vie."
+  },
+
+  "how": {
+    "heading": "Comment ça marche",
+    "steps": {
+      "1": {
+        "title": "1. Créez votre carte",
+        "body": "Ajoutez allergies, maladies, médicaments et contacts ICE. Tout reste sécurisé sur votre appareil."
+      },
+      "2": {
+        "title": "2. Reliez votre tag",
+        "body": "Connectez un bracelet, un porte-clés, un autocollant ou un widget. Un scan rapide affiche vos infos instantanément."
+      },
+      "3": {
+        "title": "3. Partagez en quelques secondes",
+        "body": "ANERITA affiche et <strong>lit à voix haute</strong> les infos essentielles pour que les secours agissent plus vite — même hors ligne."
+      }
+    }
+  },
+
+  "faq": {
+    "heading": "Questions fréquentes",
+    "q1": {
+      "q": "Est-ce que ça fonctionne sans internet ?",
+      "a": "Oui. Votre carte d’urgence est stockée localement et peut être affichée et lue hors ligne."
+    },
+    "q2": {
+      "q": "Et la confidentialité ?",
+      "a": "Nous ne vous suivons pas. Vos données sont chiffrées et restent sur votre appareil, sauf si vous choisissez de les partager."
+    },
+    "q3": {
+      "q": "Les secours peuvent-ils l’utiliser rapidement ?",
+      "a": "Absolument — un simple scan ouvre votre carte ; le texte en grand et l’audio mettent en évidence les informations vitales."
+    }
+  },
+
+  "signup": {
+    "heading": "Soyez les premiers à profiter de fonctions vitales",
+    "body": "De nouvelles langues, styles de tags et intégrations hospitalières arrivent. Laissez votre email pour un accès anticipé.",
+    "placeholder": "Votre adresse email",
+    "button": "S’inscrire",
+    "success": "✅ Merci pour votre inscription ! Nous vous tiendrons informés.",
+    "error": "⚠️ Une erreur est survenue. Veuillez réessayer."
+  },
+
+  "compliance": {
+    "heading": "Confidentialité & Conformité",
+    "body": "ANERITA est conçu avec la sécurité des patients, la confidentialité et les normes mondiales en tête.",
+    "badges": {
+      "gdpr": "Conforme RGPD",
+      "hipaa": "Compatible HIPAA",
+      "zero": "Sans suivi",
+      "device": "Confidentialité sur l’appareil"
+    }
+  },
+
+  "footer": {
+    "copy": "© 2025 ANERITA — Aide d’identification d’urgence accessible à tout moment"
+  }
+}
