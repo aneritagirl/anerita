@@ -1,16 +1,56 @@
 {
-  "nav": {
-    "how": "Cómo funciona",
-    "openApp": "Abrir app",
-    "signInCreate": "Entrar / Crear"
-  },
-  "hero": {
-    "eyebrow": "Ayuda de Identificación de Respuesta de Emergencia en cualquier momento",
-    "headline_html": "Tu triaje de <span class=\"highlight\">emergencia</span>, con voz para ti.",
-    "subhead": "En una crisis, los equipos deciden en segundos. ANERITA muestra y habla lo esencial — alergias, condiciones, medicación e ICE — para que la ayuda sea más rápida y segura."
-  },
-  "cta": {
-    "openApp": "Abrir app",
-    "seeFeatures": "Ver funciones"
-  }
+  "nav.signin": "Iniciar sesión / Crear",
+  "nav.open": "Abrir app",
+  "nav.features": "Características",
+  "nav.how": "Cómo funciona",
+  "nav.faq": "Preguntas frecuentes",
+  "nav.about": "Acerca de",
+  "nav.clinician": "Info para clínicos",
+  "nav.contact": "Contacto",
+  "nav.privacy": "Privacidad",
+  "nav.terms": "Términos",
+
+  "feature.ice.title": "ICE y SOS",
+  "feature.ice.body": "Acceso instantáneo a contactos y alertas de emergencia.",
+  "feature.vault.title": "Bóveda de documentos",
+  "feature.vault.body": "Almacenamiento cifrado para documentos médicos.",
+  "feature.trans.title": "Traducciones",
+  "feature.trans.body": "Rompe barreras de idioma en emergencias.",
+  "feature.triage.title": "Colores de triaje",
+  "feature.triage.body": "Prioriza la atención de un vistazo.",
+  "feature.security.title": "Seguridad y privacidad",
+  "feature.security.body": "Sin rastreo. HTTPS en todo. Funciona sin señal.",
+  "feature.offline.title": "Modo sin conexión",
+  "feature.offline.body": "Acceso que salva vidas sin señal. Tu tarjeta está guardada en tu dispositivo.",
+
+  "wide.always.title": "Siempre accesible",
+  "wide.always.body": "Llévalo en pulseras, llaveros, pegatinas o como widget del teléfono — en cualquier parte.",
+  "wide.kids.title": "ANERITA para niños",
+  "wide.kids.body": "Pulseras y etiquetas aptas para niños para el colegio, viajes y tranquilidad.",
+  "wide.ident.title": "Identificación a tu manera",
+  "wide.ident.body": "Elige el formato que se ajuste a tu estilo de vida.",
+
+  "how.title": "Cómo funciona",
+  "how.step1.title": "1. Crea tu tarjeta",
+  "how.step1.body": "Añade alergias, condiciones, medicación y contactos ICE. Todo vive de forma segura en tu dispositivo.",
+  "how.step2.title": "2. Vincula tu etiqueta",
+  "how.step2.body": "Conecta una pulsera, llavero, pegatina o widget. Un escaneo muestra tu info al instante.",
+  "how.step3.title": "3. Comparte en segundos",
+  "how.step3.body": "ANERITA muestra y **habla** lo esencial para que los equipos actúen más rápido — incluso sin conexión.",
+  "how.cta": "Abrir app",
+
+  "faq.title": "Preguntas frecuentes",
+  "faq.q1": "¿Funciona sin internet?",
+  "faq.a1": "Sí. Tu tarjeta de emergencia se guarda localmente y puede mostrarse y hablarse sin conexión.",
+  "faq.q2": "¿Y la privacidad?",
+  "faq.a2": "No te rastreamos. Tus datos permanecen en tu dispositivo salvo que decidas compartirlos.",
+  "faq.q3": "¿Pueden usarla rápido los equipos?",
+  "faq.a3": "Claro — un escaneo abre tu tarjeta; el texto grande + audio remarcan lo crítico.",
+
+  "signup.title": "Recibe antes funciones que salvan vidas",
+  "signup.body": "Nuevos idiomas, estilos de etiquetas e integraciones hospitalarias están llegando. Deja tu email para acceso anticipado.",
+  "signup.placeholder": "Tu correo electrónico",
+  "signup.submit": "Suscribirme",
+
+  "foot.copyright": "© 2025 ANERITA — Ayuda de Identificación de Respuesta de Emergencia"
 }
