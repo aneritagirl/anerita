@@ -1,37 +1,52 @@
 {
   "nav": {
-    "features": "Características",
-    "how": "Cómo funciona",
-    "faq": "Preguntas frecuentes",
-    "about": "Acerca de",
-    "clinician": "Info para clínicos",
-    "contact": "Contacto",
-    "privacy": "Privacidad",
-    "terms": "Términos",
-    "login": "Iniciar sesión / Crear",
-    "openApp": "Abrir app",
-    "language": "Idioma"
+    "features": "Features",
+    "how": "How it works",
+    "faq": "FAQ",
+    "about": "About",
+    "clinician": "Clinician info",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "login": "Sign in / Create",
+    "openApp": "Open App",
+    "language": "Language"
   },
 
   "common": {
-    "brandTagline": "Ayuda de Identificación de Respuesta de Emergencia en cualquier momento",
-    "worksOffline": "Funciona sin conexión",
-    "submit": "Enviar",
-    "email": "Tu correo electrónico",
-    "name": "Tu nombre",
-    "message": "Tu mensaje",
-    "save": "Guardar",
-    "cancel": "Cancelar"
+    "brandTagline": "Anytime Emergency Response Identification Tag Aid",
+    "worksOffline": "Works offline",
+    "submit": "Send",
+    "email": "Your email address",
+    "name": "Your name",
+    "message": "Your message",
+    "save": "Save",
+    "cancel": "Cancel"
   },
 
-  "hero": {
-    "eyebrow": "Ayuda de Identificación de Respuesta de Emergencia en cualquier momento",
-    "headline_html": "Tu <span class=\"highlight\">triaje</span> de emergencia, con voz para ti.",
-    "subhead": "En una crisis, los equipos deciden en segundos. ANERITA muestra y habla lo esencial — alergias, condiciones, medicación e ICE — para que la ayuda sea más rápida y segura."
-  },
-
-  "cta": {
-    "openApp": "Abrir app",
-    "seeFeatures": "Ver funciones"
+  "home": {
+    "hero": {
+      "eyebrow": "ANERITA — Anytime Emergency Response Identification Tag Aid",
+      "headline_html": "Your <span class=\"highlight\">emergency</span> triage, voiced for you.",
+      "subhead": "In a crisis, responders decide in seconds. ANERITA shows and speaks the essentials — allergies, conditions, meds, ICE — so help is faster and safer.",
+      "benefits": {
+        "clarity": {
+          "title": "Clarity over panic:",
+          "body": "one scan shows what matters."
+        },
+        "privacy": {
+          "title": "On-device privacy:",
+          "body": "you control what is shared."
+        },
+        "universal": {
+          "title": "Universal:",
+          "body": "any phone, any language, any tag."
+        }
+      }
+    },
+    "cta": {
+      "openApp": "Open App",
+      "seeFeatures": "See features"
+    }
   }
 }
