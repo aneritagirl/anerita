@@ -1,32 +1,126 @@
-<section class="auth-page">
-  <div class="auth-card">
-    <h1 class="auth-title">Sign in</h1>
-    <p class="auth-sub">Enter your email and password to continue.</p>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign in — ANERITA</title>
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+<link rel="apple-touch-icon" href="anerita-180.png" />
+<style>
+  /* Reuse the same design tokens / layout as register */
+  :root{ --brand:#c62828; --brand-600:#a61f1f; --text:#111214; --muted:#5b6066; --glass-bg:rgba(255,255,255,.14); --glass-stroke:rgba(255,255,255,.28); }
+  body{
+    margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif; color:var(--text);
+    background:
+      radial-gradient(1200px 800px at 10% -10%, #ffe0e0 0%, transparent 60%),
+      radial-gradient(1100px 700px at 110% 20%, #ffe7d6 0%, transparent 55%),
+      linear-gradient(180deg, #f5f7fb 0%, #eef1f6 100%);
+    min-height:100dvh;
+  }
+  .auth-wrap{ min-height:100dvh; display:grid; place-items:center; padding:24px; }
+  .card{
+    width:min(100%, 780px);
+    display:grid; grid-template-columns:1fr;
+    border-radius:16px; overflow:hidden;
+    background:var(--glass-bg);
+    backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
+    box-shadow: 0 20px 60px rgba(20,20,30,.15), inset 0 0 0 1px var(--glass-stroke);
+  }
+  @media (min-width:900px){ .card{ grid-template-columns: 1fr 1fr; } }
 
-    <form class="auth-form" action="#" method="post">
-      <div class="form-row">
-        <label for="login-email">Email</label>
-        <input id="login-email" name="email" type="email" placeholder="you@example.com" required>
-      </div>
+  .left{ padding:36px 32px 28px; background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.06)); }
+  .right{ padding:36px 32px 28px; display:flex; align-items:center; justify-content:center; background:
+    radial-gradient(650px 380px at 10% 0%, rgba(198,40,40,.16), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+  }
+  h1{ margin:0 0 8px; font-size: clamp(1.9rem, 1.2rem + 1.8vw, 2.4rem); letter-spacing:-.02em; }
+  .lede{ margin:0 0 24px; color:var(--muted); }
 
-      <div class="form-row">
-        <label for="login-password">Password</label>
-        <input id="login-password" name="password" type="password" placeholder="Your password" required>
-      </div>
+  form{ display:grid; gap:14px; }
+  label{ font-size:.95rem; color:#2a2d31; display:block; margin:0 0 6px; }
+  .input{
+    width:100%; padding:14px; border-radius:10px; border:1px solid rgba(0,0,0,.08);
+    background: rgba(255,255,255,.75); font-size:1rem; outline:none;
+    transition: box-shadow .15s ease, border-color .15s ease, background .15s;
+  }
+  .input:focus{ border-color: rgba(198,40,40,.55); box-shadow: 0 0 0 4px rgba(198,40,40,.12); background:#fff; }
 
-      <div class="auth-inline">
-        <a href="#" aria-disabled="true">Forgot password?</a>
-      </div>
+  .row-between{ display:flex; justify-content:space-between; align-items:center; }
+  .link{ color:var(--brand); text-decoration:none; font-weight:600; }
+  .link:hover{ text-decoration:underline; }
 
-      <div class="auth-actions">
-        <button type="submit" class="btn btn-primary">Sign in</button>
-        <span class="auth-footer">New here? <a href="/register.html">Create account</a></span>
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    gap:10px; border:0; cursor:pointer; border-radius:999px;
+    padding:14px 18px; font-weight:700; letter-spacing:.01em;
+    transition: transform .03s ease, box-shadow .2s ease, background .2s ease;
+    text-decoration:none; width:100%;
+  }
+  .btn:active{ transform: translateY(1px); }
+  .btn-primary{ background:var(--brand); color:#fff; box-shadow: 0 8px 22px rgba(198,40,40,.28); }
+  .btn-primary:hover{ background:var(--brand-600); box-shadow: 0 8px 26px rgba(166,31,31,.32); }
+
+  .social{ margin-top:18px; display:grid; gap:10px; }
+  @media (min-width:480px){ .social{ grid-template-columns:1fr 1fr; } }
+  .btn-google{ background:#fff; border:1px solid rgba(0,0,0,.14); }
+  .btn-apple{ background:#111; color:#fff; border:1px solid #000; }
+
+  .phone{
+    width:min(340px,100%); aspect-ratio:3/5; border-radius:28px;
+    background:
+      radial-gradient(140px 180px at 20% 20%, rgba(255,255,255,.5), transparent 55%),
+      linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,.15), inset 0 0 0 1px rgba(0,0,0,.06);
+    position:relative;
+  }
+  .phone::after{ content:"ANERITA"; position:absolute; inset:auto 0 18px 0; text-align:center; color:#c62828; font-weight:800; letter-spacing:.2em; opacity:.14; font-size:1rem; }
+
+  .topbar{ position:fixed; inset:16px 16px auto auto; display:flex; gap:12px; }
+  .topbar a{ font-weight:600; color:#111; text-decoration:none; }
+  .topbar .open{ color:#fff; background:var(--brand); padding:10px 14px; border-radius:999px; }
+</style>
+</head>
+<body>
+
+<nav class="topbar" aria-label="Top">
+  <a href="register.html">Create account</a>
+  <a class="open" href="app.html">Open App</a>
+</nav>
+
+<main class="auth-wrap">
+  <section class="card" aria-label="Sign in">
+    <div class="left">
+      <h1>Sign in</h1>
+      <p class="lede">Enter your email and password to continue.</p>
+
+      <form action="#" method="post" novalidate>
+        <div>
+          <label for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <div class="row-between">
+            <label for="pass">Password</label>
+            <a class="link" href="#">Forgot password?</a>
+          </div>
+          <input class="input" id="pass" name="password" type="password" placeholder="Your password" required />
+        </div>
+        <button class="btn btn-primary" type="submit">Sign in</button>
+      </form>
+
+      <p class="lede" style="margin-top:14px;">New here? <a class="link" href="register.html">Create account</a></p>
+
+      <div class="social" aria-label="Social sign-in">
+        <button class="btn btn-google">Continue with Google</button>
+        <button class="btn btn-apple">Continue with Apple</button>
       </div>
-    </form>
-  </div>
-  <div class="auth-social">
-  <div class="auth-social-label">Or continue with</div>
-  <button class="btn social google" type="button">Continue with Google</button>
-  <button class="btn social apple"  type="button">Continue with Apple</button>
-</div>
-</section>
+    </div>
+
+    <div class="right" aria-hidden="true">
+      <div class="phone"></div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
