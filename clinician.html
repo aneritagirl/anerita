@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="clinician.metaTitle">Clinician info — ANERITA</title>
+  <title>Clinician info — ANERITA</title>
 
   <!-- SEO -->
   <link rel="canonical" href="https://anerita.com/clinician.html" />
@@ -24,171 +24,176 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header" role="banner">
-    <div class="container bar">
-      <a class="brand" href="/" aria-label="Anerita Home">
-        <span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup>
-      </a>
+<!-- ===== Header (same as index) ===== -->
+<header class="site-header" role="banner">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="Anerita Home">
+      <span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup>
+    </a>
 
-      <nav class="nav-actions" aria-label="Primary">
-        <a class="btn btn-ghost" href="/#how" data-i18n="nav.how">How it works</a>
-        <a class="btn btn-ghost" href="/contact.html" data-i18n="nav.contact">Contact</a>
-        <a class="btn btn-primary" href="/app.html" data-i18n="nav.openApp">Open App</a>
+    <div class="header-actions">
+      <nav class="nav-ctas" aria-label="Primary">
+        <a class="btn btn-ghost" href="/login.html">Sign in / Create</a>
+        <a class="btn btn-primary" href="/app.html">Open App</a>
+      </nav>
+      <button class="hamburger" id="navToggle" aria-label="Open menu"
+              aria-controls="siteMenu" aria-expanded="false">
+        <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+      </button>
+    </div>
+  </div>
 
-        <!-- Language picker -->
-        <select id="lang" aria-label="Language" style="margin-left:10px;padding:8px 10px;border-radius:8px;">
-          <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="de">Deutsch</option>
-          <option value="it">Italiano</option>
-          <option value="pt">Português</option>
-          <option value="ro">Română</option>
-          <option value="ar">العربية</option>
-          <option value="hi">हिन्दी</option>
-          <option value="zh">中文</option>
-        </select>
+  <nav id="siteMenu" class="site-menu" aria-label="More">
+    <div class="container">
+      <a href="/#features">Features</a>
+      <a href="/#how">How it works</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/about.html">About</a>
+      <a href="/clinician.html">Clinician info</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/login.html">Sign in / Create</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ===== Page ===== -->
+<section class="wide">
+  <div class="container" style="max-width:900px">
+    <h1>Clinician &amp; responder information</h1>
+    <p class="lede">
+      ANERITA is a patient‑owned emergency card that <strong>displays and speaks</strong> time‑critical
+      information at the scene — even without signal.
+    </p>
+
+    <div class="steps" style="margin-top:16px">
+      <div class="step">
+        <h3>1) Access</h3>
+        <p>Scan the QR code on the patient’s tag/phone, or tap the widget. The card opens instantly; tap <em>Play</em> to hear the voice summary.</p>
+      </div>
+      <div class="step">
+        <h3>2) What you’ll see</h3>
+        <ul>
+          <li>Identifiers (name, DOB), allergies, key conditions, medications.</li>
+          <li><strong>ICE contacts</strong> (In Case of Emergency) and patient notes.</li>
+          <li>Language/translation aid and <strong>triage color</strong> indicator selected by the user.</li>
+          <li>Time‑stamped last update.</li>
+        </ul>
+      </div>
+      <div class="step">
+        <h3>3) Offline ready</h3>
+        <p>The emergency card is cached on the device. If there’s no network, the screen and voice still work. No login required at scene.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3 style="margin-top:0">Verification &amp; authenticity</h3>
+      <p>
+        The card is <strong>patient‑supplied information</strong>. If clinical risk is high or details conflict,
+        verify against secondary sources (wristband labels, medication boxes, GP records, Summary Care Record,
+        EHR, or next‑of‑kin).
+      </p>
+      <ul>
+        <li><strong>Last updated:</strong> shown on the card.</li>
+        <li><strong>Cross‑check:</strong> scan tag + confirm name/DOB with patient or ICE contact when possible.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3 style="margin-top:0">Privacy, consent &amp; security</h3>
+      <ul>
+        <li>No trackers. Data is stored on the patient’s device; sharing happens only when they or a guardian present the card.</li>
+        <li>Use for direct care in emergencies under standard consent exceptions where applicable.</li>
+        <li>Do not photograph the card unless local policy allows and it is necessary for care.</li>
+      </ul>
+      <p style="margin:8px 0 0"><small><em>ANERITA is an information aid, not a medical record. Clinical judgment remains paramount.</em></small></p>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3 style="margin-top:0">What to document</h3>
+      <ul>
+        <li>That a patient‑provided emergency card was consulted (ANERITA).</li>
+        <li>Key items used (e.g., “Allergy: penicillin; Meds: warfarin”).</li>
+        <li>Any discrepancies and actions taken.</li>
+      </ul>
+    </div>
+
+    <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap">
+      <a class="btn btn-primary btn-lg" href="/app.html">Open emergency card</a>
+      <a class="btn btn-ghost btn-lg" href="/privacy.html">Privacy</a>
+      <a class="btn btn-ghost btn-lg" href="/terms.html">Terms</a>
+      <a class="btn btn-ghost btn-lg" href="/contact.html">Contact</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-row">
+      <div>© 2025 ANERITA — Anytime Emergency Response Identification Tag Aid</div>
+      <nav class="foot-nav">
+        <a href="/#features" class="btn btn-ghost">Features</a>
+        <a href="/#how" class="btn btn-ghost">How it works</a>
+        <a href="/#faq" class="btn btn-ghost">FAQ</a>
+        <a href="/about.html" class="btn btn-ghost">About</a>
+        <a href="/clinician.html" class="btn btn-ghost">Clinician</a>
+        <a href="/contact.html" class="btn btn-ghost">Contact</a>
+        <a href="/privacy.html" class="btn btn-ghost">Privacy</a>
+        <a href="/terms.html" class="btn btn-ghost">Terms</a>
+        <a href="/login.html" class="btn btn-ghost">Sign in / Create</a>
       </nav>
     </div>
-  </header>
+  </div>
+</footer>
 
-  <!-- Page -->
-  <section class="wide">
-    <div class="container" style="max-width:900px">
-      <h1 data-i18n="clinician.title">Clinician & responder information</h1>
-      <p class="lede" data-i18n="clinician.lede">
-        ANERITA is a patient‑owned emergency card that <strong>displays and speaks</strong> time‑critical information at the scene — even without signal.
-      </p>
+<!-- JSON‑LD -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Clinician info — ANERITA",
+  "url":"https://anerita.com/clinician.html",
+  "about":{
+    "@type":"Thing",
+    "name":"Emergency medical information aid",
+    "description":"Patient-owned emergency card with allergies, conditions, meds, ICE; offline voice + display."
+  },
+  "publisher":{"@type":"Organization","name":"ANERITA","url":"https://anerita.com/"}
+}
+</script>
 
-      <div class="steps" style="margin-top:16px">
-        <div class="step">
-          <h3 data-i18n="clinician.col1_title">1) Access</h3>
-          <p data-i18n="clinician.col1_text">
-            Scan the QR code on the patient’s tag/phone, or tap the widget. The card opens instantly; tap <em>Play</em> to hear the voice summary.
-          </p>
-        </div>
+<!-- Hamburger JS (same as index) -->
+<script>
+(function(){
+  const btn = document.getElementById('navToggle');
+  const menu = document.getElementById('siteMenu');
+  if(!btn || !menu) return;
 
-        <div class="step">
-          <h3 data-i18n="clinician.col2_title">2) What you’ll see</h3>
-          <ul>
-            <li data-i18n="clinician.col2_list1">Identifiers (name, DOB), allergies, key conditions, medications.</li>
-            <li data-i18n="clinician.col2_list2"><strong>ICE contacts</strong> (In Case of Emergency) and patient notes.</li>
-            <li data-i18n="clinician.col2_list3">Language/translation aid and <strong>triage color</strong> indicator selected by the user.</li>
-            <li data-i18n="clinician.col2_list4">Time‑stamped last update.</li>
-          </ul>
-        </div>
-
-        <div class="step">
-          <h3 data-i18n="clinician.col3_title">3) Offline ready</h3>
-          <p data-i18n="clinician.col3_text">
-            The emergency card is cached on the device. If there’s no network, the screen and voice still work. No login required at scene.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:20px">
-        <h3 style="margin-top:0" data-i18n="clinician.verifyTitle">Verification & authenticity</h3>
-        <p data-i18n="clinician.verifyText_html">
-          The card is <strong>patient‑supplied information</strong>. If clinical risk is high or details conflict, verify against secondary sources (wristband labels, medication boxes, GP records, Summary Care Record, EHR, or next‑of‑kin).
-        </p>
-        <ul>
-          <li data-i18n="clinician.verifyBul1"><strong>Last updated:</strong> shown on the card.</li>
-          <li data-i18n="clinician.verifyBul2"><strong>Cross‑check:</strong> scan tag + confirm name/DOB with patient or ICE contact when possible.</li>
-        </ul>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3 style="margin-top:0" data-i18n="clinician.privacyTitle">Privacy, consent & security</h3>
-        <ul>
-          <li data-i18n="clinician.privacyBul1">No trackers. Data is stored on the patient’s device; sharing happens only when they or a guardian present the card.</li>
-          <li data-i18n="clinician.privacyBul2">Use for direct care in emergencies under standard consent exceptions where applicable.</li>
-          <li data-i18n="clinician.privacyBul3">Do not photograph the card unless local policy allows and it is necessary for care.</li>
-        </ul>
-        <p style="margin:8px 0 0" data-i18n="clinician.disclaimer"><small><em>ANERITA is an information aid, not a medical record. Clinical judgment remains paramount.</em></small></p>
-      </div>
-
-      <div class="card" style="margin-top:16px">
-        <h3 style="margin-top:0" data-i18n="clinician.docTitle">What to document</h3>
-        <ul>
-          <li data-i18n="clinician.docBul1">That a patient‑provided emergency card was consulted (ANERITA).</li>
-          <li data-i18n="clinician.docBul2">Key items used (e.g., “Allergy: penicillin; Meds: warfarin”).</li>
-        </ul>
-      </div>
-
-      <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap">
-        <a class="btn btn-primary btn-lg" href="/app.html" data-i18n="how.cta">Open app</a>
-        <a class="btn btn-ghost btn-lg" href="/privacy.html" data-i18n="nav.privacy">Privacy</a>
-        <a class="btn btn-ghost btn-lg" href="/terms.html" data-i18n="nav.terms">Terms</a>
-        <a class="btn btn-ghost btn-lg" href="/contact.html" data-i18n="nav.contact">Contact</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="foot-row">
-        <div data-i18n="footer.copy">© 2025 ANERITA — Emergency Response Identification Tag Aid</div>
-        <nav class="foot-nav">
-          <a href="/#features" class="btn btn-ghost" data-i18n="nav.features">Features</a>
-          <a href="/#how" class="btn btn-ghost" data-i18n="nav.how">How it works</a>
-          <a href="/#faq" class="btn btn-ghost" data-i18n="nav.faq">FAQ</a>
-          <a href="/privacy.html" class="btn btn-ghost" data-i18n="nav.privacy">Privacy</a>
-          <a href="/terms.html" class="btn btn-ghost" data-i18n="nav.terms">Terms</a>
-          <a href="/clinician.html" class="btn btn-ghost" data-i18n="nav.clinician">Clinician</a>
-          <a href="/contact.html" class="btn btn-ghost" data-i18n="nav.contact">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JSON‑LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"Clinician info — ANERITA",
-    "url":"https://anerita.com/clinician.html",
-    "about":{
-      "@type":"Thing",
-      "name":"Emergency medical information aid",
-      "description":"Patient-owned emergency card with allergies, conditions, meds, ICE; offline voice + display."
-    },
-    "publisher":{"@type":"Organization","name":"ANERITA","url":"https://anerita.com/"}
+  function closeOnEscape(e){
+    if(e.key === 'Escape'){
+      btn.setAttribute('aria-expanded','false');
+      menu.classList.remove('open');
+      document.removeEventListener('keydown', closeOnEscape);
+    }
   }
-  </script>
 
-  <!-- i18n libraries -->
-  <script src="https://unpkg.com/i18next@23/i18next.min.js"></script>
-  <script src="https://unpkg.com/i18next-http-backend@2/i18nextHttpBackend.min.js"></script>
-  <script src="https://unpkg.com/i18next-browser-languagedetector@7/i18nextBrowserLanguageDetector.min.js"></script>
+  btn.addEventListener('click', ()=>{
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    menu.classList.toggle('open', !open);
+    if(!open) document.addEventListener('keydown', closeOnEscape);
+  });
 
-  <!-- Init i18n + language switcher -->
-  <script>
-    // init
-    i18next.use(i18nextHttpBackend).use(i18nextBrowserLanguageDetector).init({
-      fallbackLng: 'en',
-      backend: { loadPath: '/locales/{{lng}}/site.json' }
-    }, () => {
-      // render all data-i18n
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const html = i18next.t(key);
-        if (html) el.innerHTML = html;
-      });
-      // select current
-      const select = document.getElementById('lang');
-      if (select) {
-        select.value = i18next.language && i18next.language.split('-')[0] || 'en';
-        select.addEventListener('change', e => {
-          const lng = e.target.value;
-          const url = new URL(window.location.href);
-          url.searchParams.set('lng', lng);
-          window.location.href = url.toString();
-        });
-      }
-    });
-  </script>
+  menu.addEventListener('click', (e)=>{
+    const a = e.target.closest('a');
+    if(!a) return;
+    btn.setAttribute('aria-expanded','false');
+    menu.classList.remove('open');
+    document.removeEventListener('keydown', closeOnEscape);
+  });
+})();
+</script>
 </body>
 </html>
