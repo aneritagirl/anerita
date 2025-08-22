@@ -4,82 +4,42 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sign in — ANERITA</title>
-  <meta name="description" content="Sign in to ANERITA to access your emergency card and Health Profile." />
   <link rel="stylesheet" href="styles/site.css" />
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
 </head>
 <body>
-<header class="site-header">
-  <div class="container bar">
-    <a class="brand" href="/" aria-label="Anerita Home"><span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup></a>
-    <nav class="nav-actions">
-      <a class="btn btn-ghost" href="account.html">Create account</a>
-      <a class="btn btn-primary" href="app.html">Open App</a>
-    </nav>
-  </div>
-</header>
-
-<main class="wide">
-  <div class="container" style="max-width:720px">
-    <div class="card" style="padding:28px 28px 24px">
-      <h1 style="margin:0 0 8px">Sign in</h1>
-      <p class="note" style="margin:0 0 20px">Enter your email and password to continue.</p>
-
-      <form id="login" novalidate>
-        <label class="field">
-          <span>Email</span>
-          <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
-        </label>
-
-        <label class="field">
-          <span>Password</span>
-          <input type="password" name="password" autocomplete="current-password" minlength="6" placeholder="Your password" required />
-        </label>
-
-        <div style="display:flex; gap:12px; align-items:center">
-          <button class="btn btn-primary" type="submit">Sign in</button>
-          <a href="account.html" class="btn btn-ghost">New here? Create account</a>
-        </div>
-
-        <p id="loginError" class="note" style="color:#c62828;display:none;margin-top:12px;">
-          Please check your email or password.
-        </p>
-      </form>
-    </div>
-  </div>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="foot-row">
-      <div>© 2025 ANERITA — Emergency Response Identification Tag Aid</div>
-      <nav class="foot-nav">
-        <a href="index.html#features" class="btn btn-ghost">Features</a>
-        <a href="index.html#how" class="btn btn-ghost">How it works</a>
-        <a href="privacy.html" class="btn btn-ghost">Privacy</a>
-        <a href="terms.html" class="btn btn-ghost">Terms</a>
+  <header class="site-header">
+    <div class="container bar">
+      <a class="brand" href="/">ANERITA</a>
+      <nav>
+        <a href="register.html">Create account</a>
+        <a href="app.html" class="btn btn-primary">Open App</a>
       </nav>
     </div>
-  </div>
-</footer>
+  </header>
 
-<script>
-  // Demo-only: accept anything that looks valid and "log in"
-  const form = document.getElementById('login');
-  const err  = document.getElementById('loginError');
-  form.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    err.style.display='none';
-    const fd = new FormData(form);
-    const email = (fd.get('email')||'').trim();
-    const pass  = (fd.get('password')||'');
-    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || pass.length<6){
-      err.style.display='block'; return;
-    }
-    // Persist a tiny "session" flag so app.html can greet the user
-    localStorage.setItem('anerita_user_email', email);
-    window.location.href = 'app.html';
-  });
-</script>
+  <section class="form-section">
+    <div class="form-card">
+      <h1>Sign in</h1>
+      <p>Enter your email and password to continue.</p>
+      <form>
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" required />
+
+        <label>Password</label>
+        <input type="password" placeholder="Your password" required />
+
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+
+      <p><a href="#">Forgot password?</a></p>
+      <p>New here? <a href="register.html">Create account</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 ANERITA — Emergency Response Identification Tag Aid</p>
+    </div>
+  </footer>
 </body>
 </html>
