@@ -4,74 +4,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sign in — ANERITA</title>
-  <link rel="canonical" href="https://anerita.com/login.html" />
-  <meta name="description" content="Sign in to ANERITA to manage your emergency card, document vault, and ICE contacts." />
+  <meta name="description" content="Sign in to ANERITA to access your emergency card and Health Profile." />
   <link rel="stylesheet" href="styles/site.css" />
-  <style>
-    .auth-wrap{max-width:520px;margin:0 auto;padding:clamp(28px,6vw,56px) 0}
-    .auth-card{background:#fff;border:1px solid #e8edf3;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.08);padding:22px}
-    .field{display:grid;gap:6px;margin:12px 0}
-    .field input{padding:12px 14px;border:1px solid #ccd2d9;border-radius:12px;font-size:16px}
-    .help{font-size:14px;color:#6b7280}
-    .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-    .error{display:none;margin-top:10px;background:#fdecea;color:#c62828;border:1px solid #f5c6c6;padding:10px 12px;border-radius:12px;font-weight:600}
-  </style>
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
 </head>
 <body>
-  <!-- Header (same as site) -->
-  <header class="site-header" role="banner">
-    <div class="container bar">
-      <a class="brand" href="/" aria-label="Anerita Home"><span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup></a>
-      <nav class="nav-actions" aria-label="Primary">
-        <a class="btn btn-ghost" href="/register.html">Create account</a>
-        <a class="btn btn-primary" href="/app.html" aria-disabled="true">Open App</a>
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="/" aria-label="Anerita Home"><span>AN</span><span class="er">ER</span><span>ITA</span><sup>™</sup></a>
+    <nav class="nav-actions">
+      <a class="btn btn-ghost" href="account.html">Create account</a>
+      <a class="btn btn-primary" href="app.html">Open App</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wide">
+  <div class="container" style="max-width:720px">
+    <div class="card" style="padding:28px 28px 24px">
+      <h1 style="margin:0 0 8px">Sign in</h1>
+      <p class="note" style="margin:0 0 20px">Enter your email and password to continue.</p>
+
+      <form id="login" novalidate>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+        </label>
+
+        <label class="field">
+          <span>Password</span>
+          <input type="password" name="password" autocomplete="current-password" minlength="6" placeholder="Your password" required />
+        </label>
+
+        <div style="display:flex; gap:12px; align-items:center">
+          <button class="btn btn-primary" type="submit">Sign in</button>
+          <a href="account.html" class="btn btn-ghost">New here? Create account</a>
+        </div>
+
+        <p id="loginError" class="note" style="color:#c62828;display:none;margin-top:12px;">
+          Please check your email or password.
+        </p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot-row">
+      <div>© 2025 ANERITA — Emergency Response Identification Tag Aid</div>
+      <nav class="foot-nav">
+        <a href="index.html#features" class="btn btn-ghost">Features</a>
+        <a href="index.html#how" class="btn btn-ghost">How it works</a>
+        <a href="privacy.html" class="btn btn-ghost">Privacy</a>
+        <a href="terms.html" class="btn btn-ghost">Terms</a>
       </nav>
     </div>
-  </header>
+  </div>
+</footer>
 
-  <main class="container auth-wrap">
-    <div class="auth-card">
-      <h1>Welcome back</h1>
-      <p class="help">Sign in to manage your emergency card, ICE contacts, and document vault.</p>
-
-      <form id="loginForm" novalidate>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
-        </div>
-        <div class="field">
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="••••••••" />
-        </div>
-
-        <div class="row" style="margin-top:8px">
-          <a class="help" href="mailto:hello@anerita.com?subject=Password%20reset">Forgot password?</a>
-          <button class="btn btn-primary btn-lg" type="submit">Sign in</button>
-        </div>
-
-        <div class="error" id="loginError">Please enter a valid email and password.</div>
-      </form>
-
-      <p class="help" style="margin-top:14px">New here? <a href="/register.html">Create an account</a></p>
-    </div>
-  </main>
-
-  <script>
-    // Demo-only sign-in (no backend yet)
-    const form = document.getElementById('loginForm');
-    const err  = document.getElementById('loginError');
-    form.addEventListener('submit', e=>{
-      e.preventDefault();
-      const email = form.email.value.trim();
-      const pass  = form.password.value.trim();
-      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && pass.length >= 6;
-      if(!ok){ err.style.display='block'; return; }
-      // store a demo token and email (replace with real API later)
-      localStorage.setItem('anerita_token', 'demo_' + Math.random().toString(36).slice(2));
-      localStorage.setItem('anerita_email', email);
-      // go to the app shell for now (you can change to /dashboard.html later)
-      window.location.href = '/app.html';
-    });
-  </script>
+<script>
+  // Demo-only: accept anything that looks valid and "log in"
+  const form = document.getElementById('login');
+  const err  = document.getElementById('loginError');
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    err.style.display='none';
+    const fd = new FormData(form);
+    const email = (fd.get('email')||'').trim();
+    const pass  = (fd.get('password')||'');
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || pass.length<6){
+      err.style.display='block'; return;
+    }
+    // Persist a tiny "session" flag so app.html can greet the user
+    localStorage.setItem('anerita_user_email', email);
+    window.location.href = 'app.html';
+  });
+</script>
 </body>
 </html>
