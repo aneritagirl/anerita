@@ -639,3 +639,56 @@ summary{cursor:pointer;font-weight:600;color:var(--ink)}
   color: #fff;
   border: none;
 }
+/* Hero layout */
+.hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Left column */
+.hero-text {
+  flex: 1 1 450px;
+}
+
+/* Right column */
+.hero-art {
+  flex: 1 1 350px;
+  text-align: center;
+}
+
+.hero-art .hero-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Free tag red highlight */
+.free-tag {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .hero-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-art {
+    order: 2;
+    margin-top: 20px;
+  }
+
+  .hero-text ul {
+    text-align: left;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
