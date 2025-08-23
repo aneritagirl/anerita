@@ -692,3 +692,52 @@ summary{cursor:pointer;font-weight:600;color:var(--ink)}
     margin: 0 auto;
   }
 }
+/* Plans layout */
+.plans-grid{
+  display:grid;
+  gap:28px;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  margin-top:26px;
+}
+.plan.card{
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,.06);
+  padding:24px;
+}
+.plan-title{ font-size:1.35rem; margin:0 0 6px; }
+.plan-sub{ margin:6px 0 12px; color:#666; }
+
+/* Pills */
+.pill{
+  display:inline-block;
+  font-size:.85rem;
+  padding:6px 12px;
+  border-radius:999px;
+  font-weight:600;
+  margin:6px 0 4px;
+}
+.pill-red{ background:#c62828; color:#fff; }
+.pill-grey{ background:#eee; color:#444; }
+
+/* List with red ticks */
+.plan-list{ list-style:none; margin:14px 0 18px; padding:0; }
+.plan-list li{
+  position:relative; padding-left:28px; margin:10px 0; line-height:1.35;
+}
+.plan-list li::before{
+  content:"✓";
+  position:absolute; left:0; top:0;
+  font-weight:700; color:#c62828;
+}
+
+/* Fine print */
+.fine{ font-size:.82rem; color:#6b6b6b; margin-top:8px; }
+
+/* Buttons row */
+.plan .cta-row{ margin-top:14px; }
+
+/* Small screens */
+@media (max-width:480px){
+  .plan.card{ padding:20px; }
+}
