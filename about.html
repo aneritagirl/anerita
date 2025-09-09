@@ -4,19 +4,16 @@
   <meta charset="utf-8">
   <title>MYQER — MVP Offline/Online Hybrid QR</title>
   <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
-  <meta http-equiv="Content-Security-Policy"
-      content="default-src 'self';
-               img-src 'self' data:;
-               style-src 'self' 'unsafe-inline';
-               script-src 'self' 'unsafe-inline'">
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 2rem; }
+    #qr { image-rendering: pixelated; }
+  </style>
 </head>
-<body style="font-family:Arial,sans-serif; text-align:center; padding:2rem;">
-
+<body>
   <h1>MYQER — Hybrid QR Demo</h1>
-  <canvas id="qr"></canvas>
+  <canvas id="qr" width="300" height="300" aria-label="QR"></canvas>
 
   <script>
-    // Hardcoded user profile (demo)
     const profile = {
       name: "Anita Boros",
       dob: "1988-10-13",
@@ -25,32 +22,42 @@
       allergies: "Penicillin, Codeine, Midazolam",
       conditions: "Alport Syndrome",
       donor: "Y",
-      url: "https://myqer.com/c/6P6NH6"  // short code URL
+      url: "https://myqer.com/c/6P6NH6" // short-code URL
     };
 
-    // Build hybrid payload (plain text + URL last)
-    const payload = `
+    // 👉 URL first (no "URL:" label, no leading spaces), then the offline text
+    const payload =
+`${profile.url}
+
 Name: ${profile.name}
 DOB: ${profile.dob}
 Country: ${profile.country}
 BT: ${profile.blood}
 ALG: ${profile.allergies}
 COND: ${profile.conditions}
-DONOR: ${profile.donor}
-URL: ${profile.url}
-    `.trim();
+DONOR: ${profile.donor}`;
 
-    // Draw QR
+    const canvas = document.getElementById('qr');
+
     QRCode.toCanvas(
-      document.getElementById("qr"),
+      canvas,
       payload,
-      { width: 260, margin: 2, errorCorrectionLevel: 'H' },
-      function (err) {
-        if (err) console.error(err);
-        else console.log("✅ QR generated:", payload);
+      {
+        width: 300,
+        margin: 4,
+        errorCorrectionLevel: 'H'
+      },
+      (err) => {
+        if (err) {
+          console.error('QR error:', err);
+          return;
+        }
+        // ensure no smoothing blur
+        const ctx = canvas.getContext('2d');
+        if (ctx) ctx.imageSmoothingEnabled = false;
+        console.log('✅ QR generated');
       }
     );
   </script>
-
 </body>
 </html>
